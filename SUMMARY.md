@@ -25,7 +25,6 @@
 * [Settings](pages/settings.md)
 * [Marketplace](pages/marketplace.md)
 * [Studio](pages/studio.md)
-* [Pets](pages/pets.md)
 
 ## Tasks
 

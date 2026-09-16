@@ -196,13 +196,6 @@
       "wait": "[data-testid='builder-canvas']",
       "caption": "Studio: an agent's canvas."
     },
-    "pets-page": {
-      "file": "pets-page.png",
-      "route": "/pets",
-      "selectors": [],
-      "wait": "[data-testid='shell-nav']",
-      "caption": "Pets."
-    },
     "marketplace-list-dialog": {
       "file": "marketplace-list-dialog.png",
       "route": "/marketplace?tab=memory&view=mine",
