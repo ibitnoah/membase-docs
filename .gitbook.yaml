@@ -1,0 +1,7 @@
+# GitBook reads this repository at its root: index.md is the landing page, SUMMARY.md the table
+# of contents. Content is mirrored from docs/user-guide in unibaseio/membase-suites — edit there.
+root: ./
+
+structure:
+  readme: index.md
+  summary: SUMMARY.md

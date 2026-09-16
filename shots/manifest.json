@@ -1,0 +1,183 @@
+{
+  "sha": "122508da",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "generated": "2026-09-15T03:17:21Z",
+  "shots": {
+    "home-empty": {
+      "file": "home-empty.png",
+      "route": "/app",
+      "selectors": [
+        "[data-testid='home-entry-add-memory']",
+        "[data-testid='home-entry-ask-my-assistant']",
+        "[data-testid='home-setup-guide']"
+      ],
+      "wait": "[data-testid='home-entries']",
+      "caption": "Home: a new conversation."
+    },
+    "home-anatomy": {
+      "file": "home-anatomy.png",
+      "route": "/app",
+      "selectors": [
+        "[data-testid='shell-nav']",
+        "[data-testid='conversation-new']",
+        "[data-testid='home-entries']",
+        "[data-testid='home-entry-ask-my-assistant']",
+        "[data-testid='home-setup-guide']"
+      ],
+      "wait": "[data-testid='home-entries']",
+      "caption": "The Home page."
+    },
+    "new-memory-dialog": {
+      "file": "new-memory-dialog.png",
+      "route": "/memories",
+      "selectors": [
+        "[data-testid='new-group-name']",
+        "[data-testid='new-group-create']"
+      ],
+      "wait": "[data-testid='memory-home']",
+      "caption": "New memory: a name and what it keeps."
+    },
+    "memory-home": {
+      "file": "memory-home.png",
+      "route": "/memories",
+      "selectors": [
+        "[data-testid^='view-tile-']",
+        "[data-testid='home-new-view']"
+      ],
+      "wait": "[data-testid='memory-home']",
+      "caption": "Memory home: one tile per memory."
+    },
+    "memory-page": {
+      "file": "memory-page.png",
+      "route": "/memories",
+      "selectors": [
+        "[data-testid='view-run']",
+        "[data-testid='view-settings']",
+        "[data-testid='group-add']"
+      ],
+      "wait": "[data-testid='memory-home']",
+      "caption": "A memory's page: Run, Settings, and the Add card."
+    },
+    "memory-page-anatomy": {
+      "file": "memory-page-anatomy.png",
+      "route": "/memories",
+      "selectors": [
+        "[data-testid='view-title']",
+        "[data-testid='view-run']",
+        "[data-testid='view-settings']",
+        "[data-testid='view-delete']",
+        "[data-testid='group-add']"
+      ],
+      "wait": "[data-testid='memory-home']",
+      "caption": "Anatomy of a memory's page."
+    },
+    "memory-settings": {
+      "file": "memory-settings.png",
+      "route": "/memories",
+      "selectors": [
+        "[data-testid='view-query']",
+        "[data-testid='view-cadence-edit']"
+      ],
+      "wait": "[data-testid='memory-home']",
+      "caption": "Settings: what the memory extracts, and how often."
+    },
+    "source-page": {
+      "file": "source-page.png",
+      "route": "/memories",
+      "selectors": [
+        "[data-testid='source-hero']",
+        "[data-testid='source-read-by']"
+      ],
+      "wait": "[data-testid='memory-home']",
+      "caption": "A folder source's page: Sync now, and which memories read it."
+    },
+    "connect-page": {
+      "file": "connect-page.png",
+      "route": "/connect",
+      "selectors": [
+        "[data-testid='client-tile-claude']"
+      ],
+      "wait": "[data-testid='connect-page']",
+      "caption": "Connect: the AI apps, by purpose. Dashed tiles are not connected yet."
+    },
+    "connect-claude-steps": {
+      "file": "connect-claude-steps.png",
+      "route": "/connect",
+      "selectors": [
+        "[data-testid='connect-steps']"
+      ],
+      "wait": "[data-testid='connect-page']",
+      "caption": "Picking Claude unfolds the connector URL and its steps."
+    },
+    "space-page": {
+      "file": "space-page.png",
+      "route": "/files",
+      "selectors": [
+        "text=Upload",
+        "text=New folder"
+      ],
+      "wait": "[data-testid='space-browser']",
+      "caption": "Space: the account's files. Any folder can become a source."
+    },
+    "ai-setup-page": {
+      "file": "ai-setup-page.png",
+      "route": "/intelligence",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "AI Setup: model sources."
+    },
+    "schedules-page": {
+      "file": "schedules-page.png",
+      "route": "/schedules",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Schedules."
+    },
+    "agents-page": {
+      "file": "agents-page.png",
+      "route": "/ai-connections",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Agents."
+    },
+    "activity-page": {
+      "file": "activity-page.png",
+      "route": "/activity",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Activity."
+    },
+    "settings-page": {
+      "file": "settings-page.png",
+      "route": "/settings",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Settings."
+    },
+    "home-conversation": {
+      "file": "home-conversation.png",
+      "route": "/app",
+      "selectors": [
+        "[data-testid='mothership-user-message']",
+        "[data-testid='mothership-assistant-message']",
+        "[data-testid='mothership-activity']"
+      ],
+      "wait": "[data-testid='home-entries'], [data-testid='conversation-row']",
+      "caption": "A conversation: your question, the answer, and the tools the assistant used to find it."
+    },
+    "memory-entry": {
+      "file": "memory-entry.png",
+      "route": "/memories",
+      "selectors": [
+        "[data-testid='memory-entry'], [data-testid='memory-fact']",
+        "[data-testid='memory-entry-column'], [data-testid='memory-fact-column']"
+      ],
+      "wait": "[data-testid='memory-home']",
+      "caption": "Your Memory: what the memory keeps, and one item opened."
+    }
+  },
+  "source": "https://www.app.membase.io"
+}
