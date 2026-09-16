@@ -1,7 +1,7 @@
-# Concepts
+# How Membase fits together
 
-Six words cover everything on screen. Each is one object in the product, and the left rail
-names most of them.
+Seven words cover everything on screen. Each is one object in the product, and the left rail
+names most of them. The end of this page says what stops, and what cannot be undone.
 
 ```text
 SOURCES                        MEMORY                     APPS

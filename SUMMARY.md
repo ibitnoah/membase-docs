@@ -11,18 +11,18 @@
 
 ## Concepts
 
-* [The six objects](concepts.md)
+* [How Membase fits together](concepts.md)
 
 ## Pages
 
 * [Home](pages/home.md)
 * [Memory](pages/memory.md)
-* [Connect](pages/connect.md)
-* [Space](pages/space.md)
-* [AI Setup](pages/ai-setup.md)
-* [Schedules](pages/schedules.md)
-* [Agents](pages/agents.md)
-* [Activity](pages/activity.md)
-* [Settings](pages/settings.md)
-* [Marketplace](pages/marketplace.md)
 * [Studio](pages/studio.md)
+* [Agents](pages/agents.md)
+* [Schedules](pages/schedules.md)
+* [Space](pages/space.md)
+* [Activity](pages/activity.md)
+* [AI Setup](pages/ai-setup.md)
+* [Connect](pages/connect.md)
+* [Marketplace](pages/marketplace.md)
+* [Settings](pages/settings.md)
