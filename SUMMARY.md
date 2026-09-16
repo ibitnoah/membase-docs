@@ -26,19 +26,14 @@
 * [Marketplace](pages/marketplace.md)
 * [Studio](pages/studio.md)
 
-## Tasks
+## Guides
 
-* [Turn a project folder into a memory](tasks/project-folder-to-memory.md)
-* [Use a memory in Claude Code](tasks/use-in-claude-code.md)
-* [Use a memory in ChatGPT](tasks/use-in-chatgpt.md)
-* [Import your chats with other assistants](tasks/import-conversations.md)
-* [Keep a memory up to date on a schedule](tasks/schedule-updates.md)
+* [Bring your material in](tasks/bring-material-in.md)
 * [Reach your assistant on Telegram](tasks/telegram.md)
-* [Delete, revoke, stop](tasks/delete-and-revoke.md)
 
 ## Help
 
 * [Troubleshooting](troubleshooting.md)
 * [States](reference/states.md)
 * [Keyboard shortcuts](reference/shortcuts.md)
-* [Irreversible actions](reference/irreversible.md)
+* [Delete, revoke, stop](reference/delete-revoke-stop.md)

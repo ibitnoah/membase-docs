@@ -61,6 +61,7 @@ The same memory answers on Home, too. Ask your assistant and it tells you which 
 
 ## What next
 
-- [Keep it up to date on a schedule](../tasks/schedule-updates.md)
-- [Use it in ChatGPT too](../tasks/use-in-chatgpt.md)
-- [Import your chats with other assistants](../tasks/import-conversations.md)
+- [Keep it up to date on a schedule](../pages/memory.md#settings)
+- [Use it in ChatGPT, Cursor or another app](../pages/connect.md)
+- [Bring in more: uploads, your chats with other assistants](../tasks/bring-material-in.md)
+- [Reach your assistant on Telegram](../tasks/telegram.md)

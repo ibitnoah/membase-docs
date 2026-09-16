@@ -31,6 +31,6 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [Getting started](getting-started/sign-in.md) | you have an account and nothing else |
 | [Concepts](concepts.md) | a word on screen is unclear |
 | [Pages](pages/home.md) | you want to know what one page can do |
-| [Tasks](tasks/project-folder-to-memory.md) | you want to get one thing done |
+| [Guides](tasks/bring-material-in.md) | a job that crosses several pages: bringing material in, Telegram |
 | [Troubleshooting](troubleshooting.md) | a status word is not what you expected |
-| [Reference](reference/states.md) | you need the exact list |
+| [Reference](reference/states.md) | you need the exact list: states, shortcuts, what deletes what |
