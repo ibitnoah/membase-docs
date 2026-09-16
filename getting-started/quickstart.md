@@ -63,5 +63,5 @@ The same memory answers on Home, too. Ask your assistant and it tells you which 
 
 - [Keep it up to date on a schedule](../pages/memory.md#settings)
 - [Use it in ChatGPT, Cursor or another app](../pages/connect.md)
-- [Bring in more: uploads, your chats with other assistants](../tasks/bring-material-in.md)
-- [Reach your assistant on Telegram](../tasks/telegram.md)
+- [Bring in more: uploads, your chats with other assistants](bring-material-in.md)
+- [Reach your assistant on Telegram](../pages/home.md#telegram)

@@ -7,6 +7,7 @@
 * [Sign in](getting-started/sign-in.md)
 * [The first-run guide](getting-started/first-run-guide.md)
 * [5-minute quickstart](getting-started/quickstart.md)
+* [Bring your material in](getting-started/bring-material-in.md)
 
 ## Concepts
 
@@ -26,10 +27,6 @@
 * [Marketplace](pages/marketplace.md)
 * [Studio](pages/studio.md)
 
-## Guides
-
-* [Bring your material in](tasks/bring-material-in.md)
-* [Reach your assistant on Telegram](tasks/telegram.md)
 
 ## Help
 

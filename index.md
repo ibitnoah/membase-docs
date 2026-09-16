@@ -28,9 +28,8 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 
 | Part | Read it when |
 |---|---|
-| [Getting started](getting-started/sign-in.md) | you have an account and nothing else |
+| [Getting started](getting-started/sign-in.md) | you have an account and nothing else, or want every way to bring material in |
 | [Concepts](concepts.md) | a word on screen is unclear |
 | [Pages](pages/home.md) | you want to know what one page can do |
-| [Guides](tasks/bring-material-in.md) | a job that crosses several pages: bringing material in, Telegram |
 | [Troubleshooting](troubleshooting.md) | a status word is not what you expected |
 | [Reference](reference/states.md) | you need the exact list: states, shortcuts, what deletes what |
