@@ -31,6 +31,4 @@
 ## Help
 
 * [Troubleshooting](troubleshooting.md)
-* [States](reference/states.md)
-* [Keyboard shortcuts](reference/shortcuts.md)
 * [Delete, revoke, stop](reference/delete-revoke-stop.md)

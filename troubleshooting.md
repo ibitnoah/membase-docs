@@ -31,6 +31,22 @@ Look up the word on screen.
 | the app cannot see a memory | its switch is off | memory page › **Use in** |
 | I removed the app in Claude but it still shows *Connected* | the app did not tell Membase | **Disconnect…** here |
 
+## On AI Setup
+
+| It says | What it means | Do |
+|---|---|---|
+| *Not connected* on a subscription card | you have not signed in with that provider | **Connect** and finish the provider's sign-in |
+| a failure reason on a key's row | the one test request with that key did not succeed; the key is not used | check the key and the model, **Connect** again |
+| everything works except agent turns | the account's active source is set, the assistant's own model source is not | Home › assistant chip › Model card |
+
+## On Schedules
+
+| It says | What it means | Do |
+|---|---|---|
+| *paused* | the schedule exists and does not fire | **Resume** |
+| the time looks wrong | schedules run in UTC; the picker shows your local time beside it | nothing, or retune |
+| a scheduled result never reached Telegram | no chat is bound to the assistant | Home › Remote › **Connect Telegram** |
+
 ## On Home
 
 | It says | What it means | Do |
