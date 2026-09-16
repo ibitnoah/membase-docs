@@ -13,7 +13,7 @@
 
 * [How Membase fits together](concepts.md)
 
-## Pages
+## Features
 
 * [Home](pages/home.md)
 * [Memory](pages/memory.md)

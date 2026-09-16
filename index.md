@@ -42,7 +42,7 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 |---|---|
 | [How Membase fits together](concepts.md) | Assistant, Memory, Source, Space, Connect, Agents, Marketplace, in one picture; what runs when; what stops or deletes what |
 
-**Pages**, in the order of the left rail
+**Features**, one per item of the left rail, in its order
 
 | Page | What it owns |
 |---|---|
