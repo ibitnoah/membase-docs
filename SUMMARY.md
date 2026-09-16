@@ -23,6 +23,9 @@
 * [Agents](pages/agents.md)
 * [Activity](pages/activity.md)
 * [Settings](pages/settings.md)
+* [Marketplace](pages/marketplace.md)
+* [Studio](pages/studio.md)
+* [Pets](pages/pets.md)
 
 ## Tasks
 

@@ -33,6 +33,10 @@ may read is a switch you flip on either side, the app's page or the memory's pag
 **Agents.** Agents you build yourself, beyond the assistant. Most people never need this page;
 it is where an agent's permissions, tools and endpoint live.
 
+**Marketplace.** Where memories are sold and bought. A listing is live access to one memory
+through the buyer's own credential; what they can read is exactly what the seller lets that
+memory show. Skills, packaged abilities for agents, are the other half of the market.
+
 ## What runs when
 
 Adding a source never runs the memory. A memory learns when you press **Run** (or **Update

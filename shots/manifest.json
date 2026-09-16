@@ -1,10 +1,10 @@
 {
-  "sha": "122508da",
+  "sha": "c7611193",
   "viewport": {
     "width": 1440,
     "height": 900
   },
-  "generated": "2026-09-15T03:17:21Z",
+  "generated": "2026-09-16T00:30:13Z",
   "shots": {
     "home-empty": {
       "file": "home-empty.png",
@@ -177,6 +177,38 @@
       ],
       "wait": "[data-testid='memory-home']",
       "caption": "Your Memory: what the memory keeps, and one item opened."
+    },
+    "marketplace-memory": {
+      "file": "marketplace-memory.png",
+      "route": "/marketplace?tab=memory",
+      "selectors": [
+        "text=Browse",
+        "text=Your listings",
+        "text=Your subscriptions"
+      ],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Marketplace: the Memory part, Browse tab."
+    },
+    "studio-page": {
+      "file": "studio-page.png",
+      "route": "/studio",
+      "selectors": [],
+      "wait": "[data-testid='builder-canvas']",
+      "caption": "Studio: an agent's canvas."
+    },
+    "pets-page": {
+      "file": "pets-page.png",
+      "route": "/pets",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Pets."
+    },
+    "marketplace-list-dialog": {
+      "file": "marketplace-list-dialog.png",
+      "route": "/marketplace?tab=memory&view=mine",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "List a memory: what buyers see, price and allowance."
     }
   },
   "source": "https://www.app.membase.io"
