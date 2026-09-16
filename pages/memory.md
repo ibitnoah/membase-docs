@@ -85,3 +85,28 @@ Each source has its own page, reached from Settings › Sources or from the Add 
 
 A folder source lists its files below, as an in-place workbench: open, rename, move, upload.
 A conversation source lists its transcripts.
+
+## If something looks wrong
+
+Look up the word on screen.
+
+### On the memory
+
+| It says | What it means | Do |
+|---|---|---|
+| **Run** is disabled | the memory has no source yet, or its state is still loading | add a source; wait for *Checking…* to finish |
+| *Update now* | a source holds material this memory has not read | press it |
+| *Run failed* | the last run did not finish | open **Report**; usually the model source is off or a source needs reauthorization |
+| *Nothing yet* | never run | press **Run** |
+| *Empty* on the tile | no instruction | Settings › Instruction |
+| *Add a source* on the tile | reads nothing yet | Add card |
+
+### On a source
+
+| It says | What it means | Do |
+|---|---|---|
+| *Queued* / *Syncing…* | fetching raw material | wait; the memory reads it on its next run |
+| *Sync failed* | the last fetch failed | **Sync now**; if it repeats, the folder may have moved |
+| *Needs reauthorization* | the source's own credential expired | **Reauthorize** |
+| *Access revoked* / *Disconnected* | the source no longer grants access | **Reconnect** or remove it |
+

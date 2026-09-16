@@ -10,3 +10,14 @@ schedule stops: a schedule has no delete verb, so the row says *paused* rather t
 it is gone.
 
 Times are UTC. The picker shows your local equivalent.
+
+## If something looks wrong
+
+Look up the word on screen.
+
+| It says | What it means | Do |
+|---|---|---|
+| *paused* | the schedule exists and does not fire | **Resume** |
+| the time looks wrong | schedules run in UTC; the picker shows your local time beside it | nothing, or retune |
+| a scheduled result never reached Telegram | no chat is bound to the assistant | Home › Remote › **Connect Telegram** |
+

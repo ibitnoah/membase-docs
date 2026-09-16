@@ -26,9 +26,3 @@
 * [Settings](pages/settings.md)
 * [Marketplace](pages/marketplace.md)
 * [Studio](pages/studio.md)
-
-
-## Help
-
-* [Troubleshooting](troubleshooting.md)
-* [Delete, revoke, stop](reference/delete-revoke-stop.md)

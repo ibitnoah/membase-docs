@@ -108,3 +108,14 @@ stop being delivered there too, and stay on the Schedules and Activity pages.
 | **New** | opens a conversation | – |
 | **End** | closes it; still readable and searchable | no more turns |
 | **Forget** | deletes the transcript here and in the assistant | **no** |
+
+## If something looks wrong
+
+Look up the word on screen.
+
+| It says | What it means | Do |
+|---|---|---|
+| *Membase Intelligence is off* | no model source | **AI Setup › Connect** a key or a subscription |
+| the reply spins | first reply after a quiet period wakes the assistant | wait; if it does not land, **Retry** |
+| *New reply* pill | an answer landed while you scrolled up | click it |
+

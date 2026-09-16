@@ -33,3 +33,15 @@ switch off takes effect on the app's very next question.
 
 Removing the connector inside Claude or ChatGPT does not tell Membase. To be sure access has
 stopped, revoke it here.
+
+## If something looks wrong
+
+Look up the word on screen.
+
+| It says | What it means | Do |
+|---|---|---|
+| *Set up* | this app is not connected | pick the tile and follow the steps |
+| *Uses nothing yet* (amber) | connected, but no memory switched on | turn a switch on under **Uses** |
+| the app cannot see a memory | its switch is off | memory page › **Use in** |
+| I removed the app in Claude but it still shows *Connected* | the app did not tell Membase | **Disconnect…** here |
+

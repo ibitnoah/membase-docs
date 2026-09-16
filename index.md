@@ -12,7 +12,7 @@ The whole product answers four questions:
 - **What does my AI know now?** The Memory page.
 - **Where did it learn that?** Each memory lists what it reads.
 - **Which AIs can use it?** Connect.
-- **What do I need to fix?** The status words on every page, explained in [Troubleshooting](troubleshooting.md).
+- **What do I need to fix?** The status words on every page, each explained at the end of that page's guide.
 
 ## Start here
 
@@ -30,6 +30,4 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 |---|---|
 | [Getting started](getting-started/sign-in.md) | you have an account and nothing else, or want every way to bring material in |
 | [Concepts](concepts.md) | a word on screen is unclear |
-| [Pages](pages/home.md) | you want to know what one page can do |
-| [Troubleshooting](troubleshooting.md) | a status word on screen is not what you expected |
-| [Delete, revoke, stop](reference/delete-revoke-stop.md) | you want something to stop, and want to know what comes back |
+| [Pages](pages/home.md) | you want to know what one page can do, or a word on it is not what you expected |
