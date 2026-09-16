@@ -7,11 +7,8 @@
 * [Sign in](getting-started/sign-in.md)
 * [The first-run guide](getting-started/first-run-guide.md)
 * [5-minute quickstart](getting-started/quickstart.md)
-* [Bring your material in](getting-started/bring-material-in.md)
-
-## Concepts
-
 * [How Membase fits together](concepts.md)
+* [Bring your material in](getting-started/bring-material-in.md)
 
 ## Features
 

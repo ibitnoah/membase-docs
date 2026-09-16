@@ -34,13 +34,8 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [Sign in](getting-started/sign-in.md) | one button, four ways to prove who you are |
 | [The first-run guide](getting-started/first-run-guide.md) | the three-step tour the product opens on a new account, and how to replay it |
 | [5-minute quickstart](getting-started/quickstart.md) | a project folder answering questions in Claude, end to end |
-| [Bring your material in](getting-started/bring-material-in.md) | the four ways material reaches a memory, and why nothing is read until you press Run |
-
-**Concepts**
-
-| Page | What it gives you |
-|---|---|
 | [How Membase fits together](concepts.md) | Assistant, Memory, Source, Space, Connect, Agents, Marketplace, in one picture; what runs when; what stops or deletes what |
+| [Bring your material in](getting-started/bring-material-in.md) | the four ways material reaches a memory, and why nothing is read until you press Run |
 
 **Features**, one per item of the left rail, in its order
 
