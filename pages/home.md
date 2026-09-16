@@ -20,7 +20,8 @@ bottom; they stay readable and the assistant can still search them, but they tak
 Their menu offers **Forget**, which asks for confirmation.
 
 At the foot of the rail, **Remote** holds the assistant's Telegram chat. **Connect Telegram**
-opens the binding flow; once bound, the row opens a read-only view of that chat.
+opens the binding flow; once bound, the row opens a read-only view of that chat. See
+[Reach your assistant on Telegram](../tasks/telegram.md).
 
 ## The box
 

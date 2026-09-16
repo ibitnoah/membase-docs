@@ -1,10 +1,10 @@
 {
-  "sha": "c7611193",
+  "sha": "12f03288",
   "viewport": {
     "width": 1440,
     "height": 900
   },
-  "generated": "2026-09-16T00:30:13Z",
+  "generated": "2026-09-16T02:26:49Z",
   "shots": {
     "home-empty": {
       "file": "home-empty.png",
@@ -202,6 +202,27 @@
       "selectors": [],
       "wait": "[data-testid='shell-nav']",
       "caption": "List a memory: what buyers see, price and allowance."
+    },
+    "memory-subscribed": {
+      "file": "memory-subscribed.png",
+      "route": "/memories",
+      "selectors": [],
+      "wait": "[data-testid='memory-home']",
+      "caption": "A memory you subscribed to: who sells it, when it renews, and how your AI reads it."
+    },
+    "marketplace-subscriptions": {
+      "file": "marketplace-subscriptions.png",
+      "route": "/marketplace?tab=memory&view=subs",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Marketplace \u203a Your subscriptions."
+    },
+    "telegram-dialog": {
+      "file": "telegram-dialog.png",
+      "route": "/app",
+      "selectors": [],
+      "wait": "[data-testid='home-entries'], [data-testid='conversation-row']",
+      "caption": "Connect Telegram: generate a QR and scan it with your phone."
     }
   },
   "source": "https://www.app.membase.io"

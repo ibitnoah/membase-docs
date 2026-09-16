@@ -30,10 +30,19 @@ Open a card to see **The memory** (the seller's description and the question it 
 - **Subscribe** for a paid listing. Payment is through your wallet; one payment is valid 30 days,
   and renewing is a new payment.
 
-Once subscribed, the memory appears on your Memory page as a tile marked *Subscribed*. Its page
-shows who sells it and when it renews, a **Read by** card to give it to one of your agents, and a
-**Read from an app** card with the connector URL your AI app uses. **Your subscriptions** lists
-them all, with **Issue credential** for an app and **Renew from the listing**.
+Once subscribed, the memory appears on your Memory page as a tile marked *Subscribed*. Open it:
+
+![A subscribed memory on the Memory page](../shots/memory-subscribed.png)
+
+Its page shows who sells it and when it renews, with the **Marketplace** door and
+**Unsubscribe…**. Below: **Read by**, one switch per agent of yours (your assistant first) that
+should consult it, and **Read from an app**, the connector URL an AI app uses to read this one
+memory. You cannot edit a memory you subscribe to; the seller keeps it.
+
+![Your subscriptions](../shots/marketplace-subscriptions.png)
+
+**Your subscriptions** on the Marketplace lists them all, each with its status and period end,
+**Issue credential** for an app and **Renew from the listing**.
 
 > A subscription is live access. When the seller stops selling, your access stops immediately,
 > even inside a paid period.

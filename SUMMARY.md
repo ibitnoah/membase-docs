@@ -33,6 +33,7 @@
 * [Use a memory in ChatGPT](tasks/use-in-chatgpt.md)
 * [Import your chats with other assistants](tasks/import-conversations.md)
 * [Keep a memory up to date on a schedule](tasks/schedule-updates.md)
+* [Reach your assistant on Telegram](tasks/telegram.md)
 * [Delete, revoke, stop](tasks/delete-and-revoke.md)
 
 ## Help
