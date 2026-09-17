@@ -44,10 +44,11 @@ The token (1) appears once, in full. Store it now: afterwards the app shows only
 such as `mbk_7f3a92d1…c91e`, which is enough to tell your keys apart and never enough to use
 one.
 
-The same screen gives the token in five shapes (2) — a `curl` call, Python, TypeScript, the
-Claude Code command, and the `mcp.json` block Cursor and VS Code read — and **Send a test
-call** (3) makes one real call with the new key from your browser and reports what came back:
-*Verified*, and how many memories the key can see.
+The same screen gives the token in six shapes (2) — **Tell your AI** (the one sentence that
+makes an AI install Membase with this key, see [Connect](../pages/connect.md#tell-your-ai)), a
+`curl` call, Python, TypeScript, the Claude Code command, and the `mcp.json` block Cursor and
+VS Code read — and **Send a test call** (3) makes one real call with the new key from your
+browser and reports what came back: *Verified*, and how many memories the key can see.
 
 ## Use it
 

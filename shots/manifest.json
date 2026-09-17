@@ -1,10 +1,10 @@
 {
-  "sha": "e858aa8e",
+  "sha": "e54d1fe7",
   "viewport": {
     "width": 1440,
     "height": 900
   },
-  "generated": "2026-09-17T07:48:28Z",
+  "generated": "2026-09-17T08:17:34Z",
   "shots": {
     "home-empty": {
       "file": "home-empty.png",
@@ -282,10 +282,11 @@
       "selectors": [
         "[data-testid='connect-mcp-url']",
         "[data-testid='connect-skill-sentence']",
-        "[data-testid='connect-files']"
+        "[data-testid='connect-files']",
+        "[data-testid='connect-with-key']"
       ],
       "wait": "[data-testid='connect-start']",
-      "caption": "Start here: the MCP address, the sentence for your AI, and the setup files unfolded."
+      "caption": "Start here: the MCP address, the sentence for your AI, the setup files unfolded, and 'with a key'."
     }
   },
   "source": "https://www.app.membase.io"

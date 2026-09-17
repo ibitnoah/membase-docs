@@ -10,9 +10,11 @@ that order — the two ways to reach the door at the top, the approvals below.
    settings when you set the app up by hand (the tiles below give the steps).
 2. **Or tell your AI.** One sentence — *Install Membase from https://www.app.membase.io/skill* —
    for an AI that can read a page and run commands (Claude Code, Codex, Cursor, Windsurf…).
-   Paste it into the AI: it installs the Membase skill and the server itself, then asks you to
-   sign in or for a developer key. Neither the address nor the sentence grants anything; the
-   AI still ends up on one of the two approvals below.
+   Press **with a key** (4 on the picture below) first: it makes a developer key for the AI and hands you the sentence
+   with the key inside (*… using key mbk_…*). Paste that, and the AI installs the skill, adds
+   the server with the key, and tells you what it can see — without stopping to ask. Pasted
+   bare, the sentence still works, but the AI will stop and ask you to sign in or for a key.
+   Neither the address nor the sentence grants anything by itself; the key is what does.
 3. **The client catalog, by purpose.** *Chat assistants* and *Coding tools*. A dashed tile says
    *Set up*; a solid tile says *Authorized* with the time of its last use and opens the app's
    page. *Your own code* holds **Developer keys**.
@@ -27,19 +29,20 @@ reference.
 
 ## Tell your AI
 
-Paste the sentence into your AI. What happens next is the AI's work, but it always ends in the
-same two places:
+1. Press **with a key**. The **A key for your AI** dialog is the ordinary Create key dialog,
+   pre-filled: name *my AI*, access **Read & write**. Tick the memories it may reach and press
+   **Create key**.
+2. The token screen opens on **Tell your AI**: the sentence with the key inside. Copy it.
+3. Paste it into your AI. It reads the page at that address — the skill's own SKILL.md, which
+   begins with install steps — fetches the skill folder (SKILL.md and five references), adds the
+   MCP server for its client with the key as its header, then lists the memories it may use and
+   tells you the result. An empty list means no memory is switched on for it yet: open the
+   memory and switch it on under **Use in**.
 
-1. The AI reads the page at that address — the skill's own SKILL.md, which begins with install
-   steps — fetches the skill folder (SKILL.md and five references) and adds the MCP server for
-   its client.
-2. It has no access yet, and says so. It asks you which way you want to grant it:
-   - **Sign in** — the AI runs its client's MCP login, your browser opens the approval below,
-     you tick the memories it may read. It will be read-only.
-   - **Developer key** — you make one under **Developer keys** and paste the token to the AI.
-     You pick its access level.
-3. It makes one call to list the memories it may use and tells you the result. An empty list
-   means no memory is switched on for it yet: open the memory and switch it on under **Use in**.
+The key is a normal developer key: it appears under **Developer keys**, where you change its
+reach or access, see what the AI has been calling, and revoke it. If you paste the sentence
+without a key, the AI installs everything, then stops and asks: give it a key, or run your
+client's sign-in yourself (`claude mcp login membase`) for read-only access.
 
 ## Set an app up by hand
 
