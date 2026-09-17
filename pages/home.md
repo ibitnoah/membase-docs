@@ -7,9 +7,14 @@ Home is your conversation with the Assistant. Everything else in the product fee
 1. **Navigation.** The left rail. Flat items first, then a *Capabilities* group.
 2. **New conversation.** Starts a draft row at the top of the rail. The first message turns it
    into the real conversation.
-3. **Entry cards.** Add Memory, Ask My Assistant, Browse Memory, View Agents. Shortcuts to the
-   three things a new account does first.
-4. **Ask your assistant.** Opens the conversation box. Enter sends, Shift+Enter breaks a line.
+3. **Entry cards.** The four doors: Add Memory opens the New memory form; Marketplace opens
+   skills and memories from others; Connect Your AI opens Connect; View Agents opens the Agents
+   page. Under them, **What brings you here today?** lists things to do, each opening at its
+   first step: turn a folder into memory, keep your ChatGPT and Claude chats, upload files to
+   your Space, pick up a past conversation; use your memory while you code, talk to your
+   assistant on Telegram, have something done on a schedule, use your own model key or
+   subscription. No two of them lead to the same place.
+4. **Ask your assistant.** The conversation box. Enter sends, Shift+Enter breaks a line.
 5. **Setup guide.** Replays the first-run guide from its name card.
 
 ## The conversation rail

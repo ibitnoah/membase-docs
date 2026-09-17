@@ -36,6 +36,7 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [5-minute quickstart](getting-started/quickstart.md) | a project folder answering questions in Claude, end to end |
 | [How Membase fits together](concepts.md) | Assistant, Memory, Source, Space, Connect, Agents, Marketplace, in one picture; what runs when; what stops or deletes what |
 | [Bring your material in](getting-started/bring-material-in.md) | the four ways material reaches a memory, and why nothing is read until you press Run |
+| [Use your memory from code](getting-started/developer-keys.md) | a developer key: your memory from a script, a server or Claude Code, at the access you choose |
 
 **Features**, one per item of the left rail, in its order
 
@@ -49,6 +50,6 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [Space](pages/space.md) | your files, and how a folder becomes a source |
 | [Activity](pages/activity.md) | what ran, when, with what result |
 | [AI Setup](pages/ai-setup.md) | model keys and subscriptions, and which one is active |
-| [Connect](pages/connect.md) | the AI apps that may read your memories, and what they can see |
+| [Connect](pages/connect.md) | the AI apps that may read your memories, what they can see, and your developer keys |
 | [Marketplace](pages/marketplace.md) | buying live access to someone's memory, and selling yours |
 | [Settings](pages/settings.md) | account, plan and payments, export, delete |

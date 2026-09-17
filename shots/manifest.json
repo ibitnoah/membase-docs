@@ -1,10 +1,10 @@
 {
-  "sha": "12f03288",
+  "sha": "2f5ee094",
   "viewport": {
     "width": 1440,
     "height": 900
   },
-  "generated": "2026-09-16T02:26:49Z",
+  "generated": "2026-09-17T01:49:36Z",
   "shots": {
     "home-empty": {
       "file": "home-empty.png",
@@ -223,7 +223,16 @@
       "selectors": [],
       "wait": "[data-testid='home-entries'], [data-testid='conversation-row']",
       "caption": "Connect Telegram: generate a QR and scan it with your phone."
+    },
+    "connect-developer-keys": {
+      "file": "connect-developer-keys.png",
+      "route": "/connect",
+      "selectors": [
+        "[data-testid='developer-key-new']"
+      ],
+      "wait": "[data-testid='developer-keys']",
+      "caption": "Developer keys: your own credentials for scripts and SDKs, made and revoked here."
     }
   },
-  "source": "https://www.app.membase.io"
+  "source": "local"
 }

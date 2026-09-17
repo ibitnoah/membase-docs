@@ -9,6 +9,7 @@
 * [5-minute quickstart](getting-started/quickstart.md)
 * [How Membase fits together](concepts.md)
 * [Bring your material in](getting-started/bring-material-in.md)
+* [Use your memory from code](getting-started/developer-keys.md)
 
 ## Features
 
