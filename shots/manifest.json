@@ -1,10 +1,10 @@
 {
-  "sha": "2f5ee094",
+  "sha": "31d4e597",
   "viewport": {
     "width": 1440,
     "height": 900
   },
-  "generated": "2026-09-17T01:49:36Z",
+  "generated": "2026-09-17T06:10:46Z",
   "shots": {
     "home-empty": {
       "file": "home-empty.png",
@@ -226,13 +226,54 @@
     },
     "connect-developer-keys": {
       "file": "connect-developer-keys.png",
-      "route": "/connect",
+      "route": "/connect/keys",
       "selectors": [
-        "[data-testid='developer-key-new']"
+        "[data-testid='developer-key-new']",
+        "[data-testid='developer-key-row'] [data-testid='developer-key-open']",
+        "[data-testid='developer-key-row'] [data-testid='developer-key-menu']"
       ],
-      "wait": "[data-testid='developer-keys']",
-      "caption": "Developer keys: your own credentials for scripts and SDKs, made and revoked here."
+      "wait": "[data-testid='developer-key-row']",
+      "caption": "Developer keys: one row per key \u2014 name and hint, access, reach, expiry, last use."
+    },
+    "developer-key-create": {
+      "file": "developer-key-create.png",
+      "route": "/connect/keys",
+      "selectors": [
+        "[data-testid='developer-key-name']",
+        "[data-testid='developer-key-access-suggest']",
+        "[data-testid='developer-key-all-views']",
+        "[role='tablist'][aria-label='Expiry']",
+        "[data-testid='developer-key-create']"
+      ],
+      "wait": "[data-testid='developer-key-new']",
+      "caption": "Create a developer key: the name, the access with its tools, the reach, the expiry."
+    },
+    "developer-key-page": {
+      "file": "developer-key-page.png",
+      "route": "/connect/keys",
+      "selectors": [
+        "[data-testid='key-access']",
+        "[data-testid='key-reach']",
+        "[data-testid='key-expiry']",
+        "[data-testid='key-usage']",
+        "[data-testid='key-activity']",
+        "[data-testid='key-rotate']",
+        "[data-testid='key-revoke']"
+      ],
+      "wait": "[data-testid='developer-key-row']",
+      "caption": "A key's page: access, reach, expiry, usage and recent calls; Rotate and Revoke in the hero."
+    },
+    "developer-key-token": {
+      "file": "developer-key-token.png",
+      "route": "/connect/keys",
+      "selectors": [
+        "[data-testid='developer-key-token']",
+        "[data-testid='developer-key-snippet-curl']",
+        "[data-testid='developer-key-test']"
+      ],
+      "wait": "[data-testid='developer-key-new']",
+      "caption": "The token, once \u2014 with the places to paste it and a real test call."
     }
   },
-  "source": "local"
+  "source": "https://www.app.membase.io"
 }

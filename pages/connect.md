@@ -37,12 +37,13 @@ what changed recently. An app can never add, delete or forget anything.
 
 ![Developer keys](../shots/connect-developer-keys.png)
 
-Under the apps sits the **Developer keys** card: your own credentials for a script, a server or
-an SDK. A key reaches the memories you tick, at an access level you choose — **Read**, **Read &
-write** (adds facts and documents) or **Manage** (may also delete a document or forget a fact,
-and even then only when the call says so explicitly). **New key** makes one and shows the token
-once; **Revoke** ends it at once. The walkthrough is
-[Use your memory from code](../getting-started/developer-keys.md).
+Under the apps, the **Your own code** group holds the **Developer keys** tile: your own
+credentials for a script, a server or an SDK. It opens a page of its own, one key per row —
+name and hint, access (**Read**, **Read & write** or **Full access**, which may also delete a
+document or forget a fact, and even then only when the call says so explicitly), reach, expiry
+and last use. **Create key** makes one and shows the token once; a key's page changes its
+access and reach in place, shows what it has been doing, and rotates or revokes it. The
+walkthrough is [Use your memory from code](../getting-started/developer-keys.md).
 
 Removing the connector inside Claude or ChatGPT does not tell Membase. To be sure access has
 stopped, revoke it here.
@@ -57,6 +58,6 @@ Look up the word on screen.
 | *Uses nothing yet* (amber) | connected, but no memory switched on | turn a switch on under **Uses** |
 | the app cannot see a memory | its switch is off | memory page › **Use in** |
 | I removed the app in Claude but it still shows *Connected* | the app did not tell Membase | **Disconnect…** here |
-| a key's row says *expired* | its token has lapsed | **Revoke** it and make a new one |
-| *No developer keys yet* | you have not made one | **New key** on the Developer keys card |
+| a key's row says *Expired* | its token has lapsed | **⋯ › Create a similar key** on the Developer keys page |
+| the Developer keys tile says *For scripts and SDKs* | you have no active key | open it and press **Create key** |
 
