@@ -1,10 +1,10 @@
 {
-  "sha": "e54d1fe7",
+  "sha": "a05636a2",
   "viewport": {
     "width": 1440,
     "height": 900
   },
-  "generated": "2026-09-17T08:17:34Z",
+  "generated": "2026-09-17T11:53:09Z",
   "shots": {
     "home-empty": {
       "file": "home-empty.png",
@@ -98,12 +98,12 @@
       "file": "connect-page.png",
       "route": "/connect",
       "selectors": [
+        "[data-testid='connect-tab-mcp']",
         "[data-testid='connect-mcp-url']",
-        "[data-testid='connect-skill-sentence']",
         "[data-testid='mcp-connector']"
       ],
       "wait": "[data-testid='connect-page']",
-      "caption": "Connect: the address and the sentence for your AI on top; the approvals \u2014 apps by purpose, your own keys \u2014 below."
+      "caption": "Connect, the MCP tab: the address, then the apps by purpose."
     },
     "connect-claude-steps": {
       "file": "connect-claude-steps.png",
@@ -278,15 +278,15 @@
     },
     "connect-start": {
       "file": "connect-start.png",
-      "route": "/connect",
+      "route": "/connect?tab=skills",
       "selectors": [
-        "[data-testid='connect-mcp-url']",
         "[data-testid='connect-skill-sentence']",
+        "[data-testid='connect-with-key']",
         "[data-testid='connect-files']",
-        "[data-testid='connect-with-key']"
+        "[data-testid='client-tile-developer-keys']"
       ],
-      "wait": "[data-testid='connect-start']",
-      "caption": "Start here: the MCP address, the sentence for your AI, the setup files unfolded, and 'with a key'."
+      "wait": "[data-testid='connect-skills']",
+      "caption": "The Skills tab: the sentence for your AI, 'with a key', the setup files, and Developer keys."
     }
   },
   "source": "https://www.app.membase.io"
