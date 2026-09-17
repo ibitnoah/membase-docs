@@ -50,6 +50,6 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [Space](pages/space.md) | your files, and how a folder becomes a source |
 | [Activity](pages/activity.md) | what ran, when, with what result |
 | [AI Setup](pages/ai-setup.md) | model keys and subscriptions, and which one is active |
-| [Connect](pages/connect.md) | the AI apps that may read your memories, what they can see, and your developer keys |
+| [Connect](pages/connect.md) | the two ways an AI gets in — an app you approve, a key you hold — the one sentence that lets your AI set itself up, and your developer keys |
 | [Marketplace](pages/marketplace.md) | buying live access to someone's memory, and selling yours |
 | [Settings](pages/settings.md) | account, plan and payments, export, delete |

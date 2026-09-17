@@ -1,10 +1,10 @@
 {
-  "sha": "31d4e597",
+  "sha": "e858aa8e",
   "viewport": {
     "width": 1440,
     "height": 900
   },
-  "generated": "2026-09-17T06:10:46Z",
+  "generated": "2026-09-17T07:48:28Z",
   "shots": {
     "home-empty": {
       "file": "home-empty.png",
@@ -98,10 +98,12 @@
       "file": "connect-page.png",
       "route": "/connect",
       "selectors": [
-        "[data-testid='client-tile-claude']"
+        "[data-testid='connect-mcp-url']",
+        "[data-testid='connect-skill-sentence']",
+        "[data-testid='mcp-connector']"
       ],
       "wait": "[data-testid='connect-page']",
-      "caption": "Connect: the AI apps, by purpose. Dashed tiles are not connected yet."
+      "caption": "Connect: the address and the sentence for your AI on top; the approvals \u2014 apps by purpose, your own keys \u2014 below."
     },
     "connect-claude-steps": {
       "file": "connect-claude-steps.png",
@@ -273,6 +275,17 @@
       ],
       "wait": "[data-testid='developer-key-new']",
       "caption": "The token, once \u2014 with the places to paste it and a real test call."
+    },
+    "connect-start": {
+      "file": "connect-start.png",
+      "route": "/connect",
+      "selectors": [
+        "[data-testid='connect-mcp-url']",
+        "[data-testid='connect-skill-sentence']",
+        "[data-testid='connect-files']"
+      ],
+      "wait": "[data-testid='connect-start']",
+      "caption": "Start here: the MCP address, the sentence for your AI, and the setup files unfolded."
     }
   },
   "source": "https://www.app.membase.io"
