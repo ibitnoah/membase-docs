@@ -26,7 +26,7 @@ memory itself, so it always opens instantly.
 3. **Settings.** The whole configuration as one dialog.
 4. **Delete…** Says first the one irreversible thing (everything the memory learned goes with it),
    then what depends on it.
-5. **Add to this memory.** Three doors: Unibase Memory, Upload Files, Your Space. Sources you
+5. **Add to this memory.** Three doors: Unibase Memory, Upload Files, Your Files. Sources you
    added are listed under them with a **Remove** per row.
 
 Under the Add card:
@@ -78,7 +78,7 @@ Below: **Sharing** (apps as switches, what depends on this memory, Sell / Stop s
 Each source has its own page, reached from Settings › Sources or from the Add card.
 
 1. **Hero.** The folder and its path, with **Disconnect…** as the one verb: a folder in your
-   Space is read in place, so there is nothing to sync. A connector source (Unibase Memory)
+   Files is read in place, so there is nothing to sync. A connector source (Unibase Memory)
    shows a status word here instead, and **Sync now**, **Reauthorize** or **Reconnect** when
    they apply.
 2. **Read by.** Which memories learn from this source.

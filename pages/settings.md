@@ -12,7 +12,7 @@ card is needed anywhere.
 
 ## Plan & usage
 
-Your Space plan and how much of it you use: storage, and the metered actions your plan counts.
+Your Storage plan and how much of it you use: storage, and the metered actions your plan counts.
 *Unlimited* on a line means the plan does not cap it.
 
 - **Free** is the default and needs nothing.
@@ -33,7 +33,7 @@ the amount and what it bought. *No payments yet* on a free account.
 
 ## Data & export
 
-**Export account data** downloads a .zip of everything the account holds: your Space files,
+**Export account data** downloads a .zip of everything the account holds: your Files,
 what your agent remembers, your memories and their settings, and the list of connected apps.
 Use it before deleting, or just to keep a copy.
 
@@ -42,7 +42,7 @@ Use it before deleting, or just to keep a copy.
 The last row is the account itself. It asks twice and tells you exactly what goes:
 
 - Your agent and everything it remembers.
-- Every file in your Space, trash included.
+- Every file in your Files, trash included.
 - Sources and their credentials, revoked at once.
 - Connected AI clients and their tokens.
 

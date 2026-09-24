@@ -11,7 +11,7 @@ Home is your conversation with the Assistant. Everything else in the product fee
    skills and memories from others; Connect Your AI opens Connect; View Agents opens the Agents
    page. Under them, **What brings you here today?** lists things to do, each opening at its
    first step: turn a folder into memory, keep your ChatGPT and Claude chats, upload files to
-   your Space, pick up a past conversation; use your memory while you code, talk to your
+   your Files, pick up a past conversation; use your memory while you code, talk to your
    assistant on Telegram, have something done on a schedule, use your own model key or
    subscription. No two of them lead to the same place.
 4. **Ask your assistant.** The conversation box. Enter sends, Shift+Enter breaks a line.

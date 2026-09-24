@@ -5,7 +5,7 @@ names most of them. The end of this page says what stops, and what cannot be und
 
 ```text
 SOURCES                        MEMORY                     APPS
-Space folders   ──┐
+Files folders   ──┐
 Uploads         ──┼──▶  Assistant's memory  ──▶  Claude / ChatGPT / Claude Code
 Unibase Memory  ──┘         └─ Memories              (Connect)
 ```
@@ -18,12 +18,12 @@ decisions*, *Reading notes*, *Customers*. A memory has an instruction (what it k
 (what it reads), a schedule (how often it re-reads) and a list of apps that may use it. It is
 private until you let an app use it.
 
-**Source.** Something you handed a memory to learn from. Today that is a folder in your Space,
+**Source.** Something you handed a memory to learn from. Today that is a folder in your Files,
 files you upload, or your conversations with other assistants imported through the Unibase
 Memory browser extension. A source has its own page with its own status, and a memory only
 learns from it when the memory runs.
 
-**Space.** Your files. A real folder tree the assistant shares with you. Any folder in it can
+**Files.** Your files. A real folder tree the assistant shares with you. Any folder in it can
 become a source. The system folders *Generated*, *Assets* and *Trash* sit beside your own.
 
 **Connect / Apps.** The AI apps allowed to read your memories: Claude, ChatGPT, Claude Code,

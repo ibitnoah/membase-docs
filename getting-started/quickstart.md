@@ -23,13 +23,13 @@ You are on the memory's page. Its hero shows the name, a **Run** button that is 
 
 ## 2. Add something to it
 
-The **Add to this memory** card ③ has three doors: Unibase Memory, Upload Files and Your Space.
+The **Add to this memory** card ③ has three doors: Unibase Memory, Upload Files and Your Files.
 
 ![A memory's page](../shots/memory-page.png)
 
-1. Press **Choose** on *Your Space*. The Space browser opens inside the dialog.
+1. Press **Choose** on *Your Files*. The Files browser opens inside the dialog.
 2. Tick the folder that holds your project files and confirm in the footer. If your files are
-   not in Space yet, press **Upload** on *Upload Files* instead; they land in a folder with the
+   not in Files yet, press **Upload** on *Upload Files* instead; they land in a folder with the
    memory's name.
 3. The Add card now lists the folder. A toast tells you adding does not run the memory.
 4. Press **Run** ① in the hero. The status line under the name says *Running…*, then

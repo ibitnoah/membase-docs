@@ -1,8 +1,8 @@
-# Space
+# Files
 
-Space is your files: a real folder tree the assistant shares with you.
+Files is your files: a real folder tree the assistant shares with you.
 
-![Space](../shots/space-page.png)
+![Files](../shots/space-page.png)
 
 1. **Upload.** Files land in the folder you are in.
 2. **New folder.** Any folder can later become a source.
@@ -15,5 +15,5 @@ Right-click a row for rename, move, delete and download. Deleted files go to *Tr
 ## Making a folder a source
 
 You do not do it here. Open the memory that should read the folder and press **Choose** on
-*Your Space* in its Add card. The same browser opens inside the dialog, with a footer that
+*Your Files* in its Add card. The same browser opens inside the dialog, with a footer that
 connects the ticked folders. A folder the memory already reads says *reading*.

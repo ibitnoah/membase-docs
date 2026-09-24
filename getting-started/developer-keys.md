@@ -11,8 +11,8 @@ you run yourself.
 
 ## Where keys live
 
-Open **Connect**. Under the apps, the **Your own code** group holds one tile, **Developer
-keys** — it says how many keys are active and when one was last used. It opens the keys page.
+Open **Connect › Skills › Manage keys**. The count beside the link shows how many keys are
+active. The link opens the keys page.
 
 ![Developer keys](../shots/connect-developer-keys.png)
 
@@ -45,7 +45,7 @@ such as `mbk_7f3a92d1…c91e`, which is enough to tell your keys apart and never
 one.
 
 The same screen gives the token in six shapes (2) — **Tell your AI** (the one sentence that
-makes an AI install Membase with this key, see [Connect](../pages/connect.md#tell-your-ai)), a
+makes an AI install Membase with this key, see [Connect](../pages/connect.md#the-skill-way-step-by-step)), a
 `curl` call, Python, TypeScript, the Claude Code command, and the `mcp.json` block Cursor and
 VS Code read — and **Send a test call** (3) makes one real call with the new key from your
 browser and reports what came back: *Verified*, and how many memories the key can see.

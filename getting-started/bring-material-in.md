@@ -5,23 +5,23 @@ the material lands in the memory's Add card, and nothing is read until the memor
 
 | Way in | Good for | Where |
 |---|---|---|
-| A folder in your Space | a project, a vault, anything already on disk | memory page › Add card › **Your Space › Choose** |
+| A folder in your Files | a project, a vault, anything already on disk | memory page › Add card › **Your Files › Choose** |
 | Upload | a handful of files | memory page › Add card › **Upload Files › Upload** |
 | Unibase Memory | your chats with other assistants | memory page › Add card › **Unibase Memory** |
 | Talking to your assistant | what you tell it, decide with it, ask it | Home, or Telegram |
 
-## A folder in your Space
+## A folder in your Files
 
-Press **Choose** on *Your Space*. The Space browser opens inside the dialog: browse, tick one or
+Press **Choose** on *Your Files*. The Files browser opens inside the dialog: browse, tick one or
 more folders, and confirm in the footer. The folder is read in place, so anything you later add
 to it is picked up on the memory's next run. A folder the memory already reads says *reading*.
 
-If the files are not in your Space yet, put them there first from the Space page, or upload.
+If the files are not in your Files yet, put them there first from the Files page, or upload.
 
 ## Upload
 
 Press **Upload** on *Upload Files* and drop the files. They land in a folder with the memory's
-name at the top of your Space, which is connected as a source on the spot. Markdown, text and
+name at the top of your Files, which is connected as a source on the spot. Markdown, text and
 the common document formats are accepted; the dialog tells you before sending if a file is not.
 
 ## Unibase Memory

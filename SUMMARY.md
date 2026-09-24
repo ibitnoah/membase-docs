@@ -18,7 +18,7 @@
 * [Studio](pages/studio.md)
 * [Agents](pages/agents.md)
 * [Schedules](pages/schedules.md)
-* [Space](pages/space.md)
+* [Files](pages/files.md)
 * [Activity](pages/activity.md)
 * [AI Setup](pages/ai-setup.md)
 * [Connect](pages/connect.md)

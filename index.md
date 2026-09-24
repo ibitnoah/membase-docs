@@ -34,7 +34,7 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [Sign in](getting-started/sign-in.md) | one button, four ways to prove who you are |
 | [The first-run guide](getting-started/first-run-guide.md) | the three-step tour the product opens on a new account, and how to replay it |
 | [5-minute quickstart](getting-started/quickstart.md) | a project folder answering questions in Claude, end to end |
-| [How Membase fits together](concepts.md) | Assistant, Memory, Source, Space, Connect, Agents, Marketplace, in one picture; what runs when; what stops or deletes what |
+| [How Membase fits together](concepts.md) | Assistant, Memory, Source, Files, Connect, Agents, Marketplace, in one picture; what runs when; what stops or deletes what |
 | [Bring your material in](getting-started/bring-material-in.md) | the four ways material reaches a memory, and why nothing is read until you press Run |
 | [Use your memory from code](getting-started/developer-keys.md) | a developer key: your memory from a script, a server or Claude Code, at the access you choose |
 
@@ -47,7 +47,7 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [Studio](pages/studio.md) | a memory's canvas, for the few that should do more than read their sources |
 | [Agents](pages/agents.md) | agents you build yourself |
 | [Schedules](pages/schedules.md) | every cadence in one place, in UTC |
-| [Space](pages/space.md) | your files, and how a folder becomes a source |
+| [Files](pages/files.md) | your files, and how a folder becomes a source |
 | [Activity](pages/activity.md) | what ran, when, with what result |
 | [AI Setup](pages/ai-setup.md) | model keys and subscriptions, and which one is active |
 | [Connect](pages/connect.md) | the two ways an AI gets in — an app you approve, a key you hold — the one sentence that lets your AI set itself up, and your developer keys |

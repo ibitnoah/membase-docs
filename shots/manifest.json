@@ -1,17 +1,17 @@
 {
-  "sha": "a05636a2",
+  "sha": "1cbeb937",
   "viewport": {
     "width": 1440,
     "height": 900
   },
-  "generated": "2026-09-17T11:53:09Z",
+  "generated": "2026-09-24T01:16:30Z",
   "shots": {
     "home-empty": {
       "file": "home-empty.png",
       "route": "/app",
       "selectors": [
         "[data-testid='home-entry-add-memory']",
-        "[data-testid='home-entry-ask-my-assistant']",
+        "[data-testid='home-entry-connect-your-ai']",
         "[data-testid='home-setup-guide']"
       ],
       "wait": "[data-testid='home-entries']",
@@ -24,7 +24,7 @@
         "[data-testid='shell-nav']",
         "[data-testid='conversation-new']",
         "[data-testid='home-entries']",
-        "[data-testid='home-entry-ask-my-assistant']",
+        "[data-testid='mothership-composer']",
         "[data-testid='home-setup-guide']"
       ],
       "wait": "[data-testid='home-entries']",
@@ -105,6 +105,18 @@
       "wait": "[data-testid='connect-page']",
       "caption": "Connect, the MCP tab: the address, then the apps by purpose."
     },
+    "connect-start": {
+      "file": "connect-start.png",
+      "route": "/connect?tab=skills",
+      "selectors": [
+        "[data-testid='connect-with-key']",
+        "[data-testid='connect-existing-key']",
+        "[data-testid='connect-skill-zip']",
+        "[data-testid='connect-manage-keys']"
+      ],
+      "wait": "[data-testid='connect-skills']",
+      "caption": "The Skills tab: Create key, an existing key, downloads and the setup guide, and Manage keys."
+    },
     "connect-claude-steps": {
       "file": "connect-claude-steps.png",
       "route": "/connect",
@@ -114,6 +126,56 @@
       "wait": "[data-testid='connect-page']",
       "caption": "Picking Claude unfolds the connector URL and its steps."
     },
+    "connect-developer-keys": {
+      "file": "connect-developer-keys.png",
+      "route": "/connect/keys",
+      "selectors": [
+        "[data-testid='developer-key-new']",
+        "[data-testid='developer-key-row'] [data-testid='developer-key-open']",
+        "[data-testid='developer-key-row'] [data-testid='developer-key-menu']"
+      ],
+      "wait": "[data-testid='developer-key-row']",
+      "caption": "Developer keys: one row per key \u2014 name and hint, access, reach, expiry, last use."
+    },
+    "developer-key-create": {
+      "file": "developer-key-create.png",
+      "route": "/connect/keys",
+      "selectors": [
+        "[data-testid='developer-key-name']",
+        "[data-testid='developer-key-access-suggest']",
+        "[data-testid='developer-key-all-views']",
+        "[role='tablist'][aria-label='Expiry']",
+        "[data-testid='developer-key-create']"
+      ],
+      "wait": "[data-testid='developer-key-new']",
+      "caption": "Create a developer key: the name, the access with its tools, the reach, the expiry."
+    },
+    "developer-key-token": {
+      "file": "developer-key-token.png",
+      "route": "/connect/keys",
+      "selectors": [
+        "[data-testid='developer-key-token']",
+        "[data-testid='developer-key-snippet-curl']",
+        "[data-testid='developer-key-test']"
+      ],
+      "wait": "[data-testid='developer-key-new']",
+      "caption": "The token, once \u2014 with the places to paste it and a real test call."
+    },
+    "developer-key-page": {
+      "file": "developer-key-page.png",
+      "route": "/connect/keys",
+      "selectors": [
+        "[data-testid='key-access']",
+        "[data-testid='key-reach']",
+        "[data-testid='key-expiry']",
+        "[data-testid='key-usage']",
+        "[data-testid='key-activity']",
+        "[data-testid='key-rotate']",
+        "[data-testid='key-revoke']"
+      ],
+      "wait": "[data-testid='developer-key-row']",
+      "caption": "A key's page: access, reach, expiry, usage and recent calls; Rotate and Revoke in the hero."
+    },
     "space-page": {
       "file": "space-page.png",
       "route": "/files",
@@ -122,7 +184,7 @@
         "text=New folder"
       ],
       "wait": "[data-testid='space-browser']",
-      "caption": "Space: the account's files. Any folder can become a source."
+      "caption": "Files: the account's files. Any folder can become a source."
     },
     "ai-setup-page": {
       "file": "ai-setup-page.png",
@@ -152,12 +214,74 @@
       "wait": "[data-testid='shell-nav']",
       "caption": "Activity."
     },
+    "marketplace-memory": {
+      "file": "marketplace-memory.png",
+      "route": "/marketplace?tab=memory",
+      "selectors": [
+        "text=Browse",
+        "text=Your listings",
+        "text=Your subscriptions"
+      ],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Marketplace: the Memory part, Browse tab."
+    },
+    "marketplace-list-dialog": {
+      "file": "marketplace-list-dialog.png",
+      "route": "/marketplace?tab=memory&view=mine",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "List a memory: what buyers see, price and allowance."
+    },
+    "studio-page": {
+      "file": "studio-page.png",
+      "route": "/studio",
+      "selectors": [],
+      "wait": "[data-testid='builder-canvas']",
+      "caption": "Studio: an agent's canvas."
+    },
+    "marketplace-subscriptions": {
+      "file": "marketplace-subscriptions.png",
+      "route": "/marketplace?tab=memory&view=subs",
+      "selectors": [],
+      "wait": "[data-testid='shell-nav']",
+      "caption": "Marketplace \u203a Your subscriptions."
+    },
+    "telegram-dialog": {
+      "file": "telegram-dialog.png",
+      "route": "/app",
+      "selectors": [],
+      "wait": "[data-testid='home-entries'], [data-testid='conversation-row']",
+      "caption": "Connect Telegram: generate a QR and scan it with your phone."
+    },
     "settings-page": {
       "file": "settings-page.png",
       "route": "/settings",
       "selectors": [],
       "wait": "[data-testid='shell-nav']",
       "caption": "Settings."
+    },
+    "tour-name-card": {
+      "file": "tour-name-card.png",
+      "route": "/app",
+      "selectors": [],
+      "wait": "[data-testid='home-entries'], [data-testid='setup-tour']",
+      "caption": "First run: the guide opens on a name card."
+    },
+    "tour-step-1": {
+      "file": "tour-step-1.png",
+      "route": "/app",
+      "selectors": [],
+      "wait": "[data-testid='home-entries'], [data-testid='setup-tour']",
+      "caption": "Step 1 of the guide lights the real Add Memory card."
+    },
+    "memory-home-empty": {
+      "file": "memory-home-empty.png",
+      "route": "/memories",
+      "selectors": [
+        "[data-testid='home-new-view']"
+      ],
+      "wait": "[data-testid='memory-home']",
+      "caption": "Memory before any memory exists: only the Assistant's built-in memory."
     },
     "home-conversation": {
       "file": "home-conversation.png",
@@ -180,113 +304,12 @@
       "wait": "[data-testid='memory-home']",
       "caption": "Your Memory: what the memory keeps, and one item opened."
     },
-    "marketplace-memory": {
-      "file": "marketplace-memory.png",
-      "route": "/marketplace?tab=memory",
-      "selectors": [
-        "text=Browse",
-        "text=Your listings",
-        "text=Your subscriptions"
-      ],
-      "wait": "[data-testid='shell-nav']",
-      "caption": "Marketplace: the Memory part, Browse tab."
-    },
-    "studio-page": {
-      "file": "studio-page.png",
-      "route": "/studio",
-      "selectors": [],
-      "wait": "[data-testid='builder-canvas']",
-      "caption": "Studio: an agent's canvas."
-    },
-    "marketplace-list-dialog": {
-      "file": "marketplace-list-dialog.png",
-      "route": "/marketplace?tab=memory&view=mine",
-      "selectors": [],
-      "wait": "[data-testid='shell-nav']",
-      "caption": "List a memory: what buyers see, price and allowance."
-    },
     "memory-subscribed": {
       "file": "memory-subscribed.png",
       "route": "/memories",
       "selectors": [],
       "wait": "[data-testid='memory-home']",
       "caption": "A memory you subscribed to: who sells it, when it renews, and how your AI reads it."
-    },
-    "marketplace-subscriptions": {
-      "file": "marketplace-subscriptions.png",
-      "route": "/marketplace?tab=memory&view=subs",
-      "selectors": [],
-      "wait": "[data-testid='shell-nav']",
-      "caption": "Marketplace \u203a Your subscriptions."
-    },
-    "telegram-dialog": {
-      "file": "telegram-dialog.png",
-      "route": "/app",
-      "selectors": [],
-      "wait": "[data-testid='home-entries'], [data-testid='conversation-row']",
-      "caption": "Connect Telegram: generate a QR and scan it with your phone."
-    },
-    "connect-developer-keys": {
-      "file": "connect-developer-keys.png",
-      "route": "/connect/keys",
-      "selectors": [
-        "[data-testid='developer-key-new']",
-        "[data-testid='developer-key-row'] [data-testid='developer-key-open']",
-        "[data-testid='developer-key-row'] [data-testid='developer-key-menu']"
-      ],
-      "wait": "[data-testid='developer-key-row']",
-      "caption": "Developer keys: one row per key \u2014 name and hint, access, reach, expiry, last use."
-    },
-    "developer-key-create": {
-      "file": "developer-key-create.png",
-      "route": "/connect/keys",
-      "selectors": [
-        "[data-testid='developer-key-name']",
-        "[data-testid='developer-key-access-suggest']",
-        "[data-testid='developer-key-all-views']",
-        "[role='tablist'][aria-label='Expiry']",
-        "[data-testid='developer-key-create']"
-      ],
-      "wait": "[data-testid='developer-key-new']",
-      "caption": "Create a developer key: the name, the access with its tools, the reach, the expiry."
-    },
-    "developer-key-page": {
-      "file": "developer-key-page.png",
-      "route": "/connect/keys",
-      "selectors": [
-        "[data-testid='key-access']",
-        "[data-testid='key-reach']",
-        "[data-testid='key-expiry']",
-        "[data-testid='key-usage']",
-        "[data-testid='key-activity']",
-        "[data-testid='key-rotate']",
-        "[data-testid='key-revoke']"
-      ],
-      "wait": "[data-testid='developer-key-row']",
-      "caption": "A key's page: access, reach, expiry, usage and recent calls; Rotate and Revoke in the hero."
-    },
-    "developer-key-token": {
-      "file": "developer-key-token.png",
-      "route": "/connect/keys",
-      "selectors": [
-        "[data-testid='developer-key-token']",
-        "[data-testid='developer-key-snippet-curl']",
-        "[data-testid='developer-key-test']"
-      ],
-      "wait": "[data-testid='developer-key-new']",
-      "caption": "The token, once \u2014 with the places to paste it and a real test call."
-    },
-    "connect-start": {
-      "file": "connect-start.png",
-      "route": "/connect?tab=skills",
-      "selectors": [
-        "[data-testid='connect-skill-sentence']",
-        "[data-testid='connect-with-key']",
-        "[data-testid='connect-files']",
-        "[data-testid='client-tile-developer-keys']"
-      ],
-      "wait": "[data-testid='connect-skills']",
-      "caption": "The Skills tab: the sentence for your AI, 'with a key', the setup files, and Developer keys."
     }
   },
   "source": "https://www.app.membase.io"
