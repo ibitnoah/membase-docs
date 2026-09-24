@@ -1,0 +1,7 @@
+# GitBook reads this directory as the developer docs space: README.md is the landing page,
+# SUMMARY.md the table of contents. Mirrored from docs/developer in unibaseio/membase-suites.
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
