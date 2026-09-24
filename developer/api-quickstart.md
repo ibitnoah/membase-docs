@@ -38,8 +38,8 @@ pip install membase-sdk
 ```
 
 ```python
-from membase_sdk import Membase
-mb = Membase()          # reads MEMBASE_API_KEY
+from membase import Membase
+client = Membase()      # reads MEMBASE_API_KEY
 ```
 {% endtab %}
 
@@ -50,7 +50,7 @@ npm install @membase/sdk
 
 ```ts
 import { Membase } from "@membase/sdk";
-const mb = new Membase();   // reads MEMBASE_API_KEY
+const client = new Membase();   // reads MEMBASE_API_KEY
 ```
 {% endtab %}
 
@@ -64,24 +64,24 @@ export BASE="https://api.app.membase.io"
 {% endtab %}
 {% endtabs %}
 
-The SDK is a thin client over the REST API: one method per operation, the same names, the same
-access and reach rules (they live server-side and cannot be bypassed from code). The
-[SDK Quickstart](sdk-quickstart.md) has every method.
+The SDK is a thin client over the REST API: `add`, `search`, `profile`, `ask`, and
+`containers`, `documents`, `memories` under them; the access and reach rules live server-side
+and cannot be bypassed from code. The [SDK Quickstart](sdk-quickstart.md) has every method.
 
 ## 3. Write a memory
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-mb.add_memory("The user prefers dark mode.", static=True)      # a standing fact → the profile
-mb.add_memory("We settled on Postgres for the ledger.")         # a note → the one Memory in reach
+client.memories.add("The user prefers dark mode.", static=True)      # a standing fact → the profile
+client.memories.add("We settled on Postgres for the ledger.")         # a note → the one Memory in reach
 ```
 {% endtab %}
 
 {% tab title="TypeScript" %}
 ```ts
-await mb.addMemory({ content: "The user prefers dark mode.", static: true });
-await mb.addMemory({ content: "We settled on Postgres for the ledger." });
+await client.memories.add({ content: "The user prefers dark mode.", static: true });
+await client.memories.add({ content: "We settled on Postgres for the ledger." });
 ```
 {% endtab %}
 
@@ -102,13 +102,12 @@ curl -s "$BASE/v1/memories" -H "Authorization: Bearer $MEMBASE_API_KEY" \
 to the profile. Everything else is a note the Memory reads. With exactly one Memory in reach
 the `container` field may be omitted; otherwise pass the container id from `list_containers`.
 
-A whole document goes in with `add_document`: the file lands in the Memory's upload folder and
-its learning turn starts in the background. The call answers `202` with a `document_id`; poll
-`GET /v1/documents/{id}` until `learned` is true.
+A whole document goes in with `add`: the file lands in the Memory's upload folder and its
+learning turn starts in the background. The call answers `202` with a `document_id`; poll
+`documents.get(id)` (`GET /v1/documents/{id}`) until `learned` is true.
 
 ```python
-doc = mb.add_document(container="mv-…", title="Call with Acme",
-                      content=transcript, custom_id="call-2026-09-17")
+doc = client.add(transcript, container="mv-…", title="Call with Acme", custom_id="call-2026-09-17")
 ```
 
 ## 4. Search it
@@ -116,7 +115,7 @@ doc = mb.add_document(container="mv-…", title="Call with Acme",
 {% tabs %}
 {% tab title="Python" %}
 ```python
-found = mb.search_memories("what did we decide about the ledger", limit=5)
+found = client.search("what did we decide about the ledger", limit=5)
 for hit in found["results"]:
     print(hit["container_name"], "·", hit["content"])
 ```
@@ -124,7 +123,7 @@ for hit in found["results"]:
 
 {% tab title="TypeScript" %}
 ```ts
-const found = await mb.searchMemories({ q: "what did we decide about the ledger", limit: 5 });
+const found = await client.search({ q: "what did we decide about the ledger", limit: 5 });
 for (const hit of found.results) console.log(hit.container_name, "·", hit.content);
 ```
 {% endtab %}

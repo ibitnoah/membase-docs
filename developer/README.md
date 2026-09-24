@@ -12,26 +12,28 @@ Start with the API, then connect the same memory layer through plugins and MCP�
 {% tabs %}
 {% tab title="Python" %}
 ```python
-from membase_sdk import Membase
+from membase import Membase          # pip install membase-sdk
 
-mb = Membase(api_key="mbk_…")   # Connect › Developer keys
+client = Membase()                    # MEMBASE_API_KEY, from Connect › Developer keys
 
-mb.add_memory("We store money as integer cents, never floats.")
+client.add("Call notes with Acme: they want SSO before the pilot.",
+           container="mv-…", custom_id="call-2026-09-24")
 
-for hit in mb.search_memories("how do we store money", limit=3)["results"]:
+for hit in client.search("what does Acme need before the pilot", limit=3)["results"]:
     print(hit["container_name"], "·", hit["content"])
 ```
 {% endtab %}
 
 {% tab title="TypeScript" %}
 ```ts
-import { Membase } from "@membase/sdk";
+import { Membase } from "@membase/sdk";   // npm install @membase/sdk
 
-const mb = new Membase({ apiKey: process.env.MEMBASE_API_KEY! });
+const client = new Membase();              // MEMBASE_API_KEY, from Connect › Developer keys
 
-await mb.addMemory({ content: "We store money as integer cents, never floats." });
+await client.add({ container: "mv-…", content: "Call notes with Acme: they want SSO before the pilot.",
+                   customId: "call-2026-09-24" });
 
-const { results } = await mb.searchMemories({ q: "how do we store money", limit: 3 });
+const { results } = await client.search({ q: "what does Acme need before the pilot", limit: 3 });
 for (const hit of results) console.log(hit.container_name, "·", hit.content);
 ```
 {% endtab %}
@@ -41,13 +43,13 @@ for (const hit of results) console.log(hit.container_name, "·", hit.content);
 export MEMBASE_API_KEY="mbk_…"
 BASE=https://api.app.membase.io
 
-curl -s "$BASE/v1/memories" -H "Authorization: Bearer $MEMBASE_API_KEY" \
+curl -s "$BASE/v1/documents" -H "Authorization: Bearer $MEMBASE_API_KEY" \
   -H 'content-type: application/json' \
-  -d '{"content": "We store money as integer cents, never floats."}'
+  -d '{"container": "mv-…", "content": "Call notes with Acme: they want SSO before the pilot.", "custom_id": "call-2026-09-24"}'
 
 curl -s "$BASE/v1/search" -H "Authorization: Bearer $MEMBASE_API_KEY" \
   -H 'content-type: application/json' \
-  -d '{"q": "how do we store money", "limit": 3}'
+  -d '{"q": "what does Acme need before the pilot", "limit": 3}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -69,7 +71,7 @@ key to a first search in five minutes.
 | Page | What it gives you |
 |---|---|
 | [API Quickstart](api-quickstart.md) | get a key, install the SDK, write a memory, search it: five minutes to the first call |
-| [SDK Quickstart](sdk-quickstart.md) | the Python and TypeScript clients: one method per API operation, same names, same rules |
+| [SDK Quickstart](sdk-quickstart.md) | the Python and TypeScript clients: `add`, `search`, `profile`, `ask` and the resources under them |
 | [API Reference](api-reference.md) | every operation with its access level, parameters and response shape; the OpenAPI document |
 | [Plugins & MCP](plugins-mcp.md) | the MCP server, per-client setup, the skill install sentence, consent and revocation |
 | [Memory Platform](memory-platform.md) | how the hosted platform is built: containers, memories, documents; credentials, access and reach; limits |
