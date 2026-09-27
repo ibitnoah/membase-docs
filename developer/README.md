@@ -7,7 +7,7 @@ description: Start with the API, then connect the same memory layer through plug
 
 Start with the API, then connect the same memory layer through plugins and MCP—or run it locally.
 
-<a href="api-quickstart.md" class="button primary">API Quickstart</a> <a href="api-reference.md" class="button secondary">API Reference</a>
+<a href="api-quickstart.md" class="button primary">API Quickstart</a> <a href="api-reference.md" class="button secondary">API Reference</a> <a href="https://www.app.membase.io" class="button secondary">Dashboard</a> <a href="https://github.com/unibaseio" class="button secondary">GitHub</a> <a href="https://chromewebstore.google.com/detail/edmncknbiihfoakimejbepnaeemaaamf" class="button secondary">Install Extension</a>
 
 {% tabs %}
 {% tab title="Python" %}
@@ -61,8 +61,8 @@ key to a first search in five minutes.
 ## Three products, one memory
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
-<tr><td><strong>Memory Platform</strong></td><td>The hosted memory layer. Every account's memory lives in its own agent container; the REST API, the SDKs and MCP read and write the same memory.</td><td><a href="memory-platform.md">memory-platform.md</a></td></tr>
-<tr><td><strong>Plugins &#x26; MCP</strong></td><td>Connect that memory to ChatGPT, Claude, Cursor, Codex, VS Code and any MCP client, with one server URL and a consent screen.</td><td><a href="plugins-mcp.md">plugins-mcp.md</a></td></tr>
+<tr><td><strong>Memory Platform</strong></td><td>The hosted memory layer. Every account's memory lives in its own agent container; the REST API, the SDKs and MCP read and write the same memory.</td><td><a href="memory-platform/README.md">memory-platform/README.md</a></td></tr>
+<tr><td><strong>Plugins &#x26; MCP</strong></td><td>Connect that memory to ChatGPT, Claude, Cursor, Codex, Grok, Kimi and any MCP client, with one server URL and a consent screen.</td><td><a href="plugins-mcp/README.md">plugins-mcp/README.md</a></td></tr>
 <tr><td><strong>Local Memory</strong></td><td>Run the memory engine on your own machine for privacy and data control. Documentation comes with the local release.</td><td></td></tr>
 </tbody></table>
 
@@ -72,10 +72,14 @@ key to a first search in five minutes.
 |---|---|
 | [API Quickstart](api-quickstart.md) | get a key, install the SDK, write a memory, search it: five minutes to the first call |
 | [SDK Quickstart](sdk-quickstart.md) | the Python and TypeScript clients: `add`, `search`, `profile`, `ask` and the resources under them |
+| [API Integrations](api-integrations.md) | the memory behind a model: the Claude API, the OpenAI API, any tool-calling framework, any MCP-capable agent |
 | [API Reference](api-reference.md) | every operation with its access level, parameters and response shape; the OpenAPI document |
-| [Plugins & MCP](plugins-mcp.md) | the MCP server, per-client setup, the skill install sentence, consent and revocation |
-| [Memory Platform](memory-platform.md) | how the hosted platform is built: containers, memories, documents; credentials, access and reach; limits |
+| [Authentication & Scopes](authentication.md) | the two credentials, access levels, reach, the profile tick, expiry and revocation |
+| [Multi-user Isolation](multi-user-isolation.md) | the account is the tenant: what that means for a product that serves many people |
+| [How Membase Works](how-membase-works.md) | where memory lives, how material becomes memory, why a search is a turn |
 | [Benchmarks](benchmarks.md) | LoCoMo, LongMemEval and DMR results for the memory engine, with the method behind each number |
+| [Memory Platform](memory-platform/README.md) | the product around the API, one screen per page: Memories, sources and Files, agents, schedules, activity, AI Setup, developer keys |
+| [Plugins & MCP](plugins-mcp/README.md) | the MCP server, one page per client, the browser extension, access control, troubleshooting |
 
 ## How the API thinks
 

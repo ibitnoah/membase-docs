@@ -161,8 +161,8 @@ get_profile (once)  →  search_memories (per question)  →  answer, citing con
 
 | | What it is | Start here |
 |---|---|---|
-| **Memory Platform** | The hosted memory layer at app.membase.io. Each account's memory lives in its own agent container; this API, the SDKs and MCP all read and write it. | [Memory Platform](memory-platform.md) |
-| **Plugins & MCP** | The same memory inside ChatGPT, Claude, Cursor, Codex, VS Code and any MCP client: one server URL, a consent screen, no code. | [Plugins & MCP](plugins-mcp.md) |
+| **Memory Platform** | The hosted memory layer at app.membase.io. Each account's memory lives in its own agent container; this API, the SDKs and MCP all read and write it. | [Platform Overview](memory-platform/README.md) |
+| **Plugins & MCP** | The same memory inside ChatGPT, Claude, Cursor, Codex, VS Code and any MCP client: one server URL, a consent screen, no code. | [Plugins Overview](plugins-mcp/README.md) |
 | **Local Memory** | The memory engine on your own machine, for privacy and data control. | [Benchmarks](benchmarks.md) for what the engine does; setup docs come with the local release |
 
 ## If something looks wrong

@@ -39,7 +39,7 @@ If you have used a memory API where you tag content with a *container tag* per e
 one master key reaches them all: that is not this. A Membase **container** is one of the
 person's own Memories (a topic), not a tenant. A product that serves many people gives each of
 them their own Membase account, and reaches their memory with their own key or their own
-consent. See [Memory Platform](memory-platform.md#one-account-per-person).
+consent. See [Multi-user Isolation](multi-user-isolation.md).
 
 ## Create a client
 
