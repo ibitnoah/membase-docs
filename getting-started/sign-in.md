@@ -1,3 +1,7 @@
+---
+description: One Sign in button: Google, X, email or a wallet through Privy, then Home and the first-run guide.
+---
+
 # Sign in
 
 Membase has one **Sign in** button. It opens the Privy sign-in window, where you pick how to

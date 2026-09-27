@@ -1,3 +1,7 @@
+---
+description: Five minutes from a folder of notes to Claude answering from it, with every answer naming where it came from.
+---
+
 # 5-minute quickstart
 
 By the end of this page Claude can answer questions about a project folder of yours, and you

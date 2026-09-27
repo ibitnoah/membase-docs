@@ -1,5 +1,6 @@
 ---
 title: Membase user guide
+description: Membase is the long-term memory between you and your AIs. Hand it material once; every AI you connect reads the same memory.
 ---
 
 # Membase user guide

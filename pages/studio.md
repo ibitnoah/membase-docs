@@ -1,3 +1,7 @@
+---
+description: The canvas behind a memory's Run: one pipeline per memory, the blocks you can add, and what saving changes.
+---
+
 # Studio
 
 Studio is the canvas where an agent is drawn. Most people reach it one way: a memory's

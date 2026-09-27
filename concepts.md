@@ -1,3 +1,7 @@
+---
+description: The seven words on screen (Assistant, Memory, Source, Files, Connect, Agents, Marketplace), what runs when, and what cannot be undone.
+---
+
 # How Membase fits together
 
 Seven words cover everything on screen. Each is one object in the product, and the left rail

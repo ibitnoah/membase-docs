@@ -1,3 +1,7 @@
+---
+description: The Setup guide on a new account: create a memory, add something to it, use it in your AI, one lit control at a time.
+---
+
 # The first-run guide
 
 On a new account the product dims the page and lights the one control to press next. That is the

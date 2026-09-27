@@ -1,3 +1,7 @@
+---
+description: Your conversation with the Assistant: the rail, the entry cards, the composer, and the remote channel.
+---
+
 # Home
 
 Home is your conversation with the Assistant. Everything else in the product feeds this page.

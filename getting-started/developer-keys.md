@@ -1,3 +1,7 @@
+---
+description: Mint a developer key, pick its access and reach, use it from Claude Code or a script, and rotate or revoke it.
+---
+
 # Use your memory from code
 
 A **developer key** is your own credential for a script, a server or an SDK. It reaches your

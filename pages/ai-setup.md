@@ -1,3 +1,7 @@
+---
+description: Where the account's model comes from: your own provider key or a Claude or ChatGPT subscription, verified before use.
+---
+
 # AI Setup
 
 AI Setup is where the account's model comes from.

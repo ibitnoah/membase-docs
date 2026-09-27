@@ -1,3 +1,7 @@
+---
+description: Account, plan, payments, export and delete, on one page.
+---
+
 # Settings
 
 Account, plan, payments, export and delete. Four sections, one page.

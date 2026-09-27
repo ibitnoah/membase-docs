@@ -1,3 +1,7 @@
+---
+description: The Memory page as one drive: tiles, a memory's page, the status line, Settings, a source's page, and what each word means.
+---
+
 # Memory
 
 The Memory page is one drive. Its root shows your memories as tiles; each memory opens as a page

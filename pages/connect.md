@@ -1,3 +1,7 @@
+---
+description: Let an AI read your memories: the MCP address and client catalog, the skill way with a developer key, and an app's page.
+---
+
 # Connect
 
 Connect is where an AI gets permission to read your memories. There are two ways to connect an

@@ -1,3 +1,7 @@
+---
+description: The timeline of what ran: memory runs, syncs, scheduled tasks and agent turns.
+---
+
 # Activity
 
 A human-readable timeline of what ran: memory runs, syncs, scheduled tasks, agent turns.

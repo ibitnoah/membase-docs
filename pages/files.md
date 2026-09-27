@@ -1,3 +1,7 @@
+---
+description: Your files as a real folder tree the assistant shares with you, and how a folder becomes a source.
+---
+
 # Files
 
 Files is your files: a real folder tree the assistant shares with you.

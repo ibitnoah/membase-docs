@@ -1,3 +1,7 @@
+---
+description: Skills and Memory, each with Browse and Your tabs: subscribe to a memory, sell one, publish a skill.
+---
+
 # Marketplace
 
 The Marketplace has two parts, laid out the same way: **Skills** and **Memory**. Each has a
