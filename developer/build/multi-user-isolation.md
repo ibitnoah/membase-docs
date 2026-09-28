@@ -74,6 +74,8 @@ receives a credential of their own and calls `ask_agent`; your agent answers fro
 learned, and the files never leave your container. Lapsing a subscription stops access at
 once. See [App and API concepts](platform-overview.md#marketplace).
 
+![The seller's Memory and its agent stay in the seller's container; the listing is an agent endpoint; each subscriber calls ask_agent with their own credential and gets answers, never files](figures/agent-endpoint.svg)
+
 ## What is not isolation
 
 * **Containers are not users.** Making one container per end user inside one account puts every user's material behind one owner's credentials and one agent. Nothing stops it, and nothing protects it either.

@@ -12,10 +12,7 @@ Everything below assumes `MEMBASE_API_KEY` in the environment, minted at **Read 
 with **Your profile** ticked ([Authentication & Scopes](authentication.md)), and your model
 provider's key beside it. The loop is the same in every harness:
 
-```
-get_profile (once)  →  search_memories (per question)  →  answer, citing container_name
-                     →  add_memory / add_document (what the conversation produced)
-```
+![Read the profile once, search per question, answer citing the container, then save what the person supplied so the next search finds it](figures/core-loop.svg)
 
 ## Membase as a remote MCP server
 

@@ -20,6 +20,14 @@ The **Connected** tab lists what you have set up; one of them is the account's *
 source. The active source answers everything that is not an agent turn. Which source *the
 assistant* runs on is the assistant's own field, in its settings on Home.
 
+## Where the call goes
+
+![A turn in the account's container asks the platform's inference service for a model; the service holds the provider key or subscription and makes the call; no model credential enters the container](../figures/model-proxy.svg)
+
+Your agent never holds the key or the subscription. It asks Membase for a turn, and Membase
+makes the call to the provider under this page's settings. Without a model here, memory
+stays but nothing can run.
+
 ## Verify
 
 Each connection is verified with one short real request before it is used. A key that fails

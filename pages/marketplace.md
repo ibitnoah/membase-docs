@@ -25,6 +25,8 @@ Listings can provide different kinds of access:
 | Live memory | Read access to the seller's current memory while your subscription permits it |
 | Agent endpoint | Access to an agent that answers through its published endpoint |
 
+![The seller's Memory and its agent stay in the seller's container; the listing is an agent endpoint; each subscriber calls ask_agent with their own credential and gets answers, never files](../figures/agent-endpoint.svg)
+
 Open a listing and read **Included access** for its specific terms. Live access can be
 revoked by the seller; a paid period does not guarantee access after the seller revokes it.
 

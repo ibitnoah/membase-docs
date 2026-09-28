@@ -51,6 +51,8 @@ Read it with `get_profile` when the credential grants profile access. Use `add_m
 
 ## Models
 
+![A turn in the account's container asks the platform's inference service for a model; the service holds the provider key or subscription and makes the call; no model credential enters the container](figures/model-proxy.svg)
+
 Learning, hosted search and assistant replies require an available model. The account owner
 configures supported providers or subscriptions in **AI Setup** and selects the assistant's
 model source in its settings.
