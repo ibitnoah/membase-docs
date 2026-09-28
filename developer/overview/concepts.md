@@ -10,7 +10,7 @@ names most of them. The end of this page says what stops, and what cannot be und
 ```text
 SOURCES                        MEMORY                     APPS
 Files folders   ──┐
-Uploads         ──┼──▶  Assistant's memory  ──▶  Claude / ChatGPT / Claude Code
+Uploads / Notion ─┼──▶  Assistant's memory  ──▶  Claude / ChatGPT / Claude Code
 Unibase Memory  ──┘         └─ Memories              (Connect)
 ```
 
@@ -23,7 +23,7 @@ decisions*, *Reading notes*, *Customers*. A memory has an instruction (what it k
 private until you let an app use it.
 
 **Source.** Something you handed a memory to learn from. Today that is a folder in your Files,
-files you upload, or your conversations with other assistants imported through the Unibase
+files you upload, Notion pages where available, or your conversations with other assistants imported through the Unibase
 Memory browser extension. A source has its own page with its own status, and a memory only
 learns from it when the memory runs.
 

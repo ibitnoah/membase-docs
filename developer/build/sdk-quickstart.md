@@ -2,7 +2,10 @@
 description: The Python and TypeScript clients. One client, one key, your memory.
 ---
 
-# SDK Quickstart
+# Python and TypeScript SDKs
+
+For your first working example, follow the [quickstart](api-quickstart.md). This page is
+client reference: installation, configuration, methods and errors.
 
 The SDK is a thin client over the Membase API. Every method is one operation of the
 [API reference](api-reference.md), and the access level, reach and confirmation rules are
@@ -65,8 +68,16 @@ const client = new Membase({ baseUrl: "http://localhost:8080" }); // a self-host
 {% endtab %}
 {% endtabs %}
 
-Options: `timeout` (90 s by default, because the first search after a quiet spell waits for
-the memory to wake), `max_retries` (2; on 429 and 5xx, with backoff and `Retry-After`).
+| Setting | Python | TypeScript | Default |
+|---|---|---|---|
+| Request timeout | `timeout` (seconds) | `timeoutMs` (milliseconds) | 90 seconds |
+| Retry limit | `max_retries` | `maxRetries` | 2 |
+| API origin | `base_url` | `baseUrl` | `https://api.app.membase.io` |
+
+Retries cover connection errors, 408, 409, 429 and 5xx, with backoff and `Retry-After`.
+A cold runtime can take longer than the default timeout. See [API troubleshooting](troubleshooting.md).
+The method snippets below are independent examples; follow the quickstart to wait for an
+accepted document to become searchable.
 
 ## The four verbs
 
@@ -121,7 +132,7 @@ the person does something in the app, is on [Memory operations](memory-operation
 ```python
 client.containers.list()                        # {"containers": [{id, name, description, …}]}
 
-client.documents.list(container="mv-…")        # newest first, each with "learned"
+client.documents.list(container="mv-…")        # newest first; get(id) supplies "learned"
 client.documents.get("srcitem_…")
 client.documents.delete("srcitem_…", confirm=True)
 

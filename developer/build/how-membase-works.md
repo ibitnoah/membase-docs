@@ -8,9 +8,12 @@ Membase keeps one living memory per person and lets every AI they use read it. T
 the mechanism behind that sentence: where the bytes are, what turns them into memory, and
 what a call does when it arrives.
 
-## One container per account
+## One runtime per account
 
-Every account has its **own agent container**: a small VM with its own volume. That volume is
+Every account has its **own agent runtime**: a small VM with its own volume. This runtime
+is the infrastructure sometimes called an *agent container*. It is different from an API
+`container`, which is one Memory inside the account; an account can have many of those.
+That volume is
 the memory of record. It holds the account's Files, the documents each Memory has read, and
 what each Memory has learned. The assistant the person talks to on Home runs there too.
 
@@ -35,7 +38,7 @@ A **Memory** (a *container* in the API) is one named space of memory with an ins
 material comes from: a folder in the account's Files, an upload, a Notion selection, the
 Unibase Memory browser extension, or whatever `add_document` hands in.
 
-Handing material in never reads it. A source sync lands raw bytes in the container's inbox
+A source sync lands raw bytes in the runtime's inbox
 and stops; no model is involved. The Memory reads its unread material in a **learning turn**:
 its agent works through the documents under the instruction and commits what it learned as
 facts, provenance-tagged and reversible. A turn starts when the person presses **Run** (or
@@ -57,7 +60,7 @@ auto-committed.
 `search_memories` does not query an index on the platform; it runs inside the account's
 container against what its Memories know. Three things follow:
 
-* **The first call after a quiet spell is slow.** An idle container is stopped, and the first request wakes it. Expect up to a minute; the SDKs default to a 90-second timeout for this reason. `containers[]` in the answer marks any container that could not answer yet.
+* **The first call after a quiet spell can be slow.** An idle runtime must wake before it can answer. The SDKs default to 90 seconds per request; a cold request may need longer. Check `containers[].error` for Memories that could not answer, even when the HTTP response is `200`.
 * **There is nothing to filter on but the question.** Search takes `q`, an optional `container` and a `limit`. There are no metadata filters, because there is no server-side index to apply them to. Put what matters in the content.
 * **Deletion wins.** A document deleted, a fact forgotten or a credential narrowed is gone on the next call; there is no cache in front of the container to outlive it.
 
@@ -88,11 +91,13 @@ turn, and the platform makes the call. For a subscription that is the only way i
 all, since the provider bills the plan only for its own first-party client, which the platform
 can present and a container cannot.
 
-An account with no working model keeps its memory but cannot run a turn: searches over what it
-already learned still answer, documents wait unread, and a turn answers `422` with
-`code: capability_unavailable` until one is set. A free-plan account whose free turns are
-spent answers `422` with `reason: dormant` until it brings a model of its own or moves to a
-paid plan.
+An account with no working model keeps its stored memory, but hosted learning and search
+cannot complete their agent turns. A failed turn can surface as `422` with
+`code: capability_unavailable`; search collects unavailable Memories into `containers[].error`
+in its response, so an HTTP `200` does not guarantee that all Memories answered. Documents
+can remain unread until the model works and a learning run completes. A free-plan account
+whose free turns are spent may report `reason: dormant`; follow its recovery choices to
+bring a model of its own or move to a paid plan. See [API troubleshooting](troubleshooting.md).
 
 ## Credentials are bindings
 
@@ -117,6 +122,6 @@ page without re-minting, and why the change applies on the very next request.
 | make a first call | [Quickstart](api-quickstart.md) |
 | walk every verb | [Memory operations](memory-operations.md) |
 | see every operation | [API reference](api-reference.md) |
-| understand the screens the person uses | [Platform overview](platform-overview.md) |
+| understand the screens the person uses | [App and API concepts](platform-overview.md) |
 | connect an AI app | [Connect your AI](https://noah-gao.gitbook.io/membase-user-guide/connect) |
-| see what the engine scores | [Benchmarks](benchmarks.md) |
+| see what the engine scores | [Benchmarks](https://noah-gao.gitbook.io/membase-user-guide/evaluation/benchmarks) |

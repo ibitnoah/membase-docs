@@ -43,7 +43,7 @@ Look up the word on screen, or the status in the answer.
 | `200 · status: confirmation_required` | a destructive verb without `confirm=true` | pass `confirm=true` after the person agreed |
 | `400 · validation` | a missing `q`, both `content` and `url`, an ambiguous `container` | fix the request; with several Memories in reach, `container` is required |
 | `404 · not_found` | an unknown document or memory id | list first |
-| `422 · capability_unavailable · no model` | the account has no working model | [AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/features/ai-setup) |
+| `422 · capability_unavailable · no model` | the account has no working model | [AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/account-and-models/ai-setup) |
 | `422 · capability_unavailable · no agent containers` | the memory cannot run a turn on this deployment | |
 | `422 · reason: dormant` | a free-plan account whose free turns are spent | bring a model, or a paid plan |
 | `429 · rate_limited` | the account's concurrent-turn budget | retry later; the SDK retries twice with backoff |

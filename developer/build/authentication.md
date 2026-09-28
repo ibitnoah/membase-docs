@@ -113,7 +113,7 @@ with no bearer is `401`.
 
 Keys are managed with the owner's own session, the credential the Membase app holds after
 sign-in, and never with a developer key: a key cannot mint, widen or revoke another key. The
-screen for the same operations is [Connect › Developer keys](https://noah-gao.gitbook.io/membase-user-guide/use/features/connect#developer-keys).
+screen for the same operations is [Connect › Developer keys](https://noah-gao.gitbook.io/membase-user-guide/use/manage-your-memory/connect#developer-keys).
 
 | Call | Does |
 |---|---|

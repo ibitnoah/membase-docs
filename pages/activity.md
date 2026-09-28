@@ -1,12 +1,46 @@
 ---
-description: "The timeline of what ran: memory runs, syncs, scheduled tasks and agent turns."
+description: "Find a run, inspect its status and error, and decide what to fix before trying again."
 ---
 
 # Activity
 
-A human-readable timeline of what ran: memory runs, syncs, scheduled tasks, agent turns.
+Activity shows what ran in your account and how it ended. Use it when a Memory did not
+update, an agent failed, or a scheduled task did not produce the expected result.
 
 ![Activity](../shots/activity-page.png)
 
-A scheduled run's result stays on its run record here and on Schedules, and is sent to the
-Telegram chat when one is bound to the assistant.
+## Find a run
+
+1. Open **Activity** and choose **Logs**. **Dashboard** summarizes activity across runs.
+2. Choose a time range that includes the attempt. Narrow by **Kind**, **Status** or **Ran by**,
+   or search for the run you need.
+3. Select a row to open its details. Check the status, timing and available result or error.
+4. Use **Refresh** if you are following a recent run. **Export** downloads the displayed
+   selection of activity as CSV.
+
+A Memory's **Report** and an agent's **View all runs** also help you locate their runs.
+A developer key's own request history is on [the key's page](connect.md#a-keys-page).
+
+## Read the status
+
+| Status | What to do |
+|---|---|
+| *Pending* | The run has not finished starting; wait and refresh. |
+| *Running* | Work is in progress. Check again before starting a duplicate. |
+| *Success* | Open the result and check that it did the work you expected. |
+| *Error* | Read the error, fix its cause, then retry from the Memory, agent or workflow. |
+| *Refused* | Check the reason and the relevant access or account setting before retrying. |
+
+A successful source sync means material arrived. It does not mean a Memory learned it;
+return to the [Memory](memory.md) and run **Update now** if needed.
+
+## Troubleshoot a failed update
+
+- If the error names the model, check [AI Setup](ai-setup.md) and the agent's model setting.
+- If it names a source or its authorization, open that source and restore access, then sync it.
+- If a scheduled run never appeared, check that the [schedule](schedules.md) is enabled and
+  that you are reading its UTC time correctly.
+- If the list is empty, widen the time range and clear the filters before concluding no run exists.
+
+A scheduled run can finish even if its Telegram delivery fails. Inspect the run first, then
+check the connected chat using the [Telegram guide](telegram.md).

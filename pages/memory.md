@@ -16,8 +16,7 @@ with the same anatomy.
 2. **New memory.** Opens the New memory dialog. **Marketplace** beside it opens memories other
    people sell.
 
-The Assistant's own memory is always the first tile. The home page reads nothing from the
-memory itself, so it always opens instantly.
+The Assistant's own memory is always the first tile. The home page lists the Memories before reading their contents.
 
 ## A memory's page
 
@@ -27,11 +26,12 @@ memory itself, so it always opens instantly.
 2. **Run / Update now.** The one way to make the memory read its sources by hand. It says
    **Update now** while any source holds material the memory has not read. Disabled until the
    memory has a source.
-3. **Settings.** The whole configuration as one dialog.
+3. **Settings.** Configure the instruction, schedule and sharing in one dialog.
 4. **Delete…** Says first the one irreversible thing (everything the memory learned goes with it),
    then what depends on it.
-5. **Add to this memory.** Three doors: Unibase Memory, Upload Files, Your Files. Sources you
-   added are listed under them with a **Remove** per row.
+5. **Add to this memory.** Choose Unibase Memory, Upload Files, Your Files, or Notion where
+   available. Sources you added are listed below with a **Remove** per row.
+   [Choose a source](../getting-started/bring-material-in.md) explains each option.
 
 Under the Add card:
 
@@ -42,7 +42,7 @@ Under the Add card:
 ![Your Memory with one item opened](../shots/memory-entry.png)
 
 1. **An item.** One thing the memory keeps, with its kind and when it was last updated. The
-   list is what the last run produced from the sources; nothing here was typed in by hand.
+   list contains what the Memory learned and any corrections you made through **Edit**.
 2. **The right column.** The item's full text, its tags, and **Edit** / **Forget…** for that
    one item.
 

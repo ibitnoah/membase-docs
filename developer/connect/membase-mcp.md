@@ -112,7 +112,7 @@ Merge `https://www.app.membase.io/plugin/mcp.json` into the client's configurati
 Use the same URL. The server advertises OAuth discovery on a `401`, accepts a bearer
 developer key in `Authorization`, and speaks Streamable HTTP. An agent framework without an
 MCP client can take `SKILL.md` as instructions and the REST API directly;
-[MCP frameworks](https://noah-gao.gitbook.io/membase-user-guide/build/recipes/mcp-frameworks) and [AI coding tools](https://noah-gao.gitbook.io/membase-user-guide/build/recipes/ai-coding-tools) have the shapes.
+[MCP frameworks](https://noah-gao.gitbook.io/membase-user-guide/build/integrations/mcp-frameworks) and [AI coding tools](https://noah-gao.gitbook.io/membase-user-guide/build/integrations/ai-coding-tools) have the shapes.
 
 ## Verifying and revoking
 

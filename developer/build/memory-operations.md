@@ -8,7 +8,7 @@ description: "Every verb of the agent protocol end to end: containers, search, t
 The API has three nouns and a handful of verbs. This page walks them in the order a program
 meets them, says what each does inside the user's account, and what code sees when the
 person, a schedule or the app does something on its side. Every snippet is the Python SDK;
-the TypeScript and REST shapes are on the [SDK Quickstart](sdk-quickstart.md) and the
+the TypeScript and REST shapes are on the [Python and TypeScript SDKs](sdk-quickstart.md) and the
 [API reference](api-reference.md).
 
 | Noun | In the app | What it is |
@@ -54,11 +54,14 @@ The answer lists passages most relevant first, and `containers[]` marks any Memo
 not answer yet.
 
 A search is a **turn** inside the account's container, not a query on an index. The first one
-after a quiet spell can take up to a minute while the container wakes; the SDKs wait 90
-seconds for it. There are no metadata filters, because there is no server-side index to apply
+after a quiet spell includes runtime startup; the SDKs default to 90
+seconds per request, which is configurable and is not a latency guarantee. There are no metadata filters, because there is no server-side index to apply
 them to: put what matters in the content. Search is retrieval; `ask` is an answer.
 
-A search answers nothing when the Memory has never run, or when the key does not reach it.
+A Memory with no learned content may return no results. An explicitly requested container
+outside the key’s reach is refused with `403`; an untargeted search omits it. Check
+`containers[].error` before interpreting an empty result: an unavailable model is a failed
+search, not evidence that no matching memory exists.
 
 ## The profile
 
@@ -80,7 +83,9 @@ client.memories.add("We settled on Postgres for the ledger.", container=decision
 client.memories.add("The user prefers dark mode.", static=True)                            # a standing fact → the profile
 ```
 
-A note is raw material the Memory reads on its next run; a standing fact about the person
+A note is raw material, and this call attempts to start its learning run asynchronously.
+Use the returned `document_id` and the same polling as a document write; acceptance is not
+completion. A standing fact about the person
 goes to the profile instead of any Memory. With exactly one Memory in reach `container` may be
 omitted; with several it is required. Needs a Read & write key.
 
@@ -103,8 +108,10 @@ current plans).
 
 ### What the `202` becomes
 
-The run it started is a Memory run on the account's Activity page. When it ends, the
-document's `learned` is true and the next search answers from it. If it ends in *Run failed*,
+When a learning run starts, it appears on the account’s Activity page. After a successful
+run over that material, the document’s `learned` is true and search can retrieve what it
+learned. A `202` alone does not guarantee that a run started: it can be deferred while the
+agent is paused or capacity is unavailable. Inspect `learning_run` and the Memory’s Report. If it ends in *Run failed*,
 the document is still listed and still unread, and the run's report says why; usually the
 account has no working model under AI Setup, or a source needs reauthorization.
 
@@ -113,7 +120,8 @@ account has no working model under AI Setup, or a source needs reauthorization.
 ```python
 docs = client.documents.list(container="mv-…")["documents"]     # newest first
 for d in docs:
-    print(d["id"], d.get("title"), "learned" if d.get("learned") else "unread")
+    detail = client.documents.get(d["id"])
+    print(d["id"], d.get("title"), "learned" if detail.get("learned") else "unread")
 
 client.documents.get("srcitem_…")
 client.documents.delete("srcitem_…", confirm=True)                # Full access
@@ -133,7 +141,8 @@ it has not read; a schedule does the same on a cadence; `add_document` starts a 
 "Unread" is decided by versions, not clocks: a sync that changed nothing, or a run on another
 Memory, cannot make this one look up to date.
 
-Code that adds documents with `add_document` does not need a schedule for them. A schedule
+`add_document` normally starts learning without a schedule; if it is deferred, use the
+Memory’s next run after fixing the cause. A schedule
 matters for material that arrives without a call: a folder the person keeps adding to, a
 Notion selection that changes. When a schedule fires, nothing changes in the API except the
 memory itself: `learned` turns true and the next search answers from what the run learned.
@@ -191,7 +200,7 @@ AI about behaving beneath the ceiling the server enforces.
 | revokes the key, or it expires | `403 · unauthorized` on every call; mint another |
 | removes a source | its documents stop being listed; what was learned stays until the Memory is deleted |
 | deletes the Memory | it is no longer listed; searches no longer answer from it |
-| has no working model under AI Setup | `422 · capability_unavailable · no model`; searches over what was already learned still answer, documents wait unread |
+| has no working model for its agent | a failed turn, surfaced as `422 · capability_unavailable` or a search entry in `containers[].error`; stored memory remains, documents may wait unread |
 | is on the free plan with its free turns spent | `422 · reason: dormant` until they bring a model or move to a paid plan |
 | exceeds the concurrent-turn budget | `429 · rate_limited`; the SDK retries twice |
 
@@ -202,6 +211,6 @@ AI about behaving beneath the ceiling the server enforces.
 * **Save what the user supplied,** in their words, and only when they asked or plainly meant to.
 * **Never confirm on your own.** A delete or forget without `confirm=true` answers with a `how` sentence; relay it and stop.
 * **Treat `403` as withdrawn access.** The owner narrowed or revoked the key; do not retry with it.
-* **Expect the first search to be slow.** Up to a minute after a quiet spell; keep the SDK's timeout.
+* **Allow for cold starts.** Configure a suitable timeout and inspect per-Memory errors; see [API troubleshooting](troubleshooting.md).
 * **Do not store to filter later.** There are no server-side metadata filters; use `custom_id` and `metadata` for your own bookkeeping.
 * **The token stays out of logs.** Log the key's hint (`mbk_7f3a92d1…`), never the token.

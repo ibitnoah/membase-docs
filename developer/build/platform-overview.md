@@ -1,9 +1,9 @@
 ---
-title: Platform overview
+title: App and API concepts
 description: "The hosted Membase at app.membase.io as your code meets it: the three nouns, what each screen of the app is to the API, credentials, one account per person, limits, the Marketplace, and what can be undone."
 ---
 
-# Platform overview
+# App and API concepts
 
 The Memory Platform is the hosted Membase at `https://www.app.membase.io`. A person hands it
 material once; it keeps a living memory of that material; every AI they connect, and every
@@ -32,17 +32,17 @@ user (`static`) and the most recently changed ones (`dynamic`). `get_profile` re
 
 | Screen | The person uses it to | Your code meets it as |
 |---|---|---|
-| [Home](https://noah-gao.gitbook.io/membase-user-guide/use/features/home) | talk to the assistant, the one agent that is theirs by default; reach it on Telegram | the profile it keeps, and the assistant's own memory, always the first container |
-| [Memory](https://noah-gao.gitbook.io/membase-user-guide/use/features/memory) | make, run and inspect Memories | `list_containers`, `search_memories`, the items `forget_memory` removes; `learned` turning true after a run |
-| [Files](https://noah-gao.gitbook.io/membase-user-guide/use/features/files) | keep files, and hand folders, uploads, Notion pages and captured conversations to a Memory | `add_document`, `list_documents`, `get_document`, `delete_document` |
-| [Studio](https://noah-gao.gitbook.io/membase-user-guide/use/features/studio) | edit a Memory's pipeline canvas | nothing; a canvas run as an endpoint is `workflow_invoke` over MCP |
-| [Agents](https://noah-gao.gitbook.io/membase-user-guide/use/features/agents) | build agents beyond the assistant | `ask_agent` on an agent-endpoint credential |
-| [Schedules](https://noah-gao.gitbook.io/membase-user-guide/use/features/schedules) | run Memories on a cadence | `learned` turning true without a call of yours |
-| [Activity](https://noah-gao.gitbook.io/membase-user-guide/use/features/activity) | see what ran | the run a `202` from `add_document` started; a key's own calls are on the key's page |
-| [AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/features/ai-setup) | choose the account's model | `422 · capability_unavailable` when there is none |
-| [Connect](https://noah-gao.gitbook.io/membase-user-guide/use/features/connect) | let an AI app read Memories, mint keys | consent tokens and developer keys: [Authentication & Scopes](authentication.md) |
-| [Marketplace](https://noah-gao.gitbook.io/membase-user-guide/use/features/marketplace) | sell and buy access to a Memory | subscriptions, `ask_agent` |
-| [Settings](https://noah-gao.gitbook.io/membase-user-guide/use/features/settings) | plan, export, delete | `422 · reason: dormant` on a free plan whose turns are spent |
+| [Home](https://noah-gao.gitbook.io/membase-user-guide/use/use-your-assistant/home) | talk to the assistant, the one agent that is theirs by default; reach it on Telegram | the profile it keeps, and the assistant's own memory, always the first container |
+| [Memory](https://noah-gao.gitbook.io/membase-user-guide/use/manage-your-memory/memory) | make, run and inspect Memories | `list_containers`, `search_memories`, the items `forget_memory` removes; `learned` turning true after a run |
+| [Files](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/files) | keep files, and hand folders, uploads, Notion pages and captured conversations to a Memory | `add_document`, `list_documents`, `get_document`, `delete_document` |
+| [Studio](https://noah-gao.gitbook.io/membase-user-guide/use/advanced/studio) | edit a Memory's pipeline canvas | nothing; a canvas run as an endpoint is `workflow_invoke` over MCP |
+| [Agents](https://noah-gao.gitbook.io/membase-user-guide/use/advanced/agents) | build agents beyond the assistant | `ask_agent` on an agent-endpoint credential |
+| [Schedules](https://noah-gao.gitbook.io/membase-user-guide/use/automate-and-troubleshoot/schedules) | run Memories on a cadence | `learned` turning true without a call of yours |
+| [Activity](https://noah-gao.gitbook.io/membase-user-guide/use/automate-and-troubleshoot/activity) | see what ran | the run a `202` from `add_document` started; a key's own calls are on the key's page |
+| [AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/account-and-models/ai-setup) | choose the account's model | `422 · capability_unavailable` when there is none |
+| [Connect](https://noah-gao.gitbook.io/membase-user-guide/use/manage-your-memory/connect) | let an AI app read Memories, mint keys | consent tokens and developer keys: [Authentication & Scopes](authentication.md) |
+| [Marketplace](https://noah-gao.gitbook.io/membase-user-guide/use/share-and-trade/marketplace) | sell and buy access to a Memory | subscriptions, `ask_agent` |
+| [Settings](https://noah-gao.gitbook.io/membase-user-guide/use/account-and-models/settings) | plan, export, delete | `422 · reason: dormant` on a free plan whose turns are spent |
 
 ## Credentials
 
@@ -51,7 +51,7 @@ app received on the OAuth consent screen. A key has a level (Read, Read & write,
 access), a reach (the Memories it may use) and an expiry; a consent token is read-only and
 reaches what the user ticked. Both are bindings on the account and change live on the
 Connect page. [Authentication & Scopes](authentication.md) has the whole model; the keys
-screen is under [Connect](https://noah-gao.gitbook.io/membase-user-guide/use/features/connect#developer-keys) in the user guide.
+screen is under [Connect](https://noah-gao.gitbook.io/membase-user-guide/use/manage-your-memory/connect#developer-keys) in the user guide.
 
 A key's calls are on the key's page, not on Activity: **Usage** (calls in the last 30 or 7
 days, how many were *refused*, the tool it calls most) and **Recent activity** (each call:
@@ -70,11 +70,16 @@ own key or their own consent; there are no application-wide keys and no sub-tena
 Every learning turn, every search and every assistant answer needs a model. The account
 chooses it under AI Setup: a key of its own for a provider, or a Claude or ChatGPT
 subscription, verified with one short real request before it is used. The credential never
-enters the account's container; the platform makes the call. An account with no model keeps
-its memory: searches over what it already learned still answer, and documents wait unread.
+enters the account's container; the platform makes the call. An account with no working model keeps
+its stored memory, but learning and hosted search need working agent turns. A search may
+return per-Memory failures in `containers[].error`; documents can remain unread.
 [How Membase works](how-membase-works.md#models).
 
 ## Limits and errors
+
+Search can report per-Memory failures in `containers[].error` on an HTTP `200`. Check that
+field before treating an empty result as “nothing found.” [API troubleshooting](troubleshooting.md)
+covers partial failures, deferred learning and timeouts.
 
 | Status | Code | When |
 |---|---|---|

@@ -1,17 +1,19 @@
 ---
-description: "The four ways material reaches a memory: a folder in Files, an upload, the Unibase Memory extension, or talking to the assistant."
+description: "Choose how to bring in files, Notion pages or captured conversations, and learn when a Memory reads them."
 ---
 
 # Bring your material in
 
-A memory learns from what you hand it. There are four ways in, and they all end the same way:
-the material lands in the memory's Add card, and nothing is read until the memory runs.
+Choose the source that fits your material. Files, uploads, Notion and captured conversations
+feed a Memory through its Add card; the Memory learns from them when you run it. Talking to
+your assistant follows a different path: it can save what matters during the conversation.
 
 | Way in | Good for | Where |
 |---|---|---|
 | A folder in your Files | a project, a vault, anything already on disk | memory page › Add card › **Your Files › Choose** |
 | Upload | a handful of files | memory page › Add card › **Upload Files › Upload** |
-| Unibase Memory | your chats with other assistants | memory page › Add card › **Unibase Memory** |
+| [Notion](notion.md) | pages and databases | memory page › Add card › **Notion** (where available) |
+| [Browser extension](browser-extension.md) | your chats with other assistants | memory page › Add card › **Unibase Memory** |
 | Talking to your assistant | what you tell it, decide with it, ask it | Home, or Telegram |
 
 ## A folder in your Files
@@ -27,6 +29,12 @@ If the files are not in your Files yet, put them there first from the Files page
 Press **Upload** on *Upload Files* and drop the files. They land in a folder with the memory's
 name at the top of your Files, which is connected as a source on the spot. Markdown, text and
 the common document formats are accepted; the dialog tells you before sending if a file is not.
+
+## Notion
+
+Connect a workspace, select the pages or databases the Memory should read, and add them.
+A sync fetches those pages; the Memory still needs a run to learn from them. Follow the
+[Notion guide](notion.md) for authorization, page selection, updates and disconnection.
 
 ## Unibase Memory
 
@@ -48,6 +56,8 @@ Everything you say to the assistant on Home or in Telegram goes into its own mem
 setup. When it saves something you see *Saved to memory* under its answer; when a conversation
 ends it takes one more turn to keep what mattered. This is the assistant's memory, the first tile
 on the Memory page, not one of the memories you make; those learn from sources only.
+
+The [browser extension guide](browser-extension.md) covers setup and missing conversations.
 
 ## Then run
 

@@ -6,8 +6,8 @@ description: Unibase Memory, the browser extension that captures the person's co
 
 **Unibase Memory** is a browser extension. It captures the person's conversations with other
 AI assistants as they happen and hands them to Membase, where a Memory reads them as a
-source. It is not an MCP client and does not read Membase; it is a way *in*, the mirror of
-the clients on the other pages of this section.
+source. Use this to bring conversations into memory. To let an AI app read existing memory, follow
+[Connect your AI](https://noah-gao.gitbook.io/membase-user-guide/connect).
 
 * Chrome Web Store: [Unibase Memory](https://chromewebstore.google.com/detail/edmncknbiihfoakimejbepnaeemaaamf)
 
@@ -28,7 +28,7 @@ In the app, on a Memory's page, the Add card has a door for it:
 
 From then on the captured conversations reach the Memory as documents. The source's own page
 shows a status word (*Syncing…*, *Sync failed*, *Needs reauthorization*) and **Sync now**,
-**Reauthorize** or **Reconnect** when they apply; see [Bring your material in](https://noah-gao.gitbook.io/membase-user-guide/use/getting-started/bring-material-in).
+**Reauthorize** or **Reconnect** when they apply; see [Bring your material in](bring-material-in.md).
 
 ## Writing the instruction
 
@@ -37,12 +37,6 @@ adopted. It does not restate what an assistant explained. Its instruction is a *
 the chats, not a subject**: *unibase* keeps what the chats say that bears on Unibase, not a
 description of Unibase. An instruction written as a topic produces a log; written as a
 filter it produces the standing facts the person would want any other assistant to know.
-
-## What code sees
-
-Nothing new. The captured conversations are documents of the Memory (`list_documents`,
-`learned` after a run; [Memory operations](https://noah-gao.gitbook.io/membase-user-guide/build/core/memory-operations)) and what the run learned is what `search_memories` answers. There is
-no API into the extension; the browser and the wallet are the only path.
 
 ## If something looks wrong
 

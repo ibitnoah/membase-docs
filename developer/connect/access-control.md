@@ -38,7 +38,7 @@ withheld from absent, and cannot ask for more; only the person can switch it on.
 `search_memories` and, when ticked, `get_profile`, and nothing that writes; a key is offered
 the tools of its level. A model cannot call what it was not offered, and a call that
 bypasses the list is refused with `403` anyway. The full table per level is on
-[Authentication & Scopes](https://noah-gao.gitbook.io/membase-user-guide/build/core/authentication#access-levels).
+[Authentication & Scopes](https://noah-gao.gitbook.io/membase-user-guide/build/reference/authentication#access-levels).
 
 ## Destructive verbs
 

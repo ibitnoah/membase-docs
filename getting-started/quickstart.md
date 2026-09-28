@@ -1,13 +1,16 @@
 ---
-description: Five minutes from a folder of notes to Claude answering from it, with every answer naming where it came from.
+description: "Create a Memory, add your notes, run it, and verify what it learned before connecting another AI."
 ---
 
-# 5-minute quickstart
+# Your first Memory
 
-By the end of this page Claude can answer questions about a project folder of yours, and you
-will have seen where each answer came from.
+By the end of this page you will have a Memory that has learned from your own notes, and
+you will know how to use it in an AI.
 
-You need: a Membase account, a folder of Markdown or text files, and a Claude account.
+You need a Membase account and a small Markdown or text file with a fact you can check, such
+as “The Lumen launch is on 15 October.” Learning needs a working model and available turns.
+If a run reports that no model is available, follow [AI Setup](../pages/ai-setup.md).
+Connecting Claude at the end is optional and requires a Claude account.
 
 ## 1. Create a memory
 
@@ -27,7 +30,8 @@ You are on the memory's page. Its hero shows the name, a **Run** button that is 
 
 ## 2. Add something to it
 
-The **Add to this memory** card ③ has three doors: Unibase Memory, Upload Files and Your Files.
+The **Add to this memory** card ③ includes **Upload Files**, **Your Files** and
+**Unibase Memory**. Where available, **Notion** is another option; this walkthrough uses a file.
 
 ![A memory's page](../shots/memory-page.png)
 
@@ -44,6 +48,16 @@ The **Add to this memory** card ③ has three doors: Unibase Memory, Upload File
 
 ## 3. Use it in your AI
 
+First, check **Your Memory** below the Add card. Open a result and confirm it reflects your
+notes. On **Home**, ask the assistant a specific question, such as “When is the Lumen launch?”
+If that Memory is not available to the assistant, select it in the assistant’s settings on Home.
+Check the answer against your file. If the run failed, open **Report** and resolve that error
+before connecting an external app.
+
+### Optional: use it in Claude
+
+For other clients, use [Connect your AI](https://noah-gao.gitbook.io/membase-user-guide/connect).
+
 1. Open **Connect** in the left rail. Apps you have not connected show as dashed tiles.
 
 ![Connect page](../shots/connect-page.png)
@@ -56,8 +70,10 @@ The **Add to this memory** card ③ has three doors: Unibase Memory, Upload File
    tick the memories Claude may read. Tick the memory you just made and press **Approve access**.
 4. Back in Claude, ask a question about your project. Claude reaches for your memory on its own.
 
-The Claude tile is now solid and says *Connected*. Its page lists the memory under **Uses**, with
-a switch you can turn off at any time.
+After approval, the Claude tile is solid and says *Authorized · awaiting first use*. After
+a successful tool call it shows recent usage. Authorization confirms permission; the answer
+from your notes confirms that the integration works. The app’s page lists the Memory under
+**Uses**, with a switch you can turn off at any time.
 
 The same memory answers on Home, too. Ask your assistant and it tells you which page it read:
 
@@ -67,5 +83,5 @@ The same memory answers on Home, too. Ask your assistant and it tells you which 
 
 - [Keep it up to date on a schedule](../pages/memory.md#settings)
 - [Use it in ChatGPT, Cursor or another app](../pages/connect.md)
-- [Bring in more: uploads, your chats with other assistants](bring-material-in.md)
+- [Bring in more: uploads, Notion, your chats with other assistants](bring-material-in.md)
 - [Reach your assistant on Telegram](../pages/home.md#telegram)

@@ -9,22 +9,21 @@ description: "Short answers to the questions people ask first: what a Memory is,
 
 One named part of your world, kept up to date: *Project decisions*, *Reading notes*,
 *Customers*. It has an instruction (what it keeps), sources (what it reads), a schedule (how
-often it re-reads) and a list of apps and keys that may use it. In the API it is a
-**container**. [How Membase fits together](concepts.md).
+often it re-reads) and a list of apps and keys that may use it. [How Membase fits together](concepts.md).
 
 ## I added a folder. Why does my AI not know about it yet?
 
 Adding a source never reads it. A Memory learns when you press **Run** (or **Update now**, the
 same button while a source holds unread material), when its schedule fires, or when code calls
 `add_document`. A source's sync only fetches raw material.
-[Bring your material in](https://noah-gao.gitbook.io/membase-user-guide/use/getting-started/bring-material-in).
+[Bring your material in](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/bring-material-in).
 
 ## Why does the first search take a minute?
 
-A search runs inside your own agent container, against what your Memories know. An idle
-container is stopped, and the first request wakes it. The next one is quick. The SDKs wait
-90 seconds for this reason, and the answer marks any Memory that could not answer yet.
-[How Membase works](https://noah-gao.gitbook.io/membase-user-guide/build/core/how-membase-works#a-search-is-a-turn).
+Your account’s memory may need to wake after it has been idle. Searching also runs a model
+to find relevant material. Allow time for that first request; if it fails, check the Memory’s
+Report and model settings instead of assuming the Memory is empty.
+[How Membase works](https://noah-gao.gitbook.io/membase-user-guide/build/concepts/how-membase-works#a-search-is-a-turn).
 
 ## Where does my memory live? Does Membase keep a copy?
 
@@ -38,7 +37,7 @@ An app connected through Connect (Claude, ChatGPT, Cursor…) can list the Memor
 on for it and search them, and read your profile if you ticked **Let it know about you**. It
 cannot add, delete or forget anything, and it cannot see a Memory that is not switched on.
 An AI that needs to write gets a developer key instead, at the level you choose.
-[Access control](https://noah-gao.gitbook.io/membase-user-guide/connect/reference/access-control).
+[Access control](https://noah-gao.gitbook.io/membase-user-guide/connect/manage-access/access-control).
 
 ## How do I stop an app?
 
@@ -52,31 +51,13 @@ Every turn needs a model. Under **AI Setup** you bring a key for a provider (Ope
 Gemini, DeepSeek, Kimi, Qwen, OpenRouter or any OpenAI-compatible endpoint) or connect a Claude
 or ChatGPT subscription. The credential never enters your container; the platform makes the
 call. A free account has free turns to start with, and keeps its memory when they are spent.
-[AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/features/ai-setup).
-
-## Why is a bad key a 403 and not a 401?
-
-Because the request was authenticated as *some* caller (the key id is in the token) and that
-caller is not allowed. Only a request with no bearer at all is `401`.
-[Authentication & Scopes](https://noah-gao.gitbook.io/membase-user-guide/build/core/authentication#what-a-wrong-credential-looks-like).
-
-## My product serves many people. One key for all of them?
-
-No. The account is the tenant, and a Memory is a topic, not an end user. Each person has their
-own Membase account and your product reaches their memory with their own key or their own
-consent. [Multi-user isolation](https://noah-gao.gitbook.io/membase-user-guide/build/core/multi-user-isolation).
+[AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/account-and-models/ai-setup).
 
 ## What is the profile?
 
 The standing facts your assistant keeps about you: who you are and lasting preferences
-(`static`), and what changed recently (`dynamic`). It is granted separately from reach because
+and what changed recently. It is granted separately from reach because
 it is about you, not about a topic. An AI should read it first in a new conversation.
-
-## Can search filter on metadata?
-
-No. Search takes a question, an optional Memory and a limit; there is no server-side index to
-apply filters to. Put what matters in the content, and keep `custom_id` and `metadata` for your
-own bookkeeping. [Memory operations](https://noah-gao.gitbook.io/membase-user-guide/build/core/memory-operations).
 
 ## What cannot be undone?
 
@@ -89,9 +70,13 @@ takes effect at once. [How Membase fits together](concepts.md#stopping-and-undoi
 
 A Memory reads its sources in a learning turn and keeps what it learned as facts, with
 provenance; a search answers from those facts, not from chunks of the transcript. The numbers
-are on [Benchmarks](https://noah-gao.gitbook.io/membase-user-guide/build/core/benchmarks).
+are on [Benchmarks](benchmarks.md).
 
 ## When is Local Memory coming?
 
-The engine that runs in the hosted container is the same one the local release will ship.
-Documentation comes with that release; until then the landing page keeps a card for it.
+This guide covers the hosted app. Local Memory setup is not documented here yet; check
+[What’s new](whats-new.md) for release announcements rather than using hosted setup steps
+as local installation instructions.
+
+Questions about API status codes, metadata filters or serving multiple users belong in
+[API troubleshooting](https://noah-gao.gitbook.io/membase-user-guide/build/reference/troubleshooting).

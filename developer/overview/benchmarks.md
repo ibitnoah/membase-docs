@@ -2,9 +2,14 @@
 description: LoCoMo, LongMemEval and DMR results for the Unibase memory engine, with the method behind each number.
 ---
 
-# Benchmarks
+# Memory engine benchmarks
 
-The memory engine behind Membase is measured on the three public long-term-memory benchmarks:
+This report covers the memory engine’s benchmark harness. These scores and latency figures
+are not measurements of the hosted Membase API, account startup, or an end-to-end app task.
+For hosted search behavior and timeouts, see [How Membase works](https://noah-gao.gitbook.io/membase-user-guide/build/concepts/how-membase-works)
+and [API troubleshooting](https://noah-gao.gitbook.io/membase-user-guide/build/reference/troubleshooting).
+
+The engine is measured on three public long-term-memory benchmarks:
 **LoCoMo**, **LongMemEval** and **DMR**. Each number below is one pass over the full question
 set, graded by the benchmark's own judge. Powered by episodic extraction and multi-round
 retrieval that sends the reader a few thousand tokens instead of the whole history.
@@ -75,9 +80,9 @@ Mean context: 1,602 tokens.
 | end-to-end, p50 / p95 | 8.30 s / 18.0 s | 14.7 s / 30.2 s | 3.21 s / 6.34 s |
 | context tokens per question | 6,562 | 8,970 | 1,602 |
 
-Search runs in 1.1 to 2.5 s at the median, including one to three decider rounds. End to end
-is 3 to 15 s at the median depending on the reader model; the memory layer is not the
-bottleneck.
+In these benchmark runs, search takes 1.1 to 2.5 s at the median, including one to three
+decider rounds. End to end is 3 to 15 s at the median depending on the reader model. These
+figures exclude hosted runtime wake-up and are not a service latency guarantee.
 
 ## Why the numbers look this way
 

@@ -1,31 +1,39 @@
 ---
 title: Connect your AI
-description: "The same memory inside ChatGPT, Claude, Claude Code, Cursor, Codex, Grok, Kimi and any MCP client. One server URL, a consent screen, no code. Telegram and the browser extension are the other ways in."
+description: "Choose MCP for read-only access through consent, or a skill with a developer key for an AI that needs to write. Then follow your client’s setup guide."
 ---
 
 # Connect your AI
 
-Membase is a standard remote **MCP server**:
+Connect an AI you already use to your Membase memory. You need a Memory with material it
+has learned; start with the [app quickstart](https://noah-gao.gitbook.io/membase-user-guide/use/getting-started/quickstart)
+if you have not made one yet.
 
-```
-https://api.app.membase.io/mcp-http
-```
-
-Streamable HTTP, plain JSON responses, no trailing slash. It serves the same operations as
-the REST API under the same names ([API reference](https://noah-gao.gitbook.io/membase-user-guide/build/reference/api-reference)), so a model
-that learned `search_memories` in one client knows it in every other. An AI app that connects
-to it reads the person's Memories; nothing is copied into the app.
+Choose a connection method, follow your client's guide, then ask a question about a known
+fact in your Memory to verify the result.
 
 ## Two ways in
 
 | | For | How it authenticates | What it gets |
 |---|---|---|---|
-| **MCP** | an AI app the person uses: Claude, ChatGPT, Cursor, Codex, Grok, Kimi, VS Code, Windsurf… | the app discovers OAuth, the browser opens Membase's consent screen, the person ticks the Memories the app may use and whether it may read their profile | `list_containers`, `search_memories` and, when ticked, `get_profile`. Read-only by design. |
-| **The skill** | an AI that reads pages and runs commands: Claude Code, Codex, Cursor's agent, Kimi Code | a developer key the person minted | the key's access level, up to Full access |
+| **MCP with consent** | an AI app the person uses: Claude, ChatGPT, Cursor, Codex, Grok, Kimi, VS Code, Windsurf… | the app discovers OAuth, the browser opens Membase's consent screen, the person ticks the Memories the app may use and whether it may read their profile | `list_containers`, `search_memories` and, when ticked, `get_profile`. Read-only by design. |
+| **Skill with a developer key** | an AI that reads pages and runs commands: Claude Code, Codex, Cursor's agent, Kimi Code | a developer key the person minted | the key's access level, up to Full access |
 
 Both are ordinary bindings on the account: the person can narrow or revoke them live on the
 **Connect** page, and the change applies on the credential's next call.
 [Access control](access-control.md) has the rules.
+
+### MCP server address
+
+Paste this into your client’s remote MCP setup:
+
+```text
+https://api.app.membase.io/mcp-http
+```
+
+The transport is Streamable HTTP. Supported clients open a browser for consent; the
+[client guides](#the-pages) show their setup steps. Some clients also accept a developer
+key in an Authorization header, with the permissions of that key.
 
 ### The skill, in one sentence
 
@@ -52,8 +60,6 @@ can do, which Memories it uses, remove it, and what to do when something looks w
 | [Codex](codex.md) | `codex mcp add`, `config.toml`, the IDE extension |
 | [Grok](grok.md) | a custom connector on grok.com |
 | [Kimi Code](kimi-code.md) | `kimi mcp add` |
-| [Browser extension](browser-extension.md) | Unibase Memory, which captures conversations with other assistants and hands them to a Memory as a source |
-| [Telegram](telegram.md) | the assistant in a Telegram chat, and scheduled results delivered there |
 | [Any MCP client](membase-mcp.md) | the server itself: discovery, the header alternative, what `tools/list` shows, the ready-made config files, VS Code, Windsurf, Devin and every client without a page |
 | [Access control](access-control.md) | consent vs key, reach, the profile tick, confirmation, revocation |
 | [Troubleshooting](troubleshooting.md) | every word and status a client can show, and what to do |
@@ -63,9 +69,16 @@ can do, which Memories it uses, remove it, and what to do when something looks w
 1. The person pastes the URL into the app, or runs the app's `mcp add` command.
 2. The app answers with a browser window: Membase's consent card, listing the Memories with a tick each and **Let it know about you** for the profile.
 3. The person approves. The app's tile on Connect says *Authorized*; its page lists what it **Uses**.
-4. In a chat, the person asks *"List my Membase containers."* An empty list means no Memory is switched on for this connection yet.
+4. In a chat, the person asks *"List my Membase containers."* Check that it names the Memory you granted. Then ask about a specific fact from its
+   material and check the answer. An empty list means no Memory is switched on for this connection yet.
 
 Connecting is the account's, once. Which Memories an app uses is the Memory's, and the
 switch on the app's page and the switch on the Memory's **Use in** card are the same switch.
-The Connect page itself, tab by tab, is on [Connect](https://noah-gao.gitbook.io/membase-user-guide/use/features/connect) in
+The Connect page itself, tab by tab, is on [Connect](https://noah-gao.gitbook.io/membase-user-guide/use/manage-your-memory/connect) in
 the user guide.
+
+## Related tasks
+
+- To import conversations into memory, use the [browser extension](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/browser-extension).
+- To talk to Membase's own assistant from your phone, use [Telegram](https://noah-gao.gitbook.io/membase-user-guide/use/use-your-assistant/telegram).
+- To build your own integration, use the [API quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart).

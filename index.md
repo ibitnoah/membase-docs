@@ -1,60 +1,30 @@
 ---
-title: Membase user guide
-description: Membase is the long-term memory between you and your AIs. Hand it material once; every AI you connect reads the same memory.
+title: Use Membase
+description: "Start with a working Memory, then import more material, use your assistant, connect apps, and keep your memory up to date."
 ---
 
-# Membase user guide
+# Use Membase
 
-Membase is the long-term memory between you and your AIs. You hand it material once, it keeps a
-living memory of that material, and every AI you connect can read the same memory.
+Start with the [quickstart](getting-started/quickstart.md): create a Memory, add a file, run
+it, and ask your assistant a question. You can connect another AI after that first success.
 
-The whole product answers four questions:
+A **Memory** is a named collection of what Membase has learned about a topic. A **source**
+is the material it reads. Adding a source and learning from it are separate steps.
+[How Membase fits together](https://noah-gao.gitbook.io/membase-user-guide/concepts) explains the other product terms.
 
-- **What does my AI know now?** [Memory](pages/memory.md).
-- **Where did it learn that?** Each memory lists what it reads, and each answer on
-  [Home](pages/home.md) names the page it drew on.
-- **Which AIs can use it?** [Connect](pages/connect.md).
-- **What do I need to fix?** The status word on screen, explained at the end of that page's guide.
+## Find your task
 
-## Start here
-
-If this is your first time, follow the three steps the product itself walks you through:
-
-1. [Create a memory](getting-started/quickstart.md#1-create-a-memory)
-2. [Add something to it](getting-started/quickstart.md#2-add-something-to-it)
-3. [Use it in your AI](getting-started/quickstart.md#3-use-it-in-your-ai)
-
-The [5-minute quickstart](getting-started/quickstart.md) does all three with a project folder and Claude.
-
-## Every page
-
-**Getting started**
-
-| Page | What it gives you |
+| I want to | Guide |
 |---|---|
-| [Sign in](getting-started/sign-in.md) | one button, four ways to prove who you are |
-| [The first-run guide](getting-started/first-run-guide.md) | the three-step tour the product opens on a new account, and how to replay it |
-| [5-minute quickstart](getting-started/quickstart.md) | a project folder answering questions in Claude, end to end |
-| [Bring your material in](getting-started/bring-material-in.md) | the four ways material reaches a memory, and why nothing is read until you press Run |
-| [How Membase fits together](https://noah-gao.gitbook.io/membase-user-guide/concepts) | Assistant, Memory, Source, Files, Connect, Agents, Marketplace, in one picture; what runs when; what stops or deletes what |
+| sign in or replay the setup tour | [Sign in](getting-started/sign-in.md) · [Setup guide](getting-started/first-run-guide.md) |
+| import my material | [Choose a source](getting-started/bring-material-in.md) · [Files](pages/files.md) · [Notion](getting-started/notion.md) · [Browser extension](getting-started/browser-extension.md) |
+| create, update, inspect or edit a Memory | [Memory](pages/memory.md) |
+| talk to my assistant | [Home](pages/home.md) · [Telegram](pages/telegram.md) |
+| let another AI use my memory | [Choose a connection method](https://noah-gao.gitbook.io/membase-user-guide/connect) |
+| change access or manage developer keys | [Connect](pages/connect.md) |
+| update automatically or investigate a failure | [Schedules](pages/schedules.md) · [Activity](pages/activity.md) |
+| buy or sell access to a Memory | [Marketplace](pages/marketplace.md) |
+| choose a model or manage my account | [AI Setup](pages/ai-setup.md) · [Settings](pages/settings.md) |
+| customize an agent or its workflow | [Studio](pages/studio.md) · [Agents](pages/agents.md) |
 
-**Features**, one per item of the left rail, in its order
-
-| Page | What it owns |
-|---|---|
-| [Home](pages/home.md) | the conversation with your assistant, its settings, and its Telegram chat |
-| [Memory](pages/memory.md) | your memories: what each reads, what it knows, which apps use it, and its status words |
-| [Studio](pages/studio.md) | a memory's canvas, for the few that should do more than read their sources |
-| [Agents](pages/agents.md) | agents you build yourself |
-| [Schedules](pages/schedules.md) | every cadence in one place, in UTC |
-| [Files](pages/files.md) | your files, and how a folder becomes a source |
-| [Activity](pages/activity.md) | what ran, when, with what result |
-| [AI Setup](pages/ai-setup.md) | model keys and subscriptions, and which one is active |
-| [Connect](pages/connect.md) | the two ways an AI gets in — an app you approve, a key you hold — the one sentence that lets your AI set itself up, and your developer keys |
-
-Two things live in the other tabs of this site: the steps for each AI app are under
-**Connect your AI** ([ChatGPT](https://noah-gao.gitbook.io/membase-user-guide/connect/clients/chatgpt), [Claude](https://noah-gao.gitbook.io/membase-user-guide/connect/clients/claude),
-[Claude Code](https://noah-gao.gitbook.io/membase-user-guide/connect/clients/claude-code) and the rest), and using a key from code is
-under **Build with Membase** ([Quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart)).
-| [Marketplace](pages/marketplace.md) | buying live access to someone's memory, and selling yours |
-| [Settings](pages/settings.md) | account, plan and payments, export, delete |
+To use memory from code, start with the [API quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart).

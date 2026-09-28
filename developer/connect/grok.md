@@ -26,7 +26,7 @@ the *Authorized* tile on Connect, is the same as for every other client.
 Grok's connector dialog has no header field, so a person's Grok connects by consent only.
 Grok's **API** also takes remote MCP servers as tools on a request; that is a developer
 integration rather than a plugin, and it works with a developer key in the server's
-`Authorization` header the way [MCP frameworks](https://noah-gao.gitbook.io/membase-user-guide/build/recipes/mcp-frameworks) describes.
+`Authorization` header the way [MCP frameworks](https://noah-gao.gitbook.io/membase-user-guide/build/integrations/mcp-frameworks) describes.
 
 ## What it can do
 

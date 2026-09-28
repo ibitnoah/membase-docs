@@ -1,24 +1,45 @@
 # Table of contents
 
-* [Membase user guide](index.md)
+* [Use Membase](index.md)
 
 ## Getting started
 
+* [Quickstart](getting-started/quickstart.md)
 * [Sign in](getting-started/sign-in.md)
-* [The first-run guide](getting-started/first-run-guide.md)
-* [5-minute quickstart](getting-started/quickstart.md)
-* [Bring your material in](getting-started/bring-material-in.md)
+* [The setup guide](getting-started/first-run-guide.md)
 
-## Features
+## Bring your material in
 
-* [Home](pages/home.md)
-* [Memory](pages/memory.md)
+* [Choose a source](getting-started/bring-material-in.md)
+* [Files and uploads](pages/files.md)
+* [Notion](getting-started/notion.md)
+* [Browser extension](getting-started/browser-extension.md)
+
+## Manage your memory
+
+* [Create, update and edit memories](pages/memory.md)
+* [Connect apps and manage keys](pages/connect.md)
+
+## Use your assistant
+
+* [Home and conversations](pages/home.md)
+* [Telegram](pages/telegram.md)
+
+## Automate and troubleshoot
+
+* [Schedules](pages/schedules.md)
+* [Activity and failed runs](pages/activity.md)
+
+## Share and trade
+
+* [Marketplace](pages/marketplace.md)
+
+## Account and models
+
+* [AI Setup](pages/ai-setup.md)
+* [Settings](pages/settings.md)
+
+## Advanced
+
 * [Studio](pages/studio.md)
 * [Agents](pages/agents.md)
-* [Schedules](pages/schedules.md)
-* [Files](pages/files.md)
-* [Activity](pages/activity.md)
-* [AI Setup](pages/ai-setup.md)
-* [Connect](pages/connect.md)
-* [Marketplace](pages/marketplace.md)
-* [Settings](pages/settings.md)

@@ -5,24 +5,27 @@
 ## Getting started
 
 * [Quickstart](api-quickstart.md)
-* [SDK Quickstart](sdk-quickstart.md)
-* [Platform overview](platform-overview.md)
 
-## Core
+## Guides
 
 * [Memory operations](memory-operations.md)
-* [Authentication & Scopes](authentication.md)
 * [Multi-user isolation](multi-user-isolation.md)
-* [How Membase works](how-membase-works.md)
-* [Benchmarks](benchmarks.md)
 
-## Recipes
+## Integrations
 
 * [Claude API](claude-api.md)
 * [OpenAI API](openai-api.md)
 * [MCP frameworks](mcp-frameworks.md)
-* [AI coding tools](ai-coding-tools.md)
+* [Build with an AI coding assistant](ai-coding-tools.md)
+
+## Concepts
+
+* [App and API concepts](platform-overview.md)
+* [How Membase works](how-membase-works.md)
 
 ## Reference
 
+* [Python and TypeScript SDKs](sdk-quickstart.md)
+* [Authentication and access](authentication.md)
 * [API reference](api-reference.md)
+* [API troubleshooting](troubleshooting.md)

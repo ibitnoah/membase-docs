@@ -10,15 +10,18 @@ or code written against it.
 
 ## September 2026
 
-**A docs site with four tabs (28 Sep).** Overview, Use Membase, Connect your AI, Build with
-Membase. Every page has a description, every page can be read as Markdown by appending `.md`,
-and old addresses redirect.
+**Guides organized around your task (28 Sep).** Start with a working Memory, choose a source
+(including the new [Notion guide](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/notion)), or connect your AI.
+Telegram is under using your assistant; Studio and Agents are under Advanced. The API
+quickstart now waits for learning and checks search errors, with a separate
+[troubleshooting guide](https://noah-gao.gitbook.io/membase-user-guide/build/reference/troubleshooting). Existing page addresses redirect to their
+new locations.
 
 **Python and TypeScript SDKs (24 Sep).** `pip install membase-sdk` and `npm install membase-sdk`:
 one client over a developer key with `add`, `search`, `profile`, `ask` and the `containers`,
 `documents` and `memories` resources under them. One error class per HTTP status, retries on
 `429` and `5xx`, a 90-second default timeout for the first search after a quiet spell.
-[SDK Quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/sdk-quickstart).
+[Python and TypeScript SDKs](https://noah-gao.gitbook.io/membase-user-guide/build/reference/sdk-quickstart).
 
 **Space is called Files (23 Sep).** The file manager is *Files* everywhere a person reads it,
 and storage plans are *Storage Free / Standard / Pro*. Routes and connector ids are unchanged.
@@ -65,4 +68,4 @@ thing that reads material into memory.
 **Memory lives in the account's container (August).** Each account has its own agent
 container and volume; the platform keeps accounts, credentials and billing, transits raw bytes,
 proxies model calls, and never stores or indexes memory content.
-[How Membase works](https://noah-gao.gitbook.io/membase-user-guide/build/core/how-membase-works).
+[How Membase works](https://noah-gao.gitbook.io/membase-user-guide/build/concepts/how-membase-works).

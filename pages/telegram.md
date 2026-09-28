@@ -1,6 +1,6 @@
 ---
 title: Telegram
-description: "Your assistant in a Telegram chat: the same memory as on Home, scheduled results delivered to the chat, your own bot if you prefer, and what code sees."
+description: "Connect Telegram to your assistant, receive scheduled results, and manage or remove a connected chat."
 ---
 
 # Telegram
@@ -32,6 +32,8 @@ If you would rather not share the Membase bot, pick **Use my own bot**. Create a
 generate the QR the same way. The optional **Webhook secret token** is for operators who run
 their own webhook and can be left empty.
 
+![Connect Telegram](../shots/telegram-dialog.png)
+
 ## What it can do
 
 * **Talk to the assistant.** Ask anything you would ask on Home. It reads the same Memories and keeps the same instructions.
@@ -46,12 +48,6 @@ Home, and Home's conversations do not appear in Telegram; the memory is what the
 The assistant's: the Memories listed in the assistant's own settings on Home (the assistant
 chip in the header). There is no switch on Connect for Telegram, because Telegram is the
 assistant, not an app reading it.
-
-## What code sees
-
-Nothing new. A turn in Telegram reads and writes the same memory a search from code reads;
-what the assistant learns from the chat is in the profile and the assistant's own Memory on
-the next `search_memories`. There is no API into the chat.
 
 ## Remove it
 
