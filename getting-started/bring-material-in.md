@@ -8,6 +8,8 @@ Choose the source that fits your material. Files, uploads, Notion and captured c
 feed a Memory through its Add card; the Memory learns from them when you run it. Talking to
 your assistant follows a different path: it can save what matters during the conversation.
 
+![Material arrives when a source is added or synced; the Memory learns it on a run; then it is in memory](../figures/sync-then-learn.svg)
+
 | Way in | Good for | Where |
 |---|---|---|
 | A folder in your Files | a project, a vault, anything already on disk | memory page › Add card › **Your Files › Choose** |

@@ -19,6 +19,8 @@ container; do not use containers as isolation boundaries between different users
 A **Memory** has an instruction describing what to retain and sources containing material
 to process. Adding or syncing a source does not mean the Memory has learned its contents.
 
+![Material arrives with a 202 and learned false; a run learns it; then learned is true and search finds it](figures/sync-then-learn-api.svg)
+
 Select **Update now** in the app or configure a schedule to process sources. The API's
 `add_document` also requests learning and returns `202`; this acknowledges acceptance, not
 completed learning. Check the document's `learned` flag before searching for the new content.

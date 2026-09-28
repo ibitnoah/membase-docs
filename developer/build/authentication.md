@@ -60,6 +60,8 @@ on the Connect page, on the key's page under **Memory access**, or on a Memory's
 **Use in**; all three are the same switch. A key created with *All memories, including ones
 you make later* reaches every container the account has now or later.
 
+![One grant seen from three places, Uses, Use in and Memory access; on means in reach, off means 403 and not listed on the next call](figures/reach-one-switch.svg)
+
 A container outside the reach is refused exactly like one that does not exist: `403`,
 `code: unauthorized`, *may not use that container*. `list_containers` never lists it, so a
 client cannot tell withheld from absent. With exactly one container in reach the `container`

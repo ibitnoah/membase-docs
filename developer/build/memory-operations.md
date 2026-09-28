@@ -17,6 +17,8 @@ the TypeScript and REST shapes are on the [Python and TypeScript SDKs](sdk-quick
 | **memory** | an item on a Memory's page | one fact the container holds, or one fact of the user's profile |
 | **document** | a row under a Memory's sources | one piece of raw material a container read: a file, a note, a page |
 
+![One account holds containers; each container holds documents that a run turns into memories; the profile sits beside them](figures/three-nouns.svg)
+
 ## Containers
 
 ```python
@@ -133,6 +135,8 @@ what `add_document` handed in. `learned` is false until a run has committed it; 
 to poll after `add_document`.
 
 ### Sync and run are two different things
+
+![Material arrives with a 202 and learned false; a run learns it; then learned is true and search finds it](figures/sync-then-learn-api.svg)
 
 A **sync** fetches raw material and stops. It runs no model, reads nothing into memory and
 never changes what a search answers. A **run** (the learning turn) is what reads the unread

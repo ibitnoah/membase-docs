@@ -20,6 +20,8 @@ are in the **Use Membase** tab.
 | **memory** | an item on a Memory's page | one fact the container holds, or one fact of the user's profile |
 | **document** | a row under a Memory's sources | one piece of raw material a container read: a file, a note, a page |
 
+![One account holds containers; each container holds documents that a run turns into memories; the profile sits beside them](figures/three-nouns.svg)
+
 Plain verbs: `list`, `search`, `get`, `add`, `delete`, `forget`, `ask`.
 [Memory operations](memory-operations.md) walks them; the [API reference](api-reference.md)
 has every operation.

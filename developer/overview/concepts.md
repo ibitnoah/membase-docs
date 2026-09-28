@@ -6,12 +6,7 @@ description: "Understand Memories, sources, files, connected apps and agents, an
 
 Membase turns your material into memory that your assistant and connected AI apps can use.
 
-```text
-Sources                    Memories                  AI tools
-Files and uploads ──┐
-Notion pages ────────┼──▶ Learn and retain ──▶ Assistant and connected apps
-Imported chats ─────┘
-```
+![Sources feed a Memory, the Memory learns on a run, and the assistant, connected apps and your code read the result](figures/how-it-fits-together.svg)
 
 **Assistant.** Your built-in assistant, available on Home and through a connected Telegram
 chat. It can use the memories and skills selected in its settings.

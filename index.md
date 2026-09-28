@@ -12,6 +12,8 @@ A **Memory** is a named collection of what Membase has learned about a topic. A 
 is the material it reads. Adding a source and learning from it are separate steps.
 [How Membase fits together](https://noah-gao.gitbook.io/membase-user-guide/concepts) explains the other product terms.
 
+![Sources feed a Memory, the Memory learns on a run, and the assistant, connected apps and your code read the result](figures/how-it-fits-together.svg)
+
 ## Find your task
 
 | I want to | Guide |

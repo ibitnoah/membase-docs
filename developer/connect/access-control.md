@@ -28,6 +28,8 @@ Reach is the list of Memories a credential may use. It has one state and three v
 the **Uses** card on the client's page in Connect, the **Use in** card on the Memory's page,
 and the **Memory access** switches on a key's page. Off takes effect on the very next call.
 
+![One grant seen from three places, Uses, Use in and Memory access; on means in reach, off means 403 and not listed on the next call](figures/reach-one-switch.svg)
+
 A Memory outside the reach is refused the same way as one that does not exist: `403`,
 *may not use that container*. `list_containers` does not list it. A client cannot tell
 withheld from absent, and cannot ask for more; only the person can switch it on.

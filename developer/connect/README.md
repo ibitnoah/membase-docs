@@ -14,6 +14,8 @@ fact in your Memory to verify the result.
 
 ## Two ways in
 
+![An AI app connects over MCP and gets read-only access through the consent screen; an AI that runs commands, or your code, uses a developer key at the key's level; both are changed on Connect](figures/two-ways-in.svg)
+
 | | For | How it authenticates | What it gets |
 |---|---|---|---|
 | **MCP with consent** | an AI app the person uses: Claude, ChatGPT, Cursor, Codex, Grok, Kimi, VS Code, Windsurf… | the app discovers OAuth, the browser opens Membase's consent screen, the person ticks the Memories the app may use and whether it may read their profile | `list_containers`, `search_memories` and, when ticked, `get_profile`. Read-only by design. |

@@ -30,6 +30,8 @@ so a caller cannot even enumerate what it may not read.
 Give each person their own Membase account, and reach their memory with a credential that
 person minted or approved. Three shapes fit most products.
 
+![One shared account with a container per user and one key is not isolation; one account per person, each with their own credential, is](figures/one-account-per-person.svg)
+
 ### Your product is an MCP client
 
 If your product can act as an MCP client (an agent framework, a desktop app, anything that
