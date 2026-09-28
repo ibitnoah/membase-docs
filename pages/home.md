@@ -1,5 +1,5 @@
 ---
-description: Your conversation with the Assistant: the rail, the entry cards, the composer, and the remote channel.
+description: "Your conversation with the Assistant: the rail, the entry cards, the composer, and the remote channel."
 ---
 
 # Home

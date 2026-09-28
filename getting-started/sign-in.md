@@ -1,5 +1,5 @@
 ---
-description: One Sign in button: Google, X, email or a wallet through Privy, then Home and the first-run guide.
+description: "One Sign in button: Google, X, email or a wallet through Privy, then Home and the first-run guide."
 ---
 
 # Sign in

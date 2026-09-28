@@ -1,5 +1,5 @@
 ---
-description: The agents you build beyond the assistant: endpoint, permissions, tools and Revoke.
+description: "The agents you build beyond the assistant: endpoint, permissions, tools and Revoke."
 ---
 
 # Agents

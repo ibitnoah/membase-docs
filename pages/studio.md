@@ -1,5 +1,5 @@
 ---
-description: The canvas behind a memory's Run: one pipeline per memory, the blocks you can add, and what saving changes.
+description: "The canvas behind a memory's Run: one pipeline per memory, the blocks you can add, and what saving changes."
 ---
 
 # Studio

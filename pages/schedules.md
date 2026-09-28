@@ -1,5 +1,5 @@
 ---
-description: Every scheduled task in one place: a memory's cadence, pause and resume, UTC times.
+description: "Every scheduled task in one place: a memory's cadence, pause and resume, UTC times."
 ---
 
 # Schedules

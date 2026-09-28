@@ -1,5 +1,5 @@
 ---
-description: The four ways material reaches a memory: a folder in Files, an upload, the Unibase Memory extension, or talking to the assistant.
+description: "The four ways material reaches a memory: a folder in Files, an upload, the Unibase Memory extension, or talking to the assistant."
 ---
 
 # Bring your material in

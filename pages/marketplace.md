@@ -1,5 +1,5 @@
 ---
-description: Skills and Memory, each with Browse and Your tabs: subscribe to a memory, sell one, publish a skill.
+description: "Skills and Memory, each with Browse and Your tabs: subscribe to a memory, sell one, publish a skill."
 ---
 
 # Marketplace

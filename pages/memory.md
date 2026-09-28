@@ -1,5 +1,5 @@
 ---
-description: The Memory page as one drive: tiles, a memory's page, the status line, Settings, a source's page, and what each word means.
+description: "The Memory page as one drive: tiles, a memory's page, the status line, Settings, a source's page, and what each word means."
 ---
 
 # Memory

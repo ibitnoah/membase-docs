@@ -1,5 +1,5 @@
 ---
-description: What ran, in one timeline: Memory runs, syncs, scheduled tasks and agent turns. And where a key's own activity lives.
+description: "What ran, in one timeline: Memory runs, syncs, scheduled tasks and agent turns. And where a key's own activity lives."
 ---
 
 # Activity
