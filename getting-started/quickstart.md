@@ -16,39 +16,39 @@ Connecting Claude at the end is optional and requires a Claude account.
 
 1. Open **Memory** in the left rail. Before you have any, the page shows only the Assistant's
    own memory.
-2. Press **New memory** ①.
+2. Press **Create memory** ①.
 
 ![Memory page before any memory exists](../shots/memory-home-empty.png)
 
-3. Give it a name ①. Under *Keeps*, leave **Anything useful** or pick a preset. Press
+3. Give it a name ①. Under *Information to retain*, leave **Anything useful** or pick a preset. Press
    **Create memory** ②.
 
 ![New memory dialog](../shots/new-memory-dialog.png)
 
-You are on the memory's page. Its hero shows the name, a **Run** button that is still disabled,
+You are on the memory's page. Its hero shows the name, an **Update now** button that is still disabled,
 **Settings** and **Delete…**.
 
 ## 2. Add something to it
 
-The **Add to this memory** card ③ includes **Upload Files**, **Your Files** and
+The **Add to this memory** card ③ includes **Upload files**, **Your Files** and
 **Unibase Memory**. Where available, **Notion** is another option; this walkthrough uses a file.
 
 ![A memory's page](../shots/memory-page.png)
 
 1. Press **Choose** on *Your Files*. The Files browser opens inside the dialog.
 2. Tick the folder that holds your project files and confirm in the footer. If your files are
-   not in Files yet, press **Upload** on *Upload Files* instead; they land in a folder with the
+   not in Files yet, press **Upload** on *Upload files* instead; they land in a folder with the
    memory's name.
 3. The Add card now lists the folder. A toast tells you adding does not run the memory.
-4. Press **Run** ① in the hero. The status line under the name says *Running…*, then
+4. Press **Update now** ① in the hero. The status line under the name says *Running…*, then
    *Updated just now · Report*.
 
-> Nothing is read until you press **Run** or a schedule fires. The button says **Update now**
-> whenever a source holds material this memory has not read yet.
+> Adding a source does not process it. Select **Update now** or configure a schedule to
+> update the Memory from its sources.
 
 ## 3. Use it in your AI
 
-First, check **Your Memory** below the Add card. Open a result and confirm it reflects your
+First, check **Your memory** below the Add card. Open a result and confirm it reflects your
 notes. On **Home**, ask the assistant a specific question, such as “When is the Lumen launch?”
 If that Memory is not available to the assistant, select it in the assistant’s settings on Home.
 Check the answer against your file. If the run failed, open **Report** and resolve that error

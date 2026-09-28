@@ -194,7 +194,7 @@ AI about behaving beneath the ceiling the server enforces.
 
 | The person | Code sees |
 |---|---|
-| presses **Run** / **Update now**, or a schedule fires | documents' `learned` turns true; the next search answers from the run |
+| selects **Update now**, or a schedule fires | documents' `learned` turns true; the next search answers from the run |
 | switches a Memory off for the key under **Use in** | `403 · may not use that container` on the very next call, same token |
 | lowers the key's access | `403 · not in this agent's capability profile` on the verbs above it |
 | revokes the key, or it expires | `403 · unauthorized` on every call; mint another |

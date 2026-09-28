@@ -56,7 +56,7 @@ yet, and the model should say so rather than answer from nothing.
 
 ## Ready-made config files
 
-Everything is served by the app, staged from the `plugin/` folder of the product repository:
+Use these published configuration files and references for your client:
 
 | File | For |
 |---|---|

@@ -13,7 +13,7 @@ with the same anatomy.
 
 1. **A memory tile.** Glyph, name, and a state word only when there is one: *Empty* (no
    instruction yet), *Add a source* (reads nothing yet), *On sale*, *Subscribed*.
-2. **New memory.** Opens the New memory dialog. **Marketplace** beside it opens memories other
+2. **Create memory.** Opens the Create memory dialog. **Marketplace** beside it opens memories other
    people sell.
 
 The Assistant's own memory is always the first tile. The home page lists the Memories before reading their contents.
@@ -23,13 +23,12 @@ The Assistant's own memory is always the first tile. The home page lists the Mem
 ![Anatomy of a memory's page](../shots/memory-page-anatomy.png)
 
 1. **Name.** Click to rename in place.
-2. **Run / Update now.** The one way to make the memory read its sources by hand. It says
-   **Update now** while any source holds material the memory has not read. Disabled until the
-   memory has a source.
+2. **Update now.** Process the Memory's sources manually. The button is disabled while an
+   update is running or when the sources are not ready.
 3. **Settings.** Configure the instruction, schedule and sharing in one dialog.
 4. **Delete…** Says first the one irreversible thing (everything the memory learned goes with it),
    then what depends on it.
-5. **Add to this memory.** Choose Unibase Memory, Upload Files, Your Files, or Notion where
+5. **Add to this memory.** Choose Unibase Memory, Upload files, Your Files, or Notion where
    available. Sources you added are listed below with a **Remove** per row.
    [Choose a source](../getting-started/bring-material-in.md) explains each option.
 
@@ -52,7 +51,7 @@ The line under the name is the memory's state and nothing else:
 
 | It says | Meaning |
 |---|---|
-| *Nothing yet* | never run |
+| *Not run yet* | never run |
 | *Checking…* | the page is reading the state |
 | *Running…* | a run is queued or running; survives a reload |
 | *Updated 3h ago · Report* | the last run read the current sources; **Report** opens what it did |
@@ -98,10 +97,10 @@ Look up the word on screen.
 
 | It says | What it means | Do |
 |---|---|---|
-| **Run** is disabled | the memory has no source yet, or its state is still loading | add a source; wait for *Checking…* to finish |
-| *Update now* | a source holds material this memory has not read | press it |
+| **Update now** is disabled | the memory has no source yet, or its state is still loading | add a source; wait for *Checking…* to finish |
+| **Update now** | starts a manual update from the sources | select it to update the Memory |
 | *Run failed* | the last run did not finish | open **Report**; usually the model source is off or a source needs reauthorization |
-| *Nothing yet* | never run | press **Run** |
+| *Not run yet* | never run | select **Update now** |
 | *Empty* on the tile | no instruction | Settings › Instruction |
 | *Add a source* on the tile | reads nothing yet | Add card |
 

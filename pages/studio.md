@@ -1,5 +1,5 @@
 ---
-description: "The canvas behind a memory's Run: one pipeline per memory, the blocks you can add, and what saving changes."
+description: "The workflow canvas behind a memory update: one pipeline per memory, the blocks you can add, and what saving changes."
 ---
 
 # Studio
@@ -10,7 +10,7 @@ Studio is the canvas where an agent is drawn. Most people reach it one way: a me
 ![Studio](../shots/studio-page.png)
 
 A memory has exactly one canvas. A fresh one holds two blocks, Start and the memory's agent, and
-runs exactly what **Run** on the memory's page runs. On the canvas you can add what a button
+runs exactly what **Update now** on the Memory page runs. On the canvas you can add what a button
 cannot express: a Source block to read something else, a Recall block, a Save-to-Memory block, a
 Condition, or a Schedule block.
 

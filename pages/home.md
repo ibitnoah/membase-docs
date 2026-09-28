@@ -11,13 +11,9 @@ Home is your conversation with the Assistant. Everything else in the product fee
 1. **Navigation.** The left rail. Flat items first, then a *Capabilities* group.
 2. **New conversation.** Starts a draft row at the top of the rail. The first message turns it
    into the real conversation.
-3. **Entry cards.** The four doors: Add Memory opens the New memory form; Marketplace opens
-   skills and memories from others; Connect Your AI opens Connect; View Agents opens the Agents
-   page. Under them, **What brings you here today?** lists things to do, each opening at its
-   first step: turn a folder into memory, keep your ChatGPT and Claude chats, upload files to
-   your Files, pick up a past conversation; use your memory while you code, talk to your
-   assistant on Telegram, have something done on a schedule, use your own model key or
-   subscription. No two of them lead to the same place.
+3. **Entry cards.** **Create memory**, **Marketplace**, **Connect AI** and **View agents**
+   open their respective pages or setup steps. **Quick actions** below them provides shortcuts
+   for adding content and using your memory.
 4. **Ask your assistant.** The conversation box. Enter sends, Shift+Enter breaks a line.
 5. **Setup guide.** Replays the first-run guide from its name card.
 
@@ -26,10 +22,10 @@ Home is your conversation with the Assistant. Everything else in the product fee
 The rail lists your conversations grouped by day: Today, Yesterday, Previous 7 days, Older.
 Each row's menu offers **Rename**, **Branch** and **End**. Ended conversations fold away at the
 bottom; they stay readable and the assistant can still search them, but they take no more turns.
-Their menu offers **Forget**, which asks for confirmation.
+Their menu offers **Delete conversation**, which asks for confirmation.
 
 At the foot of the rail, **Remote** holds the assistant's Telegram chat. **Connect Telegram**
-opens the binding flow; once bound, the row opens a read-only view of that chat. See
+opens the connection steps; once connected, the row opens a read-only view of that chat. See
 [Telegram](#telegram) below.
 
 ## The box
@@ -75,9 +71,9 @@ The [Telegram guide](telegram.md) covers setup, scheduled results and disconnect
 
 | Verb | Effect | Reversible |
 |---|---|---|
-| **New** | opens a conversation | – |
+| **New conversation** | opens a conversation | – |
 | **End** | closes it; still readable and searchable | no more turns |
-| **Forget** | deletes the transcript here and in the assistant | **no** |
+| **Delete conversation** | deletes the transcript; previously saved memory is retained | **no** |
 
 ## If something looks wrong
 
@@ -85,7 +81,7 @@ Look up the word on screen.
 
 | It says | What it means | Do |
 |---|---|---|
-| *Membase Intelligence is off* | no model source | **AI Setup › Connect** a key or a subscription |
+| *AI is unavailable* | no model source | **AI Setup › Connect** a key or a subscription |
 | the reply spins | first reply after a quiet period wakes the assistant | wait; if it does not land, **Retry** |
 | *New reply* pill | an answer landed while you scrolled up | click it |
 

@@ -14,7 +14,7 @@ and check [AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/account-
 ## 1. Create a key
 
 In the app, open **Connect › Skills › Manage keys › Create key**. Name the key, choose
-**Read & write**, and select exactly one Memory under **Reach** for this walkthrough.
+**Read & write**, and select exactly one Memory under **Memory access** for this walkthrough.
 Choose an expiry and create the key. Copy the token while it is shown; it is shown only once.
 The profile permission is optional and is not needed for this example.
 

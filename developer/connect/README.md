@@ -19,7 +19,7 @@ fact in your Memory to verify the result.
 | **MCP with consent** | an AI app the person uses: Claude, ChatGPT, Cursor, Codex, Grok, Kimi, VS Code, Windsurf… | the app discovers OAuth, the browser opens Membase's consent screen, the person ticks the Memories the app may use and whether it may read their profile | `list_containers`, `search_memories` and, when ticked, `get_profile`. Read-only by design. |
 | **Skill with a developer key** | an AI that reads pages and runs commands: Claude Code, Codex, Cursor's agent, Kimi Code | a developer key the person minted | the key's access level, up to Full access |
 
-Both are ordinary bindings on the account: the person can narrow or revoke them live on the
+The account owner can change or revoke either connection from the
 **Connect** page, and the change applies on the credential's next call.
 [Access control](access-control.md) has the rules.
 

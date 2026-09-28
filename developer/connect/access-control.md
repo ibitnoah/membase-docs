@@ -26,7 +26,7 @@ instead, and the key says how wide.
 
 Reach is the list of Memories a credential may use. It has one state and three views of it:
 the **Uses** card on the client's page in Connect, the **Use in** card on the Memory's page,
-and the **Reach** switches on a key's page. Off takes effect on the very next call.
+and the **Memory access** switches on a key's page. Off takes effect on the very next call.
 
 A Memory outside the reach is refused the same way as one that does not exist: `403`,
 *may not use that container*. `list_containers` does not list it. A client cannot tell
@@ -64,9 +64,9 @@ and can be changed later on their pages.
 * **Revoke…** on a key ends it at once; it stays listed for thirty days.
 * Removing the connector inside the client does not tell Membase. Revoke on Connect to be sure.
 
-Revocation, narrowing and deletion win over caches, projections and issued credentials: no
-service on the platform serves a revoked credential one more time, and nothing deleted
-reappears in a search.
+Revocation and permission changes apply to subsequent requests. They do not remove content
+an external client has already received. A revoked key must be replaced with a new key;
+reconnecting an app requires a new authorization.
 
 ## Seeing what a client did
 

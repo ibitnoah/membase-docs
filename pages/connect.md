@@ -25,7 +25,7 @@ your AI confirm which memories it can use. It works with coding assistants such 
 Code, Codex and Cursor that can read pages and run commands.
 
 1. **Create key.** Choose the access and memories your AI may use.
-2. **Already have a key?** Expand this to copy an installation instruction without creating
+2. **Use an existing API key.** Expand this to copy an installation instruction without creating
    another key. Your AI installs the skill, then asks for your existing key.
 3. **Download skill** gets the complete folder for a manual installation. **Setup guide**
    opens the detailed instructions.
@@ -33,11 +33,11 @@ Code, Codex and Cursor that can read pages and run commands.
 
 ## The skill way, step by step
 
-1. Press **Create key**. The **A key for your AI** dialog starts with name *my AI* and access
+1. Press **Create key**. The **Create an API key** dialog starts with name *my AI* and access
    **Read & write**. Choose the memories it may reach and press **Create key**.
 2. Copy the instruction on the next screen. It includes the key, which is shown only once.
 3. Paste it to your AI. It installs the skill, stores the key, and reports which memories it
-   can use. If none are selected, open **Manage keys**, choose the key, and update its reach.
+   can use. If none are selected, open **Manage keys**, choose the key, and update its memory access.
 
 The skill uses the API with your developer key. If the AI already has Membase MCP tools,
 it uses those tools and keeps the skill for its rules.
@@ -96,7 +96,7 @@ segments; a key that has stopped working stays listed for 30 days so you can see
    - **Read** — search and list. It cannot change anything.
    - **Read & write** — also adds a memory or a document.
    - **Full access** — also deletes a document or forgets a memory. Each of those calls must still say so explicitly; a key never removes anything on its own.
-3. Pick the **Reach** (3). Nothing is ticked to begin with. Tick the memories it may use, or **All memories, including ones you make later**. **Your profile**, the standing facts your assistant keeps about you, is the last row.
+3. Pick the **Memory access** (3). Nothing is ticked to begin with. Tick the memories it may use, or **All memories, including ones you make later**. **Your profile**, the standing facts your assistant keeps about you, is the last row.
 4. Pick when it **Expires** (4): never, 30 days, 90 days or a year.
 5. Press **Create key** (5).
 
@@ -106,7 +106,7 @@ The token (1) appears once, in full. Store it now: afterwards the app shows only
 such as `mbk_7f3a92d1…c91e`, which is enough to tell your keys apart and never enough to use
 one. The same screen gives the token in six shapes (2): **Tell your AI** (the one sentence
 from the Skills tab), a `curl` call, Python, TypeScript, the Claude Code command, and the
-`mcp.json` block Cursor and VS Code read. **Send a test call** (3) makes one real call with
+`mcp.json` block Cursor and VS Code read. **Send a test request** (3) makes one real call with
 the new key from your browser and reports *Verified*, and how many memories the key can see.
 
 Using the key from a script or an SDK is the developer [Quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart);
@@ -118,7 +118,7 @@ using it in Claude Code, Codex, Cursor or Kimi Code is on each client's page und
 ![A key's page](../shots/developer-key-page.png)
 
 - **Access** (1) — change the level with the segmented control; the tools it now holds are listed under it. The change applies on the key's next call; the token stays the same.
-- **Reach** (2) — a switch per memory, one for *All memories, including ones you make later*, and one for *Your profile*. Off takes effect on the key's next call.
+- **Memory access** (2) — a switch per memory, one for *All memories, including ones you make later*, and one for *Your profile*. Off takes effect on the key's next call.
 - **Expiry** (3) — when the token stops working. It cannot be extended; to change it, rotate.
 - **Usage** (4) — calls in the last 30 or 7 days, how many were **refused** (the key asked for a memory or a verb it does not have), and the tool it calls most.
 - **Recent activity** (5) — the last calls one by one: tool, memory, what came back, when. A refused call is red and says why.
@@ -153,6 +153,6 @@ Look up the word on screen.
 | my AI installed the skill but says it has no access | the skill needs a developer key | Skills tab › **Create key**, and paste the sentence to the AI |
 | a key's row says *Expired* | its token has lapsed | **⋯ › Create a similar key** on the Developer keys page |
 | *in 6 days* on a key's row (amber) | the key expires within a week | **Rotate…** and swap the value |
-| *refused* in a key's Recent activity | the key asked for something it does not have | the row says which memory or verb; adjust Reach or Access |
-| I already have a key | you can reuse it | Skills tab › **Already have a key?** |
+| *refused* in a key's Recent activity | the key asked for something it does not have | the row says which memory or verb; adjust **Memory access** or **Access** |
+| I already have a key | you can reuse it | Skills tab › **Use an existing API key** |
 

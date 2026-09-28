@@ -20,8 +20,7 @@ You need a Memory and permission to share the Notion pages you want it to read.
    a specific page. Choose whether **Include subpages** should be on.
 4. Press **Add to** followed by the Memory's name. The picker closes and the source appears
    under the Memory's Add card.
-5. Open the source and wait for its files to arrive. Return to the Memory and press **Run**
-   or **Update now**. When the run finishes, inspect **Your Memory** or ask about the material.
+5. Open the source and wait for its files to arrive. Return to the Memory and press **Update now**. When the run finishes, inspect **Your memory** or ask about the material.
 
 If your deployment does not offer the Notion card, use [Files and uploads](../pages/files.md)
 to import an export instead. Some deployments offer **Use a token instead** in the picker;

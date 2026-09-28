@@ -49,8 +49,7 @@ user (`static`) and the most recently changed ones (`dynamic`). `get_profile` re
 Every call carries a bearer: a **developer key** the owner minted, or a **consent token** an
 app received on the OAuth consent screen. A key has a level (Read, Read & write, Full
 access), a reach (the Memories it may use) and an expiry; a consent token is read-only and
-reaches what the user ticked. Both are bindings on the account and change live on the
-Connect page. [Authentication & Scopes](authentication.md) has the whole model; the keys
+reaches what the user ticked. Both are managed by the account owner in **Connect**. [Authentication & Scopes](authentication.md) has the whole model; the keys
 screen is under [Connect](https://noah-gao.gitbook.io/membase-user-guide/use/manage-your-memory/connect#developer-keys) in the user guide.
 
 A key's calls are on the key's page, not on Activity: **Usage** (calls in the last 30 or 7
@@ -69,8 +68,7 @@ own key or their own consent; there are no application-wide keys and no sub-tena
 
 Every learning turn, every search and every assistant answer needs a model. The account
 chooses it under AI Setup: a key of its own for a provider, or a Claude or ChatGPT
-subscription, verified with one short real request before it is used. The credential never
-enters the account's container; the platform makes the call. An account with no working model keeps
+subscription. Follow the connection and verification steps shown in **AI Setup**. An account with no working model keeps
 its stored memory, but learning and hosted search need working agent turns. A search may
 return per-Memory failures in `containers[].error`; documents can remain unread.
 [How Membase works](how-membase-works.md#models).
@@ -96,18 +94,18 @@ cannot run turns until it brings a model of its own under AI Setup or moves to a
 
 ## Marketplace
 
-A Memory can be sold as an **agent endpoint**: buyers subscribe, receive a credential of their
-own and call `ask_agent` against the seller's agent, which answers from what it learned. The
-seller's memory never leaves their container; the buyer gets answers, not files. Subscriptions
-are per period, and lapsing stops metering at once. Skills, packaged abilities for agents,
-are the other half of the market.
+A listing may provide a memory snapshot, live access to a Memory, or an agent endpoint.
+An agent-endpoint credential uses `ask_agent`; snapshot and live-memory purchases have
+different access and renewal rules. Check the listing type and its **Included access**
+section. [Marketplace](https://noah-gao.gitbook.io/membase-user-guide/use/share-and-trade/marketplace).
 
 ## Stopping and undoing
 
-Everything takes effect at once; nothing waits for a cache, a sync or a paid period.
-Reversible: switching an app or key off a Memory, disconnecting an app, removing a source,
-pausing a schedule, unsubscribing. Irreversible, and always confirmed first: deleting a
-Memory and what it learned, deleting a source's imported material, forgetting a conversation,
-deleting the account. Deletion wins over caches, projections, issued credentials, and a
-Memory someone bought. The person's side of the same table is on
+Revoking a key or disconnecting an app changes subsequent access. It does not erase content
+already received by the client. Pausing a schedule stops future scheduled runs; subscription
+changes follow the terms and dates shown for that purchase or plan.
+
+Deleting a Memory removes its stored content. Deleting a conversation removes the transcript
+but retains information already saved to memory. Deleting account data retains the sign-in
+identity. Review the confirmation and export data you want to keep before deleting.
 [How Membase fits together](https://noah-gao.gitbook.io/membase-user-guide/concepts#stopping-and-undoing).

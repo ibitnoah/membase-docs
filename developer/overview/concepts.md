@@ -1,88 +1,69 @@
 ---
-description: The seven words on screen (Assistant, Memory, Source, Files, Connect, Agents, Marketplace), what runs when, and what cannot be undone.
+description: "Understand Memories, sources, files, connected apps and agents, and manage access or deletion."
 ---
 
 # How Membase fits together
 
-Seven words cover everything on screen. Each is one object in the product, and the left rail
-names most of them. The end of this page says what stops, and what cannot be undone.
+Membase turns your material into memory that your assistant and connected AI apps can use.
 
 ```text
-SOURCES                        MEMORY                     APPS
-Files folders   ──┐
-Uploads / Notion ─┼──▶  Assistant's memory  ──▶  Claude / ChatGPT / Claude Code
-Unibase Memory  ──┘         └─ Memories              (Connect)
+Sources                    Memories                  AI tools
+Files and uploads ──┐
+Notion pages ────────┼──▶ Learn and retain ──▶ Assistant and connected apps
+Imported chats ─────┘
 ```
 
-**Assistant.** The one agent that is yours by default. You talk to it on Home, and it holds the
-account's memory. Every other object either feeds it or reads from it.
+**Assistant.** Your built-in assistant, available on Home and through a connected Telegram
+chat. It can use the memories and skills selected in its settings.
 
-**Memory** (plural *Memories*). A named part of your world, kept up to date: *Project
-decisions*, *Reading notes*, *Customers*. A memory has an instruction (what it keeps), sources
-(what it reads), a schedule (how often it re-reads) and a list of apps that may use it. It is
-private until you let an app use it.
+**Memory.** A named collection of information about a topic, such as project decisions or
+reading notes. Set what it should retain, add sources, and choose a schedule if needed.
 
-**Source.** Something you handed a memory to learn from. Today that is a folder in your Files,
-files you upload, Notion pages where available, or your conversations with other assistants imported through the Unibase
-Memory browser extension. A source has its own page with its own status, and a memory only
-learns from it when the memory runs.
+**Source.** Material a Memory learns from: a folder in Files, uploaded documents, selected
+Notion pages, or conversations imported through the Unibase Memory browser extension.
 
-**Files.** Your files. A real folder tree the assistant shares with you. Any folder in it can
-become a source. The system folders *Generated*, *Assets* and *Trash* sit beside your own.
+**Files.** Your file manager. Organize documents into folders and connect a folder to a
+Memory. System folders such as Generated, Assets and Trash have separate purposes and controls.
 
-**Connect / Apps.** The AI apps allowed to read your memories: Claude, ChatGPT, Claude Code,
-Codex, Cursor, Windsurf, VS Code. Connecting an app is done once per account. Which memories it
-may read is a switch you flip on either side, the app's page or the memory's page.
+**Connect.** Manage access for external AI apps and developer keys. Choose the Memories each
+connection can use and revoke access when it is no longer needed.
 
-**Agents.** Agents you build yourself, beyond the assistant. Most people never need this page;
-it is where an agent's permissions, tools and endpoint live.
+**Agents.** Additional agents you configure for specific tasks. Use Studio to build their
+workflows and Agents to manage their settings and runs.
 
-**Marketplace.** Where memories are sold and bought. A listing is live access to one memory
-through the buyer's own credential; what they can read is exactly what the seller lets that
-memory show. Skills, packaged abilities for agents, are the other half of the market.
+**Marketplace.** Browse skills and memory listings. Check whether a listing provides a
+snapshot, live memory access or access to an agent before purchasing.
 
 ## What runs when
 
-Adding a source never runs the memory. A memory learns when you press **Run** (or **Update
-now**, the same button while a source holds material the memory has not read), or on its
-schedule. A source's sync only fetches raw material; the memory reads it on the next run.
-
-## Two things that are not concepts
-
-*Views*, *groups* and *MCP* appear in API paths and in some older links. On screen a view or
-group is simply a **Memory**, and MCP is the protocol behind **Connect**. You do not need
-either word to use the product.
+Adding or syncing a source makes material available to a Memory. Select **Update now** to
+process it, or configure a schedule. Check the run's **Report** to see whether it completed.
+An integration using `add_document` can also request learning through the API.
 
 ## Stopping and undoing
-Everything here takes effect at once. Nothing waits for a cache, a sync or a paid period.
 
-| I want to | Do this | Reversible |
+Access controls, deletion and billing have different effects. Read the confirmation for the
+selected action; subscription timing is shown in the relevant plan or purchase details.
+
+| Action | Effect | Recovery |
 |---|---|---|
-| stop one app reading one memory | memory page › **Use in** › switch off | yes |
-| stop one app entirely | Connect › the app › **Disconnect…** | reconnect later |
-| stop a memory reading a source | memory page › Add card › **Remove** on the row | re-add later |
-| stop selling a memory | Marketplace › Your listings › **Delete**, or memory Settings › **Stop selling** | list again later |
-| stop paying for a memory | Memory › the subscribed tile › **Unsubscribe…** | subscribe again |
-| stop a schedule | Schedules › **Pause** | resume later |
-| stop the Telegram chat | Remote › ⚙ › **Delete** next to the chat | connect again |
-| end a conversation | rail › row menu › **End** | readable, no more turns |
-| remove a memory and what it learned | memory page › **Delete…** | **no** |
-| remove a source's imported material | source page › ⋯ › delete | **no** |
-| forget a conversation | rail › Ended › **Forget** | **no** |
-| delete the account | Settings › **Delete everything** (two steps) | **no** |
+| Switch off a Memory under **Use in** | removes that connection's access to the Memory | switch it on again |
+| **Disconnect…** an app | revokes its Membase approvals | authorize the app again |
+| **Revoke…** a developer key | stops subsequent requests using that key | create a new key |
+| **Remove** a source from a Memory | stops that Memory reading the source | add the source again |
+| **Pause** a schedule | stops future scheduled runs | resume the schedule |
+| **End** a conversation | keeps its transcript readable and stops new turns | start or branch a conversation |
+| **Delete…** a Memory | permanently removes its stored content and affects dependent agents or listings | cannot restore from Trash |
+| **Delete conversation** | removes the transcript; previously saved memory is retained | cannot undo |
+| **Delete everything** in Settings | removes account data; retains the sign-in identity | cannot undo |
 
-### The irreversible four
+Changing access does not remove content an external app has already received. Removing a
+source from a Memory does not by itself erase information previously learned from it.
+Review and edit learned content on the Memory page when needed.
 
-These ask for confirmation and cannot be undone. The product says the irreversible part first.
+### Before deleting
 
-- **Delete…** a memory: everything it learned goes with it, then what depends on it, including
-  every subscriber's access if it was on sale.
-- Delete a source's imported material.
-- **Forget** a conversation: the transcript is deleted here and in the assistant.
-- **Delete everything**: two steps, type the identifier; offers a download first.
-
-Everything else in the table, including **Disconnect…**, **Revoke**, **Remove**, **End**,
-**Pause** and **Unsubscribe…**, can be redone later.
-
-Deletion wins over everything: caches, projections, issued credentials, even a memory someone
-bought from you. Nothing deleted reappears.
+Read the affected items in the confirmation, including dependent agents, workflows and
+subscriber access. Download data you want to keep and check for export warnings before
+continuing. The account-data deletion flow requires typing `delete everything`.
+[Export and account-data deletion](https://noah-gao.gitbook.io/membase-user-guide/use/account-and-models/settings).

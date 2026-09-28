@@ -1,82 +1,73 @@
 ---
 title: FAQ
-description: "Short answers to the questions people ask first: what a Memory is, when material is read, why the first search is slow, what an app can and cannot do, and what cannot be undone."
+description: "Answers about memories, connected apps, models, exports and deleting data."
 ---
 
 # FAQ
 
 ## What is a Memory?
 
-One named part of your world, kept up to date: *Project decisions*, *Reading notes*,
-*Customers*. It has an instruction (what it keeps), sources (what it reads), a schedule (how
-often it re-reads) and a list of apps and keys that may use it. [How Membase fits together](concepts.md).
+A Memory organizes information about a topic, such as project decisions, reading notes or
+customers. Choose its sources, describe what it should retain, and update it manually or on a
+schedule. You control which apps and keys can access it.
+[How Membase fits together](concepts.md).
 
 ## I added a folder. Why does my AI not know about it yet?
 
-Adding a source never reads it. A Memory learns when you press **Run** (or **Update now**, the
-same button while a source holds unread material), when its schedule fires, or when code calls
-`add_document`. A source's sync only fetches raw material.
-[Bring your material in](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/bring-material-in).
+Adding a source makes its content available for processing. Select **Update now** on the
+Memory page, or wait for its scheduled update, to learn from that content. Check the run's
+**Report** if the update fails. [Bring your material in](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/bring-material-in).
 
-## Why does the first search take a minute?
+## Why can the first search take longer?
 
-Your account’s memory may need to wake after it has been idle. Searching also runs a model
-to find relevant material. Allow time for that first request; if it fails, check the Memory’s
-Report and model settings instead of assuming the Memory is empty.
-[How Membase works](https://noah-gao.gitbook.io/membase-user-guide/build/concepts/how-membase-works#a-search-is-a-turn).
+A search after a period of inactivity may take longer to start. Search also uses a model to
+find relevant information. If the request fails, check the model configuration and the error
+before assuming the Memory is empty. [Search behavior](https://noah-gao.gitbook.io/membase-user-guide/build/concepts/how-membase-works#a-search-is-a-turn).
 
-## Where does my memory live? Does Membase keep a copy?
+## Where can I manage and export my data?
 
-In your account's own container, on its own volume. The platform holds accounts, credentials,
-bindings and billing; it transits raw bytes from sources and proxies model calls; it does not
-store, index or project memory content. Your export is yours.
+Manage your material in **Files**, review learned content in **Memory**, and choose which apps
+can access it in **Connect**. Download an export from **Settings › Data & export**. If the
+export warning says agent memory files are missing, export again before relying on it as a
+backup. [Export and deletion](https://noah-gao.gitbook.io/membase-user-guide/use/account-and-models/settings).
 
 ## What can a connected app do?
 
-An app connected through Connect (Claude, ChatGPT, Cursor…) can list the Memories you switched
-on for it and search them, and read your profile if you ticked **Let it know about you**. It
-cannot add, delete or forget anything, and it cannot see a Memory that is not switched on.
-An AI that needs to write gets a developer key instead, at the level you choose.
-[Access control](https://noah-gao.gitbook.io/membase-user-guide/connect/manage-access/access-control).
+An app authorized through the MCP consent screen can read the Memories you select. Profile
+access is a separate choice. For an integration that needs to add or remove content, create
+a developer key with the appropriate access level. [Access control](https://noah-gao.gitbook.io/membase-user-guide/connect/manage-access/access-control).
 
-## How do I stop an app?
+## How do I stop an app accessing my memory?
 
-Turn its switch off on the Memory's **Use in** card, or press **Disconnect…** on the app's
-page in Connect. Both take effect on the app's very next question. Removing the connector
-inside the app does not tell Membase, so do it on Connect to be sure.
+Switch off a Memory under **Use in**, or use **Disconnect…** on the app's page in **Connect**
+to revoke its approvals. These changes apply to subsequent requests. They do not remove
+content the external app has already received. Removing a connector only inside that app
+does not revoke its Membase authorization.
 
 ## Which model does it use? Do I need my own key?
 
-Every turn needs a model. Under **AI Setup** you bring a key for a provider (OpenAI, Anthropic,
-Gemini, DeepSeek, Kimi, Qwen, OpenRouter or any OpenAI-compatible endpoint) or connect a Claude
-or ChatGPT subscription. The credential never enters your container; the platform makes the
-call. A free account has free turns to start with, and keeps its memory when they are spent.
+Use **AI Setup** to connect a supported provider key or subscription. A free account includes
+an initial allowance of chat turns. When that allowance is used, stored memories remain;
+continuing to run the assistant requires an available model source or a suitable plan.
 [AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/account-and-models/ai-setup).
 
 ## What is the profile?
 
-The standing facts your assistant keeps about you: who you are and lasting preferences
-and what changed recently. It is granted separately from reach because
-it is about you, not about a topic. An AI should read it first in a new conversation.
+The profile contains information about you, such as preferences and recent context. You can
+grant access to it separately from access to individual Memories.
 
 ## What cannot be undone?
 
-Deleting a Memory and what it learned, deleting a source's imported material, forgetting a
-conversation, and deleting the account. Each asks first and says the irreversible part first.
-Everything else (Disconnect, Revoke, Remove, End, Pause, Unsubscribe) can be redone later, and
-takes effect at once. [How Membase fits together](concepts.md#stopping-and-undoing).
+Deleting a Memory removes its stored content. Deleting a conversation removes its transcript;
+information already saved to memory is retained. **Delete everything** in Settings removes
+account data while retaining your sign-in identity. Review each confirmation and download
+any data you want to keep before proceeding. [Deletion and access controls](concepts.md#stopping-and-undoing).
 
-## How is this different from RAG over my files?
+## How is this different from searching my files?
 
-A Memory reads its sources in a learning turn and keeps what it learned as facts, with
-provenance; a search answers from those facts, not from chunks of the transcript. The numbers
-are on [Benchmarks](benchmarks.md).
+A Memory processes source material and retains information for later retrieval. Updating a
+source and updating its Memory are separate actions. See the [memory engine benchmarks](benchmarks.md)
+for evaluation results and their scope; those measurements are separate from hosted API performance.
 
-## When is Local Memory coming?
-
-This guide covers the hosted app. Local Memory setup is not documented here yet; check
-[What’s new](whats-new.md) for release announcements rather than using hosted setup steps
-as local installation instructions.
-
-Questions about API status codes, metadata filters or serving multiple users belong in
+Questions about API status codes, metadata filters or serving multiple users are covered in
 [API troubleshooting](https://noah-gao.gitbook.io/membase-user-guide/build/reference/troubleshooting).

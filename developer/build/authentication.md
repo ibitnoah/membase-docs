@@ -56,7 +56,7 @@ without re-minting; the token stays the same and the next call reads the new gra
 ## Reach
 
 Reach is the list of Memories (containers, in the API) a credential may use. It is switched
-on the Connect page, on the key's page under **Reach**, or on a Memory's own page under
+on the Connect page, on the key's page under **Memory access**, or on a Memory's own page under
 **Use in**; all three are the same switch. A key created with *All memories, including ones
 you make later* reaches every container the account has now or later.
 
@@ -93,8 +93,8 @@ never confirm, so from an AI app the answer is always the sentence.
 * **Revoke…** ends a key at once. Every holder of the token fails on its next call. The key stays listed under **Revoked** for thirty days so you can see what it was.
 * **Disconnect…** on an app's page revokes every consent token that app holds. Removing the connector inside the app does not tell Membase; revoke on Connect to be sure.
 
-Revocation and narrowing win over every cache: nothing on the platform serves a revoked or
-narrowed credential one more time.
+Revocation and permission changes apply to subsequent requests. They do not remove content
+already received or stored by an external client.
 
 ## What a wrong credential looks like
 

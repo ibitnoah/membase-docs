@@ -38,17 +38,17 @@ Look up the word on screen, or the status in the answer.
 |---|---|---|
 | `401` | no bearer at all | send `Authorization: Bearer …` |
 | `403 · unauthorized` | an unknown, expired or revoked token | mint a new key; do not retry with this one |
-| `403 · unauthorized · may not use that container` | the container is outside the reach, or does not exist | switch it on under Reach; or list containers first |
+| `403 · unauthorized · may not use that container` | the container is outside the reach, or does not exist | switch it on under **Memory access**; or list containers first |
 | `403 · unauthorized · not in this agent's capability profile` | the verb is above the key's level | raise the level, or mint a higher key |
 | `200 · status: confirmation_required` | a destructive verb without `confirm=true` | pass `confirm=true` after the person agreed |
 | `400 · validation` | a missing `q`, both `content` and `url`, an ambiguous `container` | fix the request; with several Memories in reach, `container` is required |
 | `404 · not_found` | an unknown document or memory id | list first |
 | `422 · capability_unavailable · no model` | the account has no working model | [AI Setup](https://noah-gao.gitbook.io/membase-user-guide/use/account-and-models/ai-setup) |
-| `422 · capability_unavailable · no agent containers` | the memory cannot run a turn on this deployment | |
+| `422 · capability_unavailable · no agent containers` | the memory service is unavailable | contact support with the error and trace ID |
 | `422 · reason: dormant` | a free-plan account whose free turns are spent | bring a model, or a paid plan |
 | `429 · rate_limited` | the account's concurrent-turn budget | retry later; the SDK retries twice with backoff |
 | `202` with `document_id: null` | the folder sync had not written the row yet | list the container's documents in a moment |
-| a search takes a minute | the container was asleep | keep the SDK's 90-second timeout; the next call is quick |
+| a search takes a minute | the container was asleep | allow time for startup; check for errors if the request times out |
 | `405` on the MCP URL | a trailing slash on a POST | drop the slash |
 
 ## On the extension
@@ -56,7 +56,7 @@ Look up the word on screen, or the status in the answer.
 | It says | What it means | Do |
 |---|---|---|
 | **Install** never becomes **Use here** | the page cannot see the extension; it can only tell by what reached the wallet | sign the extension in with the same wallet, have a conversation, reload |
-| *Reading* but the Memory learns nothing | nothing uploaded yet, or the Memory has not run | the extension's log; **Run** |
+| *Reading* but the Memory learns nothing | nothing uploaded yet, or the Memory has not run | check the extension's log, then select **Update now** on the Memory |
 | the Memory reads like a log | the instruction is a topic | rewrite it as a filter on the chats |
 
 ## Reporting a problem

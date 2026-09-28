@@ -26,7 +26,7 @@ If the files are not in your Files yet, put them there first from the Files page
 
 ## Upload
 
-Press **Upload** on *Upload Files* and drop the files. They land in a folder with the memory's
+Press **Upload** on *Upload files* and drop the files. They land in a folder with the memory's
 name at the top of your Files, which is connected as a source on the spot. Markdown, text and
 the common document formats are accepted; the dialog tells you before sending if a file is not.
 
@@ -44,7 +44,7 @@ hands them to a memory as a source.
 1. Press **Install** on *Unibase Memory*. Once the extension is connected, the same door says
    **Use here**.
 2. Press **Use here**. The door says *Reading* and the source appears in the Add card.
-3. Press **Run**.
+3. Select **Update now**.
 
 A memory over your conversations keeps memory about *you*: what you asked, decided, adopted. It
 does not restate what an assistant explained. Its instruction is a filter on the chats, not a
@@ -52,15 +52,13 @@ subject: *unibase* keeps what the chats say that bears on Unibase, not a descrip
 
 ## Talking to your assistant
 
-Everything you say to the assistant on Home or in Telegram goes into its own memory, without any
-setup. When it saves something you see *Saved to memory* under its answer; when a conversation
-ends it takes one more turn to keep what mattered. This is the assistant's memory, the first tile
-on the Memory page, not one of the memories you make; those learn from sources only.
+Your assistant can retain relevant information from conversations on Home or Telegram.
+A *Saved to memory* indication shows when information has been saved. Review the assistant's
+memory on the Memory page; do not assume every message has been stored as a memory entry.
 
 The [browser extension guide](browser-extension.md) covers setup and missing conversations.
 
 ## Then run
 
-Adding a source never runs the memory. Press **Run** on the memory's page (it says
-**Update now** while a source holds material the memory has not read), or set a schedule in its
-Settings. See [Memory](../pages/memory.md).
+After adding a source, select **Update now** on the Memory page or configure a schedule
+in **Settings**. See [Memory](../pages/memory.md).

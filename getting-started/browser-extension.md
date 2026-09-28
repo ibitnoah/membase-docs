@@ -24,7 +24,7 @@ In the app, on a Memory's page, the Add card has a door for it:
 
 1. Press **Install** on *Unibase Memory*. Once the extension is connected to the same wallet, the same door says **Use here**.
 2. Press **Use here**. The door says *Reading* and the source appears in the Add card.
-3. Press **Run**.
+3. Press **Update now**.
 
 From then on the captured conversations reach the Memory as documents. The source's own page
 shows a status word (*Syncing…*, *Sync failed*, *Needs reauthorization*) and **Sync now**,
@@ -43,6 +43,6 @@ filter it produces the standing facts the person would want any other assistant 
 | It says | What it means | Do |
 |---|---|---|
 | **Install** never turns into **Use here** | the page has no channel to the extension; it can only tell by what reached the wallet | install from the store, sign the extension in with the same wallet as the app, have a conversation, reload |
-| *Reading* but the Memory learns nothing | no conversation has been uploaded yet, or the Memory has not run | check the extension's own log; press **Run** |
+| *Reading* but the Memory learns nothing | no conversation has been uploaded yet, or the Memory has not run | check the extension's own log; press **Update now** |
 | the Memory reads like a log of what assistants said | the instruction is a topic | rewrite it as a filter on the chats |
 | *Needs reauthorization* | the extension's credential expired | **Reauthorize** on the source page |
