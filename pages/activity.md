@@ -12,9 +12,10 @@ update, an agent failed, or a scheduled task did not produce the expected result
 ## Find a run
 
 1. Open **Activity** and choose **Logs**. **Dashboard** summarizes activity across runs.
-2. Choose a time range that includes the attempt. Narrow by **Kind**, **Status** or **Ran by**,
-   or search for the run you need.
-3. Select a row to open its details. Check the status, timing and available result or error.
+2. Set a **Time range** that includes the attempt. Narrow by **Status**, **Kind** or
+   **Run source**, or search for the run you need.
+3. Select a row to open its details. Check the status, timing, **Ran by** and the available
+   result or error.
 4. Use **Refresh** if you are following a recent run. **Export** downloads the displayed
    selection of activity as CSV.
 

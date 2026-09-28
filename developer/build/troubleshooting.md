@@ -23,8 +23,10 @@ The [quickstart](api-quickstart.md) includes bounded polling and failure handlin
 
 ## Search returns no results
 
-1. Inspect `containers[].error`. If present, that Memory could not answer; do not treat it as
-   proof that no relevant memory exists. Fix the model or run error before retrying.
+1. Inspect `containers[].error`. If present, that Memory could not run a turn (no model,
+   dormant, no agent container); do not treat it as proof that no relevant memory exists. Fix
+   the model or run error before retrying. Any other failure inside one Memory fails the whole
+   request instead of landing here.
 2. Use `list_containers` to check reach. Without a `container`, search considers only Memories
    the key reaches. An explicitly requested container outside that reach is refused with `403`.
 3. Check that the document is learned, then inspect the Memory in the app and try a question
@@ -37,7 +39,7 @@ is retained when a model is unavailable, but that does not make hosted search mo
 
 | Response | Meaning | Next step |
 |---|---|---|
-| `401` | No bearer credential was supplied. | Check the Authorization header or `MEMBASE_API_KEY`. |
+| `401` | On REST: no bearer credential was supplied. On `/mcp-http` a missing and an invalid or revoked bearer both answer `401`, with `WWW-Authenticate: Bearer error="invalid_token"` and an RFC 6750 `{"error": "invalid_token", …}` body. | Check the Authorization header or `MEMBASE_API_KEY`; over MCP, also that the token is still valid. |
 | `403 · unauthorized` | The token is invalid, expired or revoked, or the requested access is outside its grant. | Read the error and inspect the key in Connect. |
 | `403 · may not use that container` | The container is absent or outside the key's reach. | List containers and check Reach on the key. |
 | `403 · not in this agent's capability profile` | The operation is not granted to this credential. | Have the owner adjust the access level if appropriate. |
@@ -51,9 +53,10 @@ explains the credential model.
 
 | Symptom | Next step |
 |---|---|
+| `400 · validation` or `422 · validation` | `400` is the service's own check: an empty `q`, both or neither of `content` and `url`, `container` omitted when more than one is in reach. `422 · validation` is a missing or mistyped body field. Read `code`, not only the status. |
 | `422 · capability_unavailable` or a model-related `containers[].error` | Check AI Setup and the Memory agent's model setting; inspect its Report. |
 | An error with `reason: dormant` | The free account needs available turns, its own model, or a paid plan. Follow the account's recovery choices. |
-| `429 · rate_limited` | Wait for capacity; respect `Retry-After`. Do not start a parallel retry loop. |
+| `429 · rate_limited` | The account already has two agent turns running (`add_memory` with `static`, `forget_memory`, `ask_agent`) or the token exceeded its per-minute limit (`details.limit_per_min`). No `Retry-After` is sent; back off exponentially, as the SDK does. Search does not raise it and `add_document` never does. Do not start a parallel retry loop. |
 | Request timeout | The account may be waking or an agent turn may still be running. Inspect the run before resubmitting writes. |
 
 The SDK defaults to 90 seconds per request and retries some transient failures. That is a

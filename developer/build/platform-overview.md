@@ -34,7 +34,7 @@ user (`static`) and the most recently changed ones (`dynamic`). `get_profile` re
 
 | Screen | The person uses it to | Your code meets it as |
 |---|---|---|
-| [Home](https://noah-gao.gitbook.io/membase-user-guide/use/use-your-assistant/home) | talk to the assistant, the one agent that is theirs by default; reach it on Telegram | the profile it keeps, and the assistant's own memory, always the first container |
+| [Home](https://noah-gao.gitbook.io/membase-user-guide/use/use-your-assistant/home) | talk to the assistant, the one agent that is theirs by default; reach it on Telegram | the profile it keeps; the assistant's own memory is not a container |
 | [Memory](https://noah-gao.gitbook.io/membase-user-guide/use/manage-your-memory/memory) | make, run and inspect Memories | `list_containers`, `search_memories`, the items `forget_memory` removes; `learned` turning true after a run |
 | [Files](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/files) | keep files, and hand folders, uploads, Notion pages and captured conversations to a Memory | `add_document`, `list_documents`, `get_document`, `delete_document` |
 | [Studio](https://noah-gao.gitbook.io/membase-user-guide/use/advanced/studio) | edit a Memory's pipeline canvas | nothing; a canvas run as an endpoint is `workflow_invoke` over MCP |
@@ -83,23 +83,25 @@ covers partial failures, deferred learning and timeouts.
 
 | Status | Code | When |
 |---|---|---|
-| 400 | `validation` | a missing `q`, both `content` and `url`, an ambiguous `container` |
+| 400 | `validation` | an empty `q`, both or neither of `content` and `url`, `container` omitted when more than one is in reach |
 | 403 | `unauthorized` | outside the credential's reach, or a verb above its level |
 | 404 | `not_found` | an unknown document or memory id |
+| 422 | `validation` | a missing or mistyped body field; read `code` to tell it from the row below |
 | 422 | `capability_unavailable` | the account's memory cannot run a turn here (no agent container, no model) |
 | 422 | `reason: dormant` | a free-plan account whose free turns are spent |
 | 429 | `rate_limited` | the account's concurrent-turn budget; retry later |
 
-Uploads through `add_document` are bounded by the account's plan (32 MiB per file on the
-current plans). An account on the free plan whose free turns are spent keeps its memory but
-cannot run turns until it brings a model of its own under AI Setup or moves to a paid plan.
+Uploads through `add_document` are capped at 32 MiB per file, on every plan. An account on
+the free plan whose free turns are spent keeps its memory but cannot run turns until it
+brings a model of its own under AI Setup or moves to a paid plan.
 
 ## Marketplace
 
-A listing may provide a memory snapshot, live access to a Memory, or an agent endpoint.
-An agent-endpoint credential uses `ask_agent`; snapshot and live-memory purchases have
-different access and renewal rules. Check the listing type and its **Included access**
-section. [Marketplace](https://noah-gao.gitbook.io/membase-user-guide/use/share-and-trade/marketplace).
+A listing is an agent endpoint (or a workflow endpoint): the buyer's credential calls
+`ask_agent` (or `workflow_invoke`) and gets answers, never files. The earlier snapshot and
+live-memory listing kinds were retired and can no longer be created; a few pre-existing ones
+may still render for their buyers. Check the listing's **Included access** section.
+[Marketplace](https://noah-gao.gitbook.io/membase-user-guide/use/share-and-trade/marketplace).
 
 ## Stopping and undoing
 

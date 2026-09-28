@@ -61,9 +61,9 @@ client = Membase(base_url="http://localhost:8080")   # a self-hosted Membase
 ```ts
 import { Membase } from "membase-sdk";
 
-const client = new Membase();                                   // MEMBASE_API_KEY from the environment
-const client = new Membase({ apiKey: "mbk_…" });
-const client = new Membase({ baseUrl: "http://localhost:8080" }); // a self-hosted Membase
+const client = new Membase();                                    // MEMBASE_API_KEY from the environment
+const explicit = new Membase({ apiKey: "mbk_…" });               // or explicit
+const local = new Membase({ baseUrl: "http://localhost:8080" }); // a self-hosted Membase
 ```
 {% endtab %}
 {% endtabs %}
@@ -74,7 +74,8 @@ const client = new Membase({ baseUrl: "http://localhost:8080" }); // a self-host
 | Retry limit | `max_retries` | `maxRetries` | 2 |
 | API origin | `base_url` | `baseUrl` | `https://api.app.membase.io` |
 
-Retries cover connection errors, 408, 409, 429 and 5xx, with backoff and `Retry-After`.
+Retries cover connection errors, timeouts, 408, 409, 429 and 5xx, with exponential backoff;
+a numeric `Retry-After` is honoured when present (the server sends none today).
 A cold runtime can take longer than the default timeout. See [API troubleshooting](troubleshooting.md).
 The method snippets below are independent examples; follow the quickstart to wait for an
 accepted document to become searchable.
@@ -87,7 +88,7 @@ accepted document to become searchable.
 # add: a document (its text, or a public url) into a Memory. Returns at once, learned in the background.
 doc = client.add("Call notes with Acme: they want SSO before the pilot.",
                  container="mv-…", title="Call with Acme", custom_id="call-2026-09-24")
-doc["status"]                                   # "queued"; the same custom_id again is a no-op
+doc["status"]                                   # "queued"; the same custom_id again answers "exists" and starts nothing
 
 # search: passages across every Memory in reach, most relevant first, each naming its container
 hits = client.search("what does Acme need before the pilot", limit=5)
@@ -107,7 +108,7 @@ client.ask("Summarise what the seller learned about Postgres RLS.")
 ```ts
 const doc = await client.add({ container: "mv-…", content: "Call notes with Acme: they want SSO before the pilot.",
                                title: "Call with Acme", customId: "call-2026-09-24" });
-doc.status;                                      // "queued"
+doc.status;                                      // "queued"; "exists" when the customId was seen before
 
 const hits = await client.search({ q: "what does Acme need before the pilot", limit: 5 });
 for (const h of hits.results) console.log(h.container_name, "·", h.content);
@@ -172,12 +173,13 @@ One class per HTTP status, all carrying the API's error envelope: `code` (which 
 
 | Status | Class | When |
 |---|---|---|
-| 400 | `BadRequestError` | a malformed request: a missing `q`, both `content` and `url`, an ambiguous `container` |
+| 400 | `BadRequestError` | `code: validation`, from the service's own checks: an empty `q`, both or neither of `content` and `url`, `container` omitted when more than one is in reach |
 | 401 | `AuthenticationError` | no bearer at all |
 | 403 | `PermissionDeniedError` | `code: unauthorized`: an unknown, expired or revoked key; a container outside the key's reach; a verb above its level |
 | 404 | `NotFoundError` | an unknown document or memory id |
-| 422 | `UnprocessableEntityError` | `code: capability_unavailable`: the account's memory cannot run a turn here (no agent container, no model) |
-| 429 | `RateLimitError` | the account's turn budget; retried automatically, then raised |
+| 409 | `ConflictError` | a conflicting write; retried automatically, then raised |
+| 422 | `UnprocessableEntityError` | `code: capability_unavailable`: the account's memory cannot run a turn here (no agent container, no model). Also `code: validation` for a malformed body (a missing or mistyped required field), so read `code`, not only the status |
+| 429 | `RateLimitError` | the account's concurrent-turn cap (two agent turns at once, reached by `memories.add(static=True)`, `forget` and `ask`) or the per-token request limiter (`details.limit_per_min`); no `Retry-After` is sent; retried automatically with backoff, then raised. `search` does not raise it and `add` never does |
 | 5xx | `InternalServerError` | retried automatically, then raised |
 | — | `APIConnectionError`, `APITimeoutError` | the request never got an answer |
 
@@ -220,15 +222,15 @@ try {
 |---|---|---|---|
 | `add(...)` | `POST /v1/documents` | `add_document` | Read & write |
 | `search(q, ...)` | `POST /v1/search` | `search_memories` | Read |
-| `profile(q)` | `GET /v1/profile` | `get_profile` | Read + profile tick |
+| `profile(q=…)` | `GET /v1/profile` | `get_profile` | Read + profile tick |
 | `ask(message)` | `POST /v1/ask` | `ask_agent` | agent exposure |
 | `rules()` | `GET /v1/rules` | `memory_rules` | Read |
 | `containers.list()` | `GET /v1/containers` | `list_containers` | Read |
-| `documents.list(container)` | `GET /v1/documents` | `list_documents` | Read |
-| `documents.get(id)` | `GET /v1/documents/{id}` | `get_document` | Read |
-| `documents.delete(id, confirm)` | `DELETE /v1/documents/{id}` | `delete_document` | Full access |
-| `memories.add(content, ...)` | `POST /v1/memories` | `add_memory` | Read & write |
-| `memories.forget(id, ...)` | `DELETE /v1/memories/{id}` | `forget_memory` | Full access |
+| `documents.list(container=…)` | `GET /v1/documents` | `list_documents` | Read |
+| `documents.get(id)` | `GET /v1/documents/{id}` | `get_document` (REST only, not an MCP tool) | Read |
+| `documents.delete(id, confirm=True)` | `DELETE /v1/documents/{id}` | `delete_document` | Full access |
+| `memories.add(content, container=…, static=…)` | `POST /v1/memories` | `add_memory` | Read & write |
+| `memories.forget(id, container=…, confirm=True)` | `DELETE /v1/memories/{id}` | `forget_memory` | Full access |
 
 The MCP server offers the same operations under the protocol tool names, so a model that
 learned `search_memories` in Claude is calling what your code calls `search`.

@@ -13,9 +13,9 @@ your assistant follows a different path: it can save what matters during the con
 | Way in | Good for | Where |
 |---|---|---|
 | A folder in your Files | a project, a vault, anything already on disk | memory page › Add card › **Your Files › Choose** |
-| Upload | a handful of files | memory page › Add card › **Upload Files › Upload** |
+| Upload | a handful of files | memory page › Add card › **Upload files › Upload** |
 | [Notion](notion.md) | pages and databases | memory page › Add card › **Notion** (where available) |
-| [Browser extension](browser-extension.md) | your chats with other assistants | memory page › Add card › **Unibase Memory** |
+| [Browser extension](browser-extension.md) | your chats with other assistants | memory page › Add card › **Unibase memory** |
 | Talking to your assistant | what you tell it, decide with it, ask it | Home, or Telegram |
 
 ## A folder in your Files
@@ -28,8 +28,9 @@ If the files are not in your Files yet, put them there first from the Files page
 
 ## Upload
 
-Press **Upload** on *Upload files* and drop the files. They land in a folder with the memory's
-name at the top of your Files, which is connected as a source on the spot. Markdown, text and
+Press **Upload** on *Upload files* and drop the files. They land in a folder named
+“<memory name> uploads” (“… uploads (2)” if that name is taken) at the top of your Files, which
+is connected as a source on the spot. Markdown, text and
 the common document formats are accepted; the dialog tells you before sending if a file is not.
 
 ## Notion
@@ -38,14 +39,14 @@ Connect a workspace, select the pages or databases the Memory should read, and a
 A sync fetches those pages; the Memory still needs a run to learn from them. Follow the
 [Notion guide](notion.md) for authorization, page selection, updates and disconnection.
 
-## Unibase Memory
+## Unibase memory
 
 The Unibase Memory browser extension captures your conversations with other assistants and
 hands them to a memory as a source.
 
-1. Press **Install** on *Unibase Memory*. Once the extension is connected, the same door says
+1. Press **Install** on *Unibase memory*. Once the extension is connected, the same door says
    **Use here**.
-2. Press **Use here**. The door says *Reading* and the source appears in the Add card.
+2. Press **Use here**. The door says *Added* and the source appears in the Add card.
 3. Select **Update now**.
 
 A memory over your conversations keeps memory about *you*: what you asked, decided, adopted. It

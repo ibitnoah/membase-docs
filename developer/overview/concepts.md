@@ -26,8 +26,8 @@ connection can use and revoke access when it is no longer needed.
 **Agents.** Additional agents you configure for specific tasks. Use Studio to build their
 workflows and Agents to manage their settings and runs.
 
-**Marketplace.** Browse skills and memory listings. Check whether a listing provides a
-snapshot, live memory access or access to an agent before purchasing.
+**Marketplace.** Browse skills and memory listings. A memory listing provides access to an
+agent that answers from the seller's Memory; check its **Included access** before purchasing.
 
 ## What runs when
 

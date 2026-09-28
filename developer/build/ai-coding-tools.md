@@ -32,13 +32,16 @@ What the skill teaches, so you can check the result:
 | call `search_memories` before answering about past work, decisions or preferences | search is retrieval inside the user's own container |
 | cite `container_name` | every hit says which Memory it came from |
 | use `add_memory` for a fact, `add_document` for text or a URL, with `custom_id` | documents are raw material until the Memory's run; the same `custom_id` twice is a no-op |
-| pass `confirm=true` only after the person agreed | a delete or forget without it answers with a `how` sentence, not an action |
+| pass `confirm=true` only after the person agreed | on a Full access key, a delete or forget without it answers with a `how` sentence, not an action |
 | treat `403` as withdrawn access and stop | the owner narrowed or revoked the key on Connect |
 | use a suitable timeout and inspect `containers[].error` | a cold runtime or failed search must not be reported as an empty Memory |
 
-The skill lives at `plugin/skills/membase/` in the product repository and is served as a folder
-at `https://www.app.membase.io/plugin/skills/membase/` and as a zip at
-`https://www.app.membase.io/plugin/membase-skill.zip`.
+The skill is served at `https://www.app.membase.io/skill` (its `SKILL.md` with the install
+preamble) and as a zip at `https://www.app.membase.io/plugin/membase-skill.zip`. Its files are
+under `https://www.app.membase.io/plugin/skills/membase/`: `SKILL.md`, `README.md` and
+`references/api-reference.md`, `references/sdk-guide.md`, `references/mcp-setup.md`,
+`references/quickstart.md`, `references/use-cases.md`. That directory address itself is not a
+listing; fetch the files by name, or take the zip.
 
 ## Without the skill
 

@@ -15,8 +15,8 @@ call; nothing here depends on the client behaving.
 |---|---|---|
 | Ceiling | read-only, always | the key's level: Read, Read & write, Full access |
 | Reach | the Memories ticked on consent, switchable later | the Memories ticked on the key, or all including later ones |
-| Profile | when **Let it know about you** was ticked | when **Your profile** was ticked |
-| Confirmation | can never confirm a delete or forget | can, with `confirm=true` |
+| Profile | when **Profile access** was ticked on the consent screen | when **Your profile** was ticked |
+| Confirmation | is not offered a delete or forget at all | can, with `confirm=true` at Full access |
 | Ends | **Disconnect…** on the app's page, or per credential under **Approvals** | **Revoke…**, or expiry |
 
 An app that needs to write does not get a wider consent; the person mints a key for it
@@ -46,18 +46,22 @@ bypasses the list is refused with `403` anyway. The full table per level is on
 
 `delete_document` and `forget_memory` exist only at Full access, and even there they do not
 execute on a bare call: without `confirm=true` the answer is `status: confirmation_required`
-with a `how` sentence for the model to relay. From a consent-minted client the answer is
-always the sentence. From a Full access key, `confirm=true` counts as the owner's
-confirmation, which is why the skill tells the AI to pass it only after the person agreed.
+with a `how` sentence for the model to relay. A consent-minted client is never offered
+these verbs, and a call is refused with `403` (*not in this agent's capability profile*)
+rather than answered with the sentence. From a Full access key, `confirm=true` counts as
+the owner's confirmation, which is why the skill tells the AI to pass it only after the
+person agreed.
 
-Deleting a Memory, a source's material or the account has no API verb at all.
+Deleting a Memory, a source's material or the account has no agent-protocol verb at all;
+those belong to the owner's session, in the app.
 
 ## The profile
 
 The profile is about the person, not a topic, so it is granted separately from reach. A
 client offered `get_profile` reads the standing facts and what changed recently; one that
-was not ticked is not offered the tool. The tick is on the consent screen and on the key,
-and can be changed later on their pages.
+was not ticked is not offered the tool. On a key the tick is **Your profile**, changeable
+later on the key's page. On a consent connection it is **Profile access**, set only on the
+consent screen: to change it, **Disconnect…** the app and authorize it again.
 
 ## Revocation
 
@@ -74,7 +78,8 @@ reconnecting an app requires a new authorization.
 
 A client's page on Connect shows its last activity. A key's page shows **Usage** (calls,
 refusals, the tool it calls most) and **Recent activity** (each call: tool, Memory, what came
-back, when; a refused call in red with the reason). A refusal is the sign that a client asked
+back, when; a refused call in red with the reason; a refused `ask_agent` is the one call
+not recorded). A refusal is the sign that a client asked
 for a Memory or a verb it does not have, which is usually the person's cue to widen it or to
 leave it.
 

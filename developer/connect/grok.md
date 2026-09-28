@@ -7,7 +7,9 @@ description: "Membase in Grok on the web, iOS and Android, as a custom connector
 
 Grok (web, iOS and Android) takes custom MCP servers as **connectors**. The menus are the
 vendor's own and move with its releases; the Membase side, the URL, the consent screen and
-the *Authorized* tile on Connect, is the same as for every other client.
+the app's page on Connect, is the same as for every other client. Grok has no tile of its own
+in Connect's client catalog: it appears under **Other apps**, with a monogram, once the
+consent completed.
 
 ## Before you start
 
@@ -18,7 +20,7 @@ the *Authorized* tile on Connect, is the same as for every other client.
 
 1. Open `grok.com/connectors`.
 2. **New Connector → Custom**.
-3. Enter the server URL, `https://api.app.membase.io/mcp-http`, and complete the authentication: the browser opens Membase's consent screen. Tick the Memories Grok may use and, if it may read the profile, **Let it know about you**.
+3. Enter the server URL, `https://api.app.membase.io/mcp-http`, and complete the authentication: the browser opens Membase's consent screen. Tick the Memories Grok may use and, if it may read the profile, **Profile access**; press **Approve access**.
 4. Grok discovers the tools the server exposes for that consent. Ask *"List my Membase containers."*
 
 ## With a developer key
@@ -35,8 +37,9 @@ integration rather than a plugin, and it works with a developer key in the serve
 ## Which Memories it uses
 
 An empty container list means no Memory is switched on for this connection. Switch one on
-under **Uses** on Grok's page in Connect, or under **Use in** on the Memory. The tile on
-Connect says *Authorized* once the consent completed, whatever Grok's own screen says.
+under **Uses** on Grok's page in Connect, or under **Use in** on the Memory. Grok's page
+exists under **Other apps** on Connect once the consent completed, whatever Grok's own screen
+says; it has **Uses**, **Approvals** and **Disconnect…** like every other app.
 
 ## Remove it
 
@@ -47,6 +50,6 @@ Connect; the client does not tell the server.
 
 | It says | What it means | Do |
 |---|---|---|
-| the connector never authorizes | the URL has a trailing slash or a typo, or the consent tab was closed | paste the URL exactly; add it again |
+| the connector never authorizes | the URL has a typo or misses the path, or the consent tab was closed | paste the URL exactly; add it again |
 | an empty container list | connected, no Memory switched on | **Uses** on Grok's page in Connect |
 | no **New Connector** on a team plan | connectors are provisioned by the admin | ask the admin to add the URL |

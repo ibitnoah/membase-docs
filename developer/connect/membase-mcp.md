@@ -8,8 +8,8 @@ description: "The MCP server itself: how a client discovers it, the two ways to 
 https://api.app.membase.io/mcp-http
 ```
 
-One URL for every client. Streamable HTTP, JSON responses, no trailing slash (a client that
-appends one is redirected, but not every client follows a redirect on POST). The server
+One URL for every client. Streamable HTTP, JSON responses, with or without a trailing slash
+(both answer the same; what fails is a wrong path such as `/mcp`). The server
 speaks the current MCP specification and advertises its authorization the standard way, so
 a client that can add "a remote MCP server with OAuth" can add Membase without a special
 step.
@@ -17,7 +17,8 @@ step.
 ## Two ways to authenticate
 
 **OAuth consent**, for the person's own AI apps. An unauthenticated request answers `401`
-with `WWW-Authenticate` pointing at `/.well-known/oauth-protected-resource` (RFC 9728). The
+with `WWW-Authenticate` pointing at
+`https://api.app.membase.io/.well-known/oauth-protected-resource/mcp-http` (RFC 9728). The
 metadata names the authorization server and its registration endpoint; the client registers
 itself (RFC 7591) and runs the authorization code flow with PKCE. The browser opens Membase's
 consent screen; the person ticks the Memories the app may use and whether it may read their
@@ -45,10 +46,13 @@ ready-made config files carry no header, so a key never ends up in a public file
 | developer key, Full access | plus `delete_document`, `forget_memory` |
 | an agent or workflow exposure | `ask_agent` or `workflow_invoke` |
 
-A destructive verb from a consent-minted client never executes; it answers
-`status: confirmation_required` and the model relays the `how` sentence. Retired tool names
-(`memory_recall`, `memory_remember`, `memory_list`…) still answer for clients that carry them
-and are hidden from `tools/list` once their replacement is offered.
+A tool outside the caller's list is refused with `403 unauthorized` ("tool '…' is not in this
+agent's capability profile"): a consent-minted client cannot write, delete or forget at all.
+A Full access key that calls `delete_document` or `forget_memory` without `confirm=true`
+answers `status: confirmation_required` with a `how` sentence for the model to relay. Retired
+tool names (`memory_view_query`, `memory_list`, `memory_recall`, `memory_remember`,
+`memory_ingest`, `memory_list_sources`, `memory_forget`, `agent_invoke`) still answer for
+clients that carry them and are hidden from `tools/list`.
 
 A search is a turn inside the person's container. The first one after a quiet spell can
 take up to a minute; the answer marks in `containers[]` any Memory that could not answer
@@ -117,6 +121,8 @@ MCP client can take `SKILL.md` as instructions and the REST API directly;
 ## Verifying and revoking
 
 The **Connect** page shows every authorized client with its last activity. A client's page
-has the per-Memory switch (*Uses*), the credential list (*Approvals*) and **Disconnect…** for
-all of them. Removing a connector inside the client does not notify Membase: revoke on
+has the per-Memory switch (*Uses*), the credential list (*Approvals*, shown when there is
+more than one) and **Disconnect…** for all of them. A client without a tile of its own is
+listed under **Other apps** once authorized. Removing a connector inside the client does not
+notify Membase: revoke on
 Connect to be sure access has stopped. Revocation takes effect on the credential's next call.

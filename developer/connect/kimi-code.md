@@ -11,7 +11,7 @@ runs commands, so it can take the skill as well.
 ## Before you start
 
 * Kimi Code CLI with `kimi mcp`.
-* For a write-capable connection, a developer key from **Connect › Skills › Create key**.
+* For a write-capable connection, a developer key from **Connect › Developer keys › Create key**.
 
 ## Set up
 
@@ -23,7 +23,9 @@ kimi mcp list
 
 `kimi mcp auth` opens the browser on Membase's consent screen and caches the token under
 `~/.kimi/mcp-oauth/`. Tick the Memories Kimi Code may use and, if it may read the profile,
-**Let it know about you**. `kimi mcp list` shows the server and its authorization state.
+**Profile access**. `kimi mcp list` shows the server and its authorization state. Kimi Code has
+no tile of its own in Connect's client catalog: it appears under **Other apps** once the consent
+completed.
 
 ## With a developer key
 
@@ -43,7 +45,8 @@ that writes. With a key: the key's level.
 ## Which Memories it uses
 
 An empty container list means no Memory is switched on for this connection. Switch one on
-under **Uses** on Kimi Code's page in Connect, or under **Use in** on the Memory.
+under **Uses** on Kimi Code's page in Connect (under **Other apps**), or under **Use in** on
+the Memory.
 
 ## Remove it
 

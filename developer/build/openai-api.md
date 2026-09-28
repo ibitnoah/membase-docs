@@ -56,6 +56,7 @@ for (;;) {
   messages.push(reply);
   if (!reply.tool_calls?.length) { console.log(reply.content); break; }
   for (const call of reply.tool_calls) {
+    if (call.type !== "function") continue;          // tool_calls is a union; custom tool calls carry no `function`
     const content = await runTool(call.function.name, JSON.parse(call.function.arguments));
     messages.push({ role: "tool", tool_call_id: call.id, content });
   }

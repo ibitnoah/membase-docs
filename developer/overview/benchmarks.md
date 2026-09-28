@@ -10,8 +10,9 @@ For hosted search behavior and timeouts, see [How Membase works](https://noah-ga
 and [API troubleshooting](https://noah-gao.gitbook.io/membase-user-guide/build/reference/troubleshooting).
 
 The engine is measured on three public long-term-memory benchmarks:
-**LoCoMo**, **LongMemEval** and **DMR**. Each number below is one pass over the full question
-set, graded by the benchmark's own judge. Powered by episodic extraction and multi-round
+**LoCoMo**, **LongMemEval** and **DMR**. Each accuracy number below is one pass over the full
+question set, graded by the benchmark's own judge; the latency rows come from samples, noted
+under that table. Powered by episodic extraction and multi-round
 retrieval that sends the reader a few thousand tokens instead of the whole history.
 
 | | LoCoMo | LongMemEval | DMR |
@@ -80,9 +81,11 @@ Mean context: 1,602 tokens.
 | end-to-end, p50 / p95 | 8.30 s / 18.0 s | 14.7 s / 30.2 s | 3.21 s / 6.34 s |
 | context tokens per question | 6,562 | 8,970 | 1,602 |
 
-In these benchmark runs, search takes 1.1 to 2.5 s at the median, including one to three
-decider rounds. End to end is 3 to 15 s at the median depending on the reader model. These
-figures exclude hosted runtime wake-up and are not a service latency guarantee.
+The latency rows were measured on samples, not the full sets: 40 LoCoMo questions, 30
+LongMemEval and 30 DMR, timed serially on 2026-09-21. In these runs, search takes 1.1 to
+2.5 s at the median, including one to three decider rounds. End to end is 3 to 15 s at the
+median depending on the reader model. These figures exclude hosted runtime wake-up and are
+not a service latency guarantee.
 
 ## Why the numbers look this way
 
@@ -106,7 +109,7 @@ Four pieces working together.
 ## Method
 
 * **Grading.** Each benchmark's standard judge prompt with gpt-4o-mini, unmodified. LongMemEval uses its official per-type rules. Every question in the set is counted once; a failed call is graded wrong.
-* **No re-runs.** Each number is one pass over the full question set. No best-of-N, no merging of re-runs, no dataset-specific answer rules.
+* **No re-runs.** Each accuracy number is one pass over the full question set. No best-of-N, no merging of re-runs, no dataset-specific answer rules.
 * **Models.** OpenAI only: gpt-4.1-mini for extraction and retrieval decisions, text-embedding-3-small for vectors, and the reader listed per benchmark. The same stores answer with any OpenAI-compatible model.
 * **Reproducing.** The harness, dataset loaders, judge configuration and run commands ship with the engine's repository (`unibaseio/unibase-supermem`, `bench/`).
 

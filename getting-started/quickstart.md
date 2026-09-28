@@ -31,14 +31,14 @@ You are on the memory's page. Its hero shows the name, an **Update now** button 
 ## 2. Add something to it
 
 The **Add to this memory** card ③ includes **Upload files**, **Your Files** and
-**Unibase Memory**. Where available, **Notion** is another option; this walkthrough uses a file.
+**Unibase memory**. Where available, **Notion** is another option; this walkthrough uses a file.
 
 ![A memory's page](../shots/memory-page.png)
 
 1. Press **Choose** on *Your Files*. The Files browser opens inside the dialog.
 2. Tick the folder that holds your project files and confirm in the footer. If your files are
-   not in Files yet, press **Upload** on *Upload files* instead; they land in a folder with the
-   memory's name.
+   not in Files yet, press **Upload** on *Upload files* instead; they land in a folder named
+   “<memory name> uploads”.
 3. The Add card now lists the folder. A toast tells you adding does not run the memory.
 4. Press **Update now** ① in the hero. The status line under the name says *Running…*, then
    *Updated just now · Report*.
@@ -50,7 +50,8 @@ The **Add to this memory** card ③ includes **Upload files**, **Your Files** an
 
 First, check **Your memory** below the Add card. Open a result and confirm it reflects your
 notes. On **Home**, ask the assistant a specific question, such as “When is the Lumen launch?”
-If that Memory is not available to the assistant, select it in the assistant’s settings on Home.
+If that Memory is not available to the assistant, select it in the assistant’s settings on Home
+(the ⚙ **Assistant settings** button beside **Remote**, at the foot of the conversation rail).
 Check the answer against your file. If the run failed, open **Report** and resolve that error
 before connecting an external app.
 

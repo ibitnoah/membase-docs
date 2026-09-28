@@ -15,8 +15,10 @@ AI, and the page has a tab for each.
    your browser and you approve it on the consent card, ticking the memories it may read. An
    app connected this way can only read.
 3. **The client catalog, by purpose.** *Chat assistants* and *Coding tools*. A dashed tile says
-   *Set up* and unfolds that app's steps; a solid tile says *Authorized* and opens the app's
-   page.
+   *Set up* and unfolds that app's steps; a solid tile says *Authorized · awaiting first use* or
+   *Authorized · used …* and opens the app's page; *Approval expired · authorize again* means
+   the app must sign in again. An app that has no tile of its own (any other MCP client)
+   appears under *Other apps*, with a monogram, once you have approved it.
 
 ![The Skills tab](../shots/connect-start.png)
 
@@ -42,8 +44,8 @@ Code, Codex and Cursor that can read pages and run commands.
 The skill uses the API with your developer key. If the AI already has Membase MCP tools,
 it uses those tools and keeps the skill for its rules.
 
-Manual MCP configuration is under **MCP › Manual configuration**. API documentation is under
-**Manage keys › API reference**.
+Manual MCP configuration is under **MCP › Manual configuration**. The API is documented on the
+developer docs' [API reference](https://noah-gao.gitbook.io/membase-user-guide/build/reference/api-reference).
 
 ## Set an app up by hand
 
@@ -56,10 +58,11 @@ Picking a dashed tile unfolds the connector URL and the steps for that app:
 
 ## An app's page
 
-Once connected, the tile opens the app's page: the hero (name, *Authorized · last activity*), a
-**Uses** card with one row per memory and its switch, and, when there is more than one approval,
-an **Approvals** card with a **Revoke** per credential. **Disconnect…** in the hero revokes every
-approval at once.
+Once connected, the tile opens the app's page: the hero (name, *Authorized · used …* or
+*Authorized · awaiting first use*, and the amber words *No memory access* while no memory is
+switched on), a **Uses** card with one row per memory and its switch, and, when there is more
+than one approval, an **Approvals** card with a **Revoke** per credential. **Disconnect…** in the
+hero revokes every approval at once.
 
 > Connecting is the account's, once. Which memories an app uses is the memory's, and the switch on
 > the app's page and the switch on the memory's *Use in* card are the same switch.
@@ -68,9 +71,11 @@ approval at once.
 
 A connected app gets two tools: list the memories it may use, and search them. It cannot see
 memories you have not switched on for it, and it cannot tell that they exist. Turning a switch
-off takes effect on the app's very next question. If you ticked **Let it know about you** when
+off takes effect on the app's very next question. If you ticked **Profile access** when
 approving, it also gets your profile — the standing facts your assistant keeps about you and
-what changed recently. An app can never add, delete or forget anything.
+what changed recently. That tick lives on the consent screen only: the app's page has no
+profile switch, so to change it, **Disconnect…** the app and approve it again. An app can never
+add, delete or forget anything.
 
 ## Developer keys
 
@@ -106,8 +111,10 @@ The token (1) appears once, in full. Store it now: afterwards the app shows only
 such as `mbk_7f3a92d1…c91e`, which is enough to tell your keys apart and never enough to use
 one. The same screen gives the token in six shapes (2): **Tell your AI** (the one sentence
 from the Skills tab), a `curl` call, Python, TypeScript, the Claude Code command, and the
-`mcp.json` block Cursor and VS Code read. **Send a test request** (3) makes one real call with
-the new key from your browser and reports *Verified*, and how many memories the key can see.
+`mcp.json` block Cursor and VS Code read. A key created from the Skills tab's **Create key**
+shows only the **Tell your AI** sentence, and a key's page shows no snippets afterwards.
+**Send a test call** (3) makes one real call with the new key from your browser and reports
+*Verified*, and how many containers `list_containers` answered with.
 
 Using the key from a script or an SDK is the developer [Quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart);
 using it in Claude Code, Codex, Cursor or Kimi Code is on each client's page under
@@ -146,7 +153,7 @@ Look up the word on screen.
 | It says | What it means | Do |
 |---|---|---|
 | *Set up* | this app is not connected | pick the tile and follow the steps |
-| *Uses nothing yet* (amber) | connected, but no memory switched on | turn a switch on under **Uses** |
+| *No memory access* (amber) on an app's page | connected, but no memory switched on | turn a switch on under **Uses** |
 | the app cannot see a memory | its switch is off | memory page › **Use in** |
 | I removed the app in Claude but it still shows *Authorized* | the app did not tell Membase | **Disconnect…** on the app's page |
 | *The MCP address is unavailable* | the page could not ask the server for it | reload; the sentence for your AI still works |

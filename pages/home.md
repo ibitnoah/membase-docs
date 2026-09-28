@@ -14,7 +14,8 @@ Home is your conversation with the Assistant. Everything else in the product fee
 3. **Entry cards.** **Create memory**, **Marketplace**, **Connect AI** and **View agents**
    open their respective pages or setup steps. **Quick actions** below them provides shortcuts
    for adding content and using your memory.
-4. **Ask your assistant.** The conversation box. Enter sends, Shift+Enter breaks a line.
+4. **The composer.** The conversation box; its placeholder reads *Message <assistant name>…* and
+   `@` mentions a memory or file. Enter sends, Shift+Enter breaks a line.
 5. **Setup guide.** Replays the first-run guide from its name card.
 
 ## The conversation rail
@@ -57,9 +58,10 @@ answer lands while you have scrolled up.
 
 ## Assistant settings
 
-The assistant chip in the header (name · model) opens its settings as a dialog over the
-conversation. One scroll, no tabs, every field saved as it changes: the model card (which source
-answers and which model), name, instructions, memories, skills, and its Telegram chat.
+The ⚙ **Assistant settings** button beside **Remote**, at the foot of the conversation rail,
+opens its settings as a dialog over the conversation (`/?settings=assistant` opens it too). One
+scroll, no tabs, every field saved as it changes: name, instructions, memories, skills, its
+Telegram chat, and the model card (which source answers and which model).
 
 ## Telegram
 

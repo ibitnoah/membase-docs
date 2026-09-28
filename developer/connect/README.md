@@ -55,13 +55,13 @@ can do, which Memories it uses, remove it, and what to do when something looks w
 
 | Page | For |
 |---|---|
-| [ChatGPT](chatgpt.md) | Developer mode, the plugin dialog, per-chat enabling |
+| [ChatGPT](chatgpt.md) | the Plugins dialog, Developer mode if ChatGPT asks for it, per-chat enabling |
 | [Claude](claude.md) | the custom connector on claude.ai and the desktop app |
-| [Claude Code](claude-code.md) | `claude mcp add`, a key in the header, the plugin, the skill |
+| [Claude Code](claude-code.md) | `claude mcp add`, a key in the header, the skill |
 | [Cursor](cursor.md) | `mcp.json`, project or global |
 | [Codex](codex.md) | `codex mcp add`, `config.toml`, the IDE extension |
-| [Grok](grok.md) | a custom connector on grok.com |
-| [Kimi Code](kimi-code.md) | `kimi mcp add` |
+| [Grok](grok.md) | a custom connector on grok.com; no tile of its own, listed under **Other apps** after consent |
+| [Kimi Code](kimi-code.md) | `kimi mcp add`; no tile of its own, listed under **Other apps** after consent |
 | [Any MCP client](membase-mcp.md) | the server itself: discovery, the header alternative, what `tools/list` shows, the ready-made config files, VS Code, Windsurf, Devin and every client without a page |
 | [Access control](access-control.md) | consent vs key, reach, the profile tick, confirmation, revocation |
 | [Troubleshooting](troubleshooting.md) | every word and status a client can show, and what to do |
@@ -69,8 +69,8 @@ can do, which Memories it uses, remove it, and what to do when something looks w
 ## What connecting looks like
 
 1. The person pastes the URL into the app, or runs the app's `mcp add` command.
-2. The app answers with a browser window: Membase's consent card, listing the Memories with a tick each and **Let it know about you** for the profile.
-3. The person approves. The app's tile on Connect says *Authorized*; its page lists what it **Uses**.
+2. The app answers with a browser window: Membase's consent card, listing the Memories with a tick each and **Profile access** for the profile.
+3. The person presses **Approve access**. The app's tile on Connect says *Authorized · awaiting first use*; its page lists what it **Uses**. An app without a tile in the catalog (Grok, Kimi Code, any other MCP client) appears under **Other apps** once the consent completed, and only then has a page.
 4. In a chat, the person asks *"List my Membase containers."* Check that it names the Memory you granted. Then ask about a specific fact from its
    material and check the answer. An empty list means no Memory is switched on for this connection yet.
 

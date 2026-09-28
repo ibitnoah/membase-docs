@@ -11,7 +11,8 @@ Home. To give Claude or another external AI access to memory, use [Connect](conn
 
 ## Create and edit an agent
 
-1. Open **Agents** and press **New agent**. The new agent opens in Studio.
+1. Open **Agents** and press **Create agent**. Creation scaffolds a workflow and opens it in
+   Studio.
 2. Set its instructions and the workflow it should run. [Studio](studio.md) explains the
    canvas and the difference between saving a draft and deploying a version.
 3. Save the draft. Return to **Agents** and open the agent's row to see its controls and
@@ -35,8 +36,8 @@ Use **Edit in Studio** to change a custom agent. The account's default assistant
 **Pause** keeps a custom agent and its configuration; **Resume** enables it again. For a
 specific cadence, also check its row on [Schedules](schedules.md).
 
-> **Delete** removes the custom agent. Read and confirm the dialog before continuing; its
-> run history is kept.
+> **Delete** removes the custom agent. Confirm the browser prompt — Delete “<name>”? Its run
+> history is kept. — before continuing.
 
 The account's default assistant has no Pause or Delete button on this page.
 
@@ -44,7 +45,8 @@ The account's default assistant has no Pause or Delete button on this page.
 
 | What you see | What to do |
 |---|---|
-| No agents match | Clear the search or filters; use **New agent** to create a custom one. |
+| *No agents yet. Select Create agent to get started.* | Press **Create agent** to make a custom one. |
+| No agents match | Clear the search or filters; use **Create agent** to create a custom one. |
 | A run is still in progress | Open **View all runs**; do not repeatedly start the same work. |
 | Run failed | Inspect the run error, correct the model, input or workflow, then run again. |
 | An external AI is missing | Manage connected AI apps on [Connect](connect.md). |

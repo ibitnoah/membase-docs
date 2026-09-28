@@ -78,7 +78,8 @@ for (const block of response.content) if (block.type === "text") console.log(blo
 {% endtabs %}
 
 The tool list Claude sees is the key's: a Read key offers `list_containers`,
-`search_memories`, `get_profile`, `list_documents`, `memory_rules`; a Read & write key adds
+`search_memories`, `list_documents`, `memory_rules` and, with **Your profile** ticked,
+`get_profile` (`get_document` is REST-only and not offered over MCP); a Read & write key adds
 `add_memory` and `add_document`. To keep a conversation read-only, mint a Read key for it.
 
 ## Your own tools over the SDK

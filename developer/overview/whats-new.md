@@ -9,9 +9,10 @@ New features and significant product changes, newest first.
 
 ## September 2026
 
-**Python and TypeScript SDKs (24 Sep).** Integrate Membase into your application with the
-Python or TypeScript SDK. Add documents, search memories, retrieve a profile and ask an agent
-using a developer key. [Get started with the SDKs](https://noah-gao.gitbook.io/membase-user-guide/build/reference/sdk-quickstart).
+**Python and TypeScript SDKs (28 Sep).** Integrate Membase into your application with the
+Python or TypeScript SDK, now on PyPI and npm. Add documents, search memories and retrieve a
+profile with a developer key, or ask an agent with a subscription credential.
+[Get started with the SDKs](https://noah-gao.gitbook.io/membase-user-guide/build/reference/sdk-quickstart).
 
 **Notion sources (22 Sep).** Connect Notion and select the pages to use in a Memory. After
 syncing your sources, select **Update now** to process their content.
@@ -26,7 +27,7 @@ memory access and expiry dates. Manage or revoke access at any time. In **Connec
 **MCP** tab for supported AI apps or the **Skills** tab for agents that can run commands.
 [Connect your AI](https://noah-gao.gitbook.io/membase-user-guide/connect).
 
-**Memory access through MCP, REST and SDKs (17 Sep).** Connected apps can search memories,
+**Memory access through MCP and REST (17 Sep).** Connected apps can search memories,
 read documents and retrieve profiles. With the appropriate permissions, they can also add
 content and remove documents or memory entries. [API reference](https://noah-gao.gitbook.io/membase-user-guide/build/reference/api-reference).
 

@@ -10,7 +10,7 @@ Codex, the CLI and the IDE extension, reads Membase over MCP, and can take the s
 ## Before you start
 
 * Codex CLI with `codex mcp`, or the IDE extension; they share one configuration.
-* For a write-capable connection, a developer key from **Connect › Skills › Create key**.
+* For a write-capable connection, a developer key from **Connect › Developer keys › Create key**.
 
 ## Set up
 
@@ -21,7 +21,7 @@ codex mcp list
 ```
 
 `codex mcp login` opens the browser on Membase's consent screen; tick the Memories Codex may
-use and, if it may read the profile, **Let it know about you**. `codex mcp list` shows the
+use and, if it may read the profile, **Profile access**. `codex mcp list` shows the
 server and whether it is authorized.
 
 In the IDE extension: the gear menu → *MCP servers* → add the same server, then *Restart
@@ -29,18 +29,18 @@ extension* and *Authenticate*. A server added on one side appears on the other.
 
 ## With a developer key
 
-Put the snippet Membase serves at `https://www.app.membase.io/plugin/clients/codex.toml`
-into `~/.codex/config.toml` and add the header:
+The snippet Membase serves at `https://www.app.membase.io/plugin/clients/codex.toml` is the
+server alone, for `~/.codex/config.toml`:
 
 ```toml
 [mcp_servers.membase]
 url = "https://api.app.membase.io/mcp-http"
-http_headers = { Authorization = "Bearer mbk_…" }
 ```
 
-The key's page in Connect › Developer keys carries the same snippet with the key filled in.
-
-Or the skill:
+Membase writes no Codex snippet with a key in it. If your Codex build takes a static header on
+a Streamable HTTP server, add one under `[mcp_servers.membase]` with the key as
+`Authorization: Bearer mbk_…`; the setting's name is Codex's own and is not checked here, so
+the plain way to give Codex a key is the skill:
 
 > Install Membase from https://www.app.membase.io/skill using key mbk_…
 
@@ -73,5 +73,5 @@ the key.
 |---|---|---|
 | `codex mcp list` shows the server without authorization | consent not completed | `codex mcp login membase` |
 | an empty container list | connected, no Memory switched on | **Uses** on Codex's page in Connect |
-| a write is refused | the connection is consent-minted (read-only) | switch to a Read & write key in `config.toml` |
+| a write is refused | the connection is consent-minted (read-only) | give Codex a Read & write key through the skill |
 | the extension does not see the server | it was added before the extension restarted | *Restart extension*, then *Authenticate* |

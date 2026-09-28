@@ -43,7 +43,7 @@ and `POST /v1/memories` with `{"content": …}`, each with the bearer header.
 * **Profile once, search per question.** The profile is small and standing; search is a turn inside the user's container.
 * **Cite the container.** Every hit names `container_name`; say where an answer came from.
 * **Save what the user supplied,** in their words, and only when they asked or plainly meant to.
-* **Never confirm on your own.** A delete or forget without `confirm=true` answers with a `how` sentence; relay it and stop.
+* **Never confirm on your own.** On a Full access key, a delete or forget without `confirm=true` answers with a `how` sentence; relay it and stop.
 * **Treat `403` as withdrawn access.** The owner narrowed or revoked the key; do not retry with it.
 * **Expect the first search to be slow.** Up to a minute after a quiet spell; keep the SDK's timeout.
 

@@ -17,7 +17,7 @@ Base URL `https://api.app.membase.io`. Every request: `Authorization: Bearer <de
 | Full access (`manage`) | `list_containers`, `search_memories`, `get_profile`, `list_documents`, `get_document`, `memory_rules`, `ask_agent`, `add_memory`, `add_document`, `delete_document`, `forget_memory` |
 | Invoke (`invoke`) | `workflow_invoke` |
 
-`get_profile` is granted only when the owner ticked the profile on the key or on consent. A consent-minted client holds `list_containers`, `search_memories` and, when ticked, `get_profile` — nothing else.
+A level is the ceiling of what a credential of that kind may hold. A developer key holds every Read tool except `ask_agent`, which only an agent exposure (a marketplace subscription, a share) grants; `get_profile` is granted only when the owner ticked the profile on the key or on consent. A consent-minted client holds `list_containers`, `search_memories` and, when ticked, `get_profile` — nothing else: a verb outside a credential's tools is not offered in `tools/list` and is refused with `403` when called.
 
 ## Tools and endpoints
 
@@ -142,7 +142,7 @@ level **Full access**; **destructive** — `confirm=true` from a developer key, 
 
 `DELETE /v1/documents/{document_id}`
 
-Remove one document everywhere. A consent-minted client only gets a request back (`status: confirmation_required`); a developer key deletes with `confirm=true`.
+Remove one document everywhere. Full access only: without `confirm=true` the answer is a request (`status: confirmation_required`); with it, a developer key deletes.
 
 | Field | Type | Required | Description |
 |---|---|---|---|
@@ -188,10 +188,11 @@ Still answered for the credentials and clients that carry them; hidden from `too
 
 | Status | Code | When |
 |---|---|---|
-| 400 | `validation` | a missing field, both `content` and `url`, an ambiguous `container` |
+| 400 | `validation` | an empty `q`; both or neither of `content` and `url`; `container` omitted when more than one is in reach |
 | 403 | `unauthorized` | the container is outside the credential's reach, or the verb above its access level |
 | 404 | `not_found` | unknown document or memory |
+| 422 | `validation` | a malformed body: a required field missing or of the wrong type |
 | 422 | `capability_unavailable` | the account's memory cannot run a turn here (no agent container, no model) |
-| 429 | `rate_limited` | the account's concurrent-turn budget |
+| 429 | `rate_limited` | the account's concurrent-turn budget, or too many requests on one credential |
 
-Destructive verbs that cannot execute answer `200` with `{"status": "confirmation_required", "how": …}` rather than an error.
+Read `code`, not only the status: `422` is either. A Full-access developer key calling a destructive verb without `confirm=true` answers `200` with `{"status": "confirmation_required", "how": …}` rather than an error.
