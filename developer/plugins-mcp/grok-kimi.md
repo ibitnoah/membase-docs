@@ -24,7 +24,7 @@ client does not tell the server.
 
 Grok's API also takes remote MCP servers as tools on a request; that is a developer
 integration rather than a plugin, and it works with a developer key in the server's
-`Authorization` header the way [API Integrations](../api-integrations.md) describes for the
+`Authorization` header the way [API Integrations](https://noah-gao.gitbook.io/membase-user-guide/api-integrations) describes for the
 Claude API.
 
 ## Kimi

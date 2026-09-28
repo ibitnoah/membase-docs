@@ -11,7 +11,7 @@ https://api.app.membase.io/mcp-http
 ```
 
 Streamable HTTP, plain JSON responses, no trailing slash. It serves the same operations as
-the REST API under the same names ([API Reference](../api-reference.md)), so a model that
+the REST API under the same names ([API Reference](https://noah-gao.gitbook.io/membase-user-guide/api-reference)), so a model that
 learned `search_memories` in one client knows it in every other. An AI app that connects to
 it reads the person's Memories; nothing is copied into the app.
 

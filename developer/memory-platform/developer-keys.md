@@ -7,7 +7,7 @@ description: The screen where keys are minted, narrowed, rotated and revoked, an
 A **developer key** is the owner's own credential for a script, a server, an SDK or an AI
 running the skill. It reaches the memory the way a connected app does, over the Memories the
 owner chooses, at an access level they pick, for as long as they say. The model behind it is
-on [Authentication & Scopes](../authentication.md); this page is the screen.
+on [Authentication & Scopes](https://noah-gao.gitbook.io/membase-user-guide/authentication); this page is the screen.
 
 Connected apps (Claude, ChatGPT, Cursor…) do not need one: they connect through Connect and
 approve on the consent screen.

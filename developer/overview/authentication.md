@@ -30,7 +30,7 @@ time; the change applies on the credential's next call.
 
 Which one you need: if your code holds the credential, a developer key. If the user's AI app
 holds it, consent through MCP, and your code never sees a token at all. The
-[Plugins & MCP](plugins-mcp/README.md) section is the consent path; the rest of this page is
+[Plugins & MCP](https://noah-gao.gitbook.io/membase-user-guide/plugins-mcp) section is the consent path; the rest of this page is
 mostly about keys.
 
 ## Access levels

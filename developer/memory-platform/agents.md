@@ -39,7 +39,7 @@ gets answers, never files.
 `ask` is the other kind of read next to `search`: search is retrieval (passages, most
 relevant first, each naming its container), ask is an answer. A product that wants to put a
 model over the person's memory uses search and its own model
-([API Integrations](../api-integrations.md)); a product that wants a Memory's own agent to
+([API Integrations](https://noah-gao.gitbook.io/membase-user-guide/api-integrations)); a product that wants a Memory's own agent to
 answer subscribes to it.
 
 `workflow_invoke` belongs to workflow exposures, a canvas run as an endpoint, and is offered

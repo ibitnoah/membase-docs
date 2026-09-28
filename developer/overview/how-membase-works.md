@@ -103,6 +103,6 @@ page without re-minting, and why the change applies on the very next request.
 |---|---|
 | make a first call | [API Quickstart](api-quickstart.md) |
 | see every operation | [API Reference](api-reference.md) |
-| understand the screens the person uses | [Platform Overview](memory-platform/README.md) |
-| connect an AI app | [Plugins Overview](plugins-mcp/README.md) |
+| understand the screens the person uses | [Platform Overview](https://noah-gao.gitbook.io/membase-user-guide/memory-platform) |
+| connect an AI app | [Plugins Overview](https://noah-gao.gitbook.io/membase-user-guide/plugins-mcp) |
 | see what the engine scores | [Benchmarks](benchmarks.md) |

@@ -28,7 +28,7 @@ In the app, on a Memory's page, the Add card has a door for it:
 
 From then on the captured conversations reach the Memory as documents. The source's own page
 shows a status word (*Syncing…*, *Sync failed*, *Needs reauthorization*) and **Sync now**,
-**Reauthorize** or **Reconnect** when they apply; see [Sources & Files](../memory-platform/sources-and-files.md).
+**Reauthorize** or **Reconnect** when they apply; see [Sources & Files](https://noah-gao.gitbook.io/membase-user-guide/memory-platform/sources-and-files).
 
 ## Writing the instruction
 

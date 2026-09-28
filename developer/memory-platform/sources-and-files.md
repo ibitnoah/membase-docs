@@ -13,7 +13,7 @@ is read until the Memory runs.
 | A folder in Files | a project, a vault, anything already on disk | Memory page › Add card › **Your Files › Choose** |
 | Upload | a handful of files | Memory page › Add card › **Upload Files › Upload** |
 | Notion | a selection of pages from a workspace | source catalog › Notion |
-| Unibase Memory | the person's chats with other assistants | Memory page › Add card › **Unibase Memory**; [Browser Extension](../plugins-mcp/browser-extension.md) |
+| Unibase Memory | the person's chats with other assistants | Memory page › Add card › **Unibase Memory**; [Browser Extension](https://noah-gao.gitbook.io/membase-user-guide/plugins-mcp/browser-extension) |
 | `add_document` | what your code produced | the API, with a Read & write key |
 | Talking to the assistant | what the person tells it | Home or Telegram; the assistant's own memory only |
 

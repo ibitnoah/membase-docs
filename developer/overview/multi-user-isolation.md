@@ -38,7 +38,7 @@ user completes the consent screen once; your product holds one consent token per
 gets `list_containers`, `search_memories` and, when the user ticked it, `get_profile`. It
 cannot write and cannot see a Memory the user did not tick. The flow is in
 [Authentication & Scopes](authentication.md#oauth-for-an-app-that-connects-over-mcp) and the
-client side in [Membase MCP](plugins-mcp/membase-mcp.md).
+client side in [Membase MCP](https://noah-gao.gitbook.io/membase-user-guide/plugins-mcp/membase-mcp).
 
 This is the shape to prefer: the user never handles a token, and can turn your product off
 on the Connect page.
@@ -70,7 +70,7 @@ The reverse case: you hold the memory (a support corpus, a product's knowledge) 
 people ask it. List that Memory on the Marketplace as an **agent endpoint**. Each subscriber
 receives a credential of their own and calls `ask_agent`; your agent answers from what it
 learned, and the files never leave your container. Lapsing a subscription stops access at
-once. See [Platform Overview](memory-platform/README.md#marketplace).
+once. See [Platform Overview](https://noah-gao.gitbook.io/membase-user-guide/memory-platform#marketplace).
 
 ## What is not isolation
 

@@ -7,7 +7,7 @@ description: The hosted Membase at app.membase.io, one screen per page, and what
 The Memory Platform is the hosted Membase at `https://www.app.membase.io`. A person hands it
 material once; it keeps a living memory of that material; every AI they connect, and every
 key they mint, reads the same memory. The mechanism is on
-[How Membase Works](../how-membase-works.md); this section is the product around it, one
+[How Membase Works](https://noah-gao.gitbook.io/membase-user-guide/how-membase-works); this section is the product around it, one
 screen per page, written for someone whose code will meet what the person sees.
 
 ## The three nouns
@@ -19,7 +19,7 @@ screen per page, written for someone whose code will meet what the person sees.
 | **document** | a row under a Memory's sources | one piece of raw material a container read: a file, a note, a page |
 
 Plain verbs: `list`, `search`, `get`, `add`, `delete`, `forget`, `ask`. The
-[API Reference](../api-reference.md) has every operation.
+[API Reference](https://noah-gao.gitbook.io/membase-user-guide/api-reference) has every operation.
 
 A **profile** sits beside the containers: the standing facts the assistant keeps about the
 user (`static`) and the most recently changed ones (`dynamic`). `get_profile` reads it;
@@ -45,7 +45,7 @@ Every call carries a bearer: a **developer key** the owner minted, or a **consen
 app received on the OAuth consent screen. A key has a level (Read, Read & write, Full
 access), a reach (the Memories it may use) and an expiry; a consent token is read-only and
 reaches what the user ticked. Both are bindings on the account and change live on the
-Connect page. [Authentication & Scopes](../authentication.md) has the whole model;
+Connect page. [Authentication & Scopes](https://noah-gao.gitbook.io/membase-user-guide/authentication) has the whole model;
 [Developer Keys](developer-keys.md) has the screen.
 
 ## One account per person
@@ -53,7 +53,7 @@ Connect page. [Authentication & Scopes](../authentication.md) has the whole mode
 The account is the tenant. A container is a topic, not an end user. A product that serves
 many people gives each of them their own Membase account, and reads their memory with their
 own key or their own consent; there are no application-wide keys and no sub-tenant tags.
-[Multi-user Isolation](../multi-user-isolation.md) has the patterns.
+[Multi-user Isolation](https://noah-gao.gitbook.io/membase-user-guide/multi-user-isolation) has the patterns.
 
 ## Limits and errors
 

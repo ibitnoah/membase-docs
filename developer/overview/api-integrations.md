@@ -263,7 +263,7 @@ Tell it
 > Install Membase from https://www.app.membase.io/skill using key mbk_…
 
 and it installs the skill folder, keeps the key as `MEMBASE_API_KEY` and calls the REST API
-with it, at the key's level. [Plugins Overview](plugins-mcp/README.md#the-skill-in-one-sentence).
+with it, at the key's level. [Plugins Overview](https://noah-gao.gitbook.io/membase-user-guide/plugins-mcp#the-skill-in-one-sentence).
 
 ## Without an SDK
 
