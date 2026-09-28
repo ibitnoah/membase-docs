@@ -35,9 +35,8 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [Sign in](getting-started/sign-in.md) | one button, four ways to prove who you are |
 | [The first-run guide](getting-started/first-run-guide.md) | the three-step tour the product opens on a new account, and how to replay it |
 | [5-minute quickstart](getting-started/quickstart.md) | a project folder answering questions in Claude, end to end |
-| [How Membase fits together](concepts.md) | Assistant, Memory, Source, Files, Connect, Agents, Marketplace, in one picture; what runs when; what stops or deletes what |
 | [Bring your material in](getting-started/bring-material-in.md) | the four ways material reaches a memory, and why nothing is read until you press Run |
-| [Use your memory from code](getting-started/developer-keys.md) | a developer key: your memory from a script, a server or Claude Code, at the access you choose |
+| [How Membase fits together](https://noah-gao.gitbook.io/membase-user-guide/concepts) | Assistant, Memory, Source, Files, Connect, Agents, Marketplace, in one picture; what runs when; what stops or deletes what |
 
 **Features**, one per item of the left rail, in its order
 
@@ -52,5 +51,10 @@ The [5-minute quickstart](getting-started/quickstart.md) does all three with a p
 | [Activity](pages/activity.md) | what ran, when, with what result |
 | [AI Setup](pages/ai-setup.md) | model keys and subscriptions, and which one is active |
 | [Connect](pages/connect.md) | the two ways an AI gets in — an app you approve, a key you hold — the one sentence that lets your AI set itself up, and your developer keys |
+
+Two things live in the other tabs of this site: the steps for each AI app are under
+**Connect your AI** ([ChatGPT](https://noah-gao.gitbook.io/membase-user-guide/connect/clients/chatgpt), [Claude](https://noah-gao.gitbook.io/membase-user-guide/connect/clients/claude),
+[Claude Code](https://noah-gao.gitbook.io/membase-user-guide/connect/clients/claude-code) and the rest), and using a key from code is
+under **Build with Membase** ([Quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart)).
 | [Marketplace](pages/marketplace.md) | buying live access to someone's memory, and selling yours |
 | [Settings](pages/settings.md) | account, plan and payments, export, delete |

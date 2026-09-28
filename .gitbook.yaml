@@ -1,5 +1,6 @@
-# GitBook reads this repository at its root: index.md is the landing page, SUMMARY.md the table
-# of contents. Content is mirrored from docs/user-guide in unibaseio/membase-suites — edit there.
+# GitBook reads this repository's root as the "Use Membase" tab: index.md is its landing page,
+# SUMMARY.md its table of contents. Content is mirrored from docs/user-guide in
+# unibaseio/membase-suites — edit there. The other tabs are the directories under developer/.
 root: ./
 
 structure:

@@ -76,13 +76,65 @@ what changed recently. An app can never add, delete or forget anything.
 
 ![Developer keys](../shots/connect-developer-keys.png)
 
-The Skills tab’s **Manage keys** link opens your credentials for an AI, a script, a server
-or an SDK. Each key has its own row —
-name and hint, access (**Read**, **Read & write** or **Full access**, which may also delete a
-document or forget a fact, and even then only when the call says so explicitly), reach, expiry
-and last use. **Create key** makes one and shows the token once; a key's page changes its
-access and reach in place, shows what it has been doing, and rotates or revokes it. The
-walkthrough is [Use your memory from code](../getting-started/developer-keys.md).
+A **developer key** is your own credential for a script, a server, an SDK or an AI that runs
+commands. It reaches your memory the way a connected app does, over the memories you choose,
+at an access level you pick, for as long as you say. Connected apps do not need one; they
+approve on the consent screen.
+
+**Manage keys** on the Skills tab opens the keys page. Every key is one row: name and hint,
+access, reach, expiry, last use. **Active**, **Expired** and **Revoked** are the three
+segments; a key that has stopped working stays listed for 30 days so you can see what it was.
+**Create key** makes one; the name opens the key's page; **⋯** at the end of a row holds
+**Rotate…** and **Revoke…**.
+
+### Create a key
+
+![Create a developer key](../shots/developer-key-create.png)
+
+1. **Name** (1) it after what will hold it, for example *nightly-notes script*, so a revocation stops one thing.
+2. Pick the **Access** (2). The level you pick shows the tools it gets:
+   - **Read** — search and list. It cannot change anything.
+   - **Read & write** — also adds a memory or a document.
+   - **Full access** — also deletes a document or forgets a memory. Each of those calls must still say so explicitly; a key never removes anything on its own.
+3. Pick the **Reach** (3). Nothing is ticked to begin with. Tick the memories it may use, or **All memories, including ones you make later**. **Your profile**, the standing facts your assistant keeps about you, is the last row.
+4. Pick when it **Expires** (4): never, 30 days, 90 days or a year.
+5. Press **Create key** (5).
+
+![The token, once](../shots/developer-key-token.png)
+
+The token (1) appears once, in full. Store it now: afterwards the app shows only its hint,
+such as `mbk_7f3a92d1…c91e`, which is enough to tell your keys apart and never enough to use
+one. The same screen gives the token in six shapes (2): **Tell your AI** (the one sentence
+from the Skills tab), a `curl` call, Python, TypeScript, the Claude Code command, and the
+`mcp.json` block Cursor and VS Code read. **Send a test call** (3) makes one real call with
+the new key from your browser and reports *Verified*, and how many memories the key can see.
+
+Using the key from a script or an SDK is the developer [Quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart);
+using it in Claude Code, Codex, Cursor or Kimi Code is on each client's page under
+**Connect your AI**.
+
+### A key's page
+
+![A key's page](../shots/developer-key-page.png)
+
+- **Access** (1) — change the level with the segmented control; the tools it now holds are listed under it. The change applies on the key's next call; the token stays the same.
+- **Reach** (2) — a switch per memory, one for *All memories, including ones you make later*, and one for *Your profile*. Off takes effect on the key's next call.
+- **Expiry** (3) — when the token stops working. It cannot be extended; to change it, rotate.
+- **Usage** (4) — calls in the last 30 or 7 days, how many were **refused** (the key asked for a memory or a verb it does not have), and the tool it calls most.
+- **Recent activity** (5) — the last calls one by one: tool, memory, what came back, when. A refused call is red and says why.
+
+Click the name to rename the key. Which memories a key reaches can also be switched on the
+memory's own page under **Use in**, where keys are listed after the apps.
+
+### Rotate and revoke
+
+**Rotate…** (6) makes a new key with the same access, reach and expiry, and asks what to do
+with the current one. By default it keeps working until you revoke it, so you can swap the
+value in your environment first; or revoke it on the spot.
+
+**Revoke…** (7) ends a key at once: every script holding the token fails on its next call.
+The dialog shows the key's hint and warns when the key was used in the last week. A revoked
+key stays listed under **Revoked** for 30 days.
 
 Removing the connector inside Claude or ChatGPT does not tell Membase. To be sure access has
 stopped, open the app's page here and **Disconnect…**.
@@ -100,5 +152,7 @@ Look up the word on screen.
 | *The MCP address is unavailable* | the page could not ask the server for it | reload; the sentence for your AI still works |
 | my AI installed the skill but says it has no access | the skill needs a developer key | Skills tab › **Create key**, and paste the sentence to the AI |
 | a key's row says *Expired* | its token has lapsed | **⋯ › Create a similar key** on the Developer keys page |
+| *in 6 days* on a key's row (amber) | the key expires within a week | **Rotate…** and swap the value |
+| *refused* in a key's Recent activity | the key asked for something it does not have | the row says which memory or verb; adjust Reach or Access |
 | I already have a key | you can reuse it | Skills tab › **Already have a key?** |
 

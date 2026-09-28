@@ -1,98 +1,44 @@
 ---
-title: Build with Membase
-description: Start with the API, then connect the same memory layer through plugins and MCP, or run it locally.
+title: Membase Docs
+description: "Membase is the long-term memory between a person and every AI they use. Use the app, connect your AI, or build on the API: three doors, one memory."
 ---
 
-# Build with Membase.
+# Membase Docs
 
-Start with the API, then connect the same memory layer through plugins and MCP—or run it locally.
+Membase is the long-term memory between a person and every AI they use. Hand it material once;
+every AI you connect, and every line of code you write against it, reads the same memory.
 
-<a href="api-quickstart.md" class="button primary">API Quickstart</a> <a href="api-reference.md" class="button secondary">API Reference</a> <a href="https://www.app.membase.io" class="button secondary">Dashboard</a> <a href="https://github.com/unibaseio" class="button secondary">GitHub</a> <a href="https://chromewebstore.google.com/detail/edmncknbiihfoakimejbepnaeemaaamf" class="button secondary">Install Extension</a>
+<a href="https://noah-gao.gitbook.io/membase-user-guide/use/getting-started/quickstart" class="button primary">Use Membase</a> <a href="https://noah-gao.gitbook.io/membase-user-guide/connect" class="button secondary">Connect your AI</a> <a href="https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart" class="button secondary">Build with the API</a> <a href="https://www.app.membase.io" class="button secondary">Dashboard</a> <a href="https://github.com/unibaseio" class="button secondary">GitHub</a> <a href="https://chromewebstore.google.com/detail/edmncknbiihfoakimejbepnaeemaaamf" class="button secondary">Install Extension</a>
 
-{% tabs %}
-{% tab title="Python" %}
-```python
-from membase import Membase          # pip install membase-sdk
+## Three doors
 
-client = Membase()                    # MEMBASE_API_KEY, from Connect › Developer keys
-
-client.add("Call notes with Acme: they want SSO before the pilot.",
-           container="mv-…", custom_id="call-2026-09-24")
-
-for hit in client.search("what does Acme need before the pilot", limit=3)["results"]:
-    print(hit["container_name"], "·", hit["content"])
-```
-{% endtab %}
-
-{% tab title="TypeScript" %}
-```ts
-import { Membase } from "@membase/sdk";   // npm install @membase/sdk
-
-const client = new Membase();              // MEMBASE_API_KEY, from Connect › Developer keys
-
-await client.add({ container: "mv-…", content: "Call notes with Acme: they want SSO before the pilot.",
-                   customId: "call-2026-09-24" });
-
-const { results } = await client.search({ q: "what does Acme need before the pilot", limit: 3 });
-for (const hit of results) console.log(hit.container_name, "·", hit.content);
-```
-{% endtab %}
-
-{% tab title="curl" %}
-```bash
-export MEMBASE_API_KEY="mbk_…"
-BASE=https://api.app.membase.io
-
-curl -s "$BASE/v1/documents" -H "Authorization: Bearer $MEMBASE_API_KEY" \
-  -H 'content-type: application/json' \
-  -d '{"container": "mv-…", "content": "Call notes with Acme: they want SSO before the pilot.", "custom_id": "call-2026-09-24"}'
-
-curl -s "$BASE/v1/search" -H "Authorization: Bearer $MEMBASE_API_KEY" \
-  -H 'content-type: application/json' \
-  -d '{"q": "what does Acme need before the pilot", "limit": 3}'
-```
-{% endtab %}
-{% endtabs %}
-
-Every call runs against `https://api.app.membase.io` with a developer key from **Connect ›
-Developer keys** in the Membase app. The [API Quickstart](api-quickstart.md) gets you from no
-key to a first search in five minutes.
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td><strong>Use Membase</strong></td><td>Sign in, make a Memory, hand it a folder, and watch your assistant answer from it. One page per screen of the app, with the status words explained.</td><td><a href="https://noah-gao.gitbook.io/membase-user-guide/use">../user-guide/index.md</a></td></tr>
+<tr><td><strong>Connect your AI</strong></td><td>ChatGPT, Claude, Claude Code, Cursor, Codex, Grok, Kimi and any MCP client read your memory through one URL and a consent screen. Telegram and the browser extension are the other ways in.</td><td><a href="https://noah-gao.gitbook.io/membase-user-guide/connect">connect/README.md</a></td></tr>
+<tr><td><strong>Build with Membase</strong></td><td>A developer key, the Python and TypeScript SDKs, and the REST API: five minutes to a first search, then the memory behind your own model.</td><td><a href="https://noah-gao.gitbook.io/membase-user-guide/build">build/README.md</a></td></tr>
+</tbody></table>
 
 ## Three products, one memory
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
-<tr><td><strong>Memory Platform</strong></td><td>The hosted memory layer. Every account's memory lives in its own agent container; the REST API, the SDKs and MCP read and write the same memory.</td><td><a href="https://noah-gao.gitbook.io/membase-user-guide/memory-platform">memory-platform/README.md</a></td></tr>
-<tr><td><strong>Plugins &#x26; MCP</strong></td><td>Connect that memory to ChatGPT, Claude, Cursor, Codex, Grok, Kimi and any MCP client, with one server URL and a consent screen.</td><td><a href="https://noah-gao.gitbook.io/membase-user-guide/plugins-mcp">plugins-mcp/README.md</a></td></tr>
-<tr><td><strong>Local Memory</strong></td><td>Run the memory engine on your own machine for privacy and data control. Documentation comes with the local release.</td><td></td></tr>
+<tr><td><strong>Memory Platform</strong></td><td>The hosted Membase at app.membase.io. Every account's memory lives in its own agent container; the app, the API, the SDKs and MCP read and write the same memory.</td><td><a href="https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/platform-overview">build/platform-overview.md</a></td></tr>
+<tr><td><strong>Plugins &#x26; MCP</strong></td><td>The same memory inside the AI apps you already use, with no code: one server URL, a consent screen, and a switch per Memory.</td><td><a href="https://noah-gao.gitbook.io/membase-user-guide/connect">connect/README.md</a></td></tr>
+<tr><td><strong>Local Memory</strong></td><td>The memory engine on your own machine, for privacy and data control. Documentation comes with the local release.</td><td></td></tr>
 </tbody></table>
 
-## Where to go
+## First steps, by what you want
 
-| Page | What it gives you |
+| I want to | Start at |
 |---|---|
-| [API Quickstart](api-quickstart.md) | get a key, install the SDK, write a memory, search it: five minutes to the first call |
-| [SDK Quickstart](sdk-quickstart.md) | the Python and TypeScript clients: `add`, `search`, `profile`, `ask` and the resources under them |
-| [API Integrations](api-integrations.md) | the memory behind a model: the Claude API, the OpenAI API, any tool-calling framework, any MCP-capable agent |
-| [API Reference](api-reference.md) | every operation with its access level, parameters and response shape; the OpenAPI document |
-| [Authentication & Scopes](authentication.md) | the two credentials, access levels, reach, the profile tick, expiry and revocation |
-| [Multi-user Isolation](multi-user-isolation.md) | the account is the tenant: what that means for a product that serves many people |
-| [How Membase Works](how-membase-works.md) | where memory lives, how material becomes memory, why a search is a turn |
-| [Benchmarks](benchmarks.md) | LoCoMo, LongMemEval and DMR results for the memory engine, with the method behind each number |
-| [Memory Platform](https://noah-gao.gitbook.io/membase-user-guide/memory-platform) | the product around the API, one screen per page: Memories, sources and Files, agents, schedules, activity, AI Setup, developer keys |
-| [Plugins & MCP](https://noah-gao.gitbook.io/membase-user-guide/plugins-mcp) | the MCP server, one page per client, the browser extension, access control, troubleshooting |
-
-## How the API thinks
-
-Three nouns, plain verbs. A **container** is one named space of memory (a *Memory* in the
-app), a **memory** is one fact a container holds, a **document** is one piece of raw material a
-container has read. You `list`, `search`, `get`, `add`, `delete` and `forget` them.
-
-A credential is always the user's own: a developer key they minted, or the consent they gave
-an app. It reaches the containers they ticked, at the access level they chose, and both can be
-changed live on the Connect page without re-minting. Nothing is ever deleted without an
-explicit `confirm=true`.
+| see my AI answer from my own notes | [5-minute quickstart](https://noah-gao.gitbook.io/membase-user-guide/use/getting-started/quickstart) |
+| give Claude, ChatGPT or Cursor my memory | [Connect your AI](https://noah-gao.gitbook.io/membase-user-guide/connect) |
+| let Claude Code or Codex work with a key | [Claude Code](https://noah-gao.gitbook.io/membase-user-guide/connect/clients/claude-code), [Codex](https://noah-gao.gitbook.io/membase-user-guide/connect/clients/codex) |
+| write and search memory from code | [Quickstart](https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart) |
+| put my memory behind my own model | [Claude API](https://noah-gao.gitbook.io/membase-user-guide/build/recipes/claude-api), [OpenAI API](https://noah-gao.gitbook.io/membase-user-guide/build/recipes/openai-api) |
+| understand what runs when, and what cannot be undone | [How Membase fits together](concepts.md) |
+| see what changed lately | [What's new](whats-new.md) |
 
 {% hint style="info" %}
-Looking for the app itself rather than its API? The **User Guide** covers Home, Memory, Files,
-Connect and the rest of the product, one page per screen.
+Every page here can also be read by an AI: append `.md` to a page's address, or point it at
+`/llms.txt` at the root of this site.
 {% endhint %}
