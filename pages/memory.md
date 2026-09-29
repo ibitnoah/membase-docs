@@ -1,5 +1,6 @@
 ---
 description: "The Memory page as one drive: tiles, a memory's page, the status line, Settings, a source's page, and what each word means."
+icon: brain
 ---
 
 # Memory
@@ -30,7 +31,7 @@ The Assistant's own memory is always the first tile. The home page lists the Mem
    then what depends on it.
 5. **Add to this memory.** Choose Unibase memory, Upload files, Your Files, or Notion where
    available. Sources you added are listed below with a **Remove** per row.
-   [Choose a source](../getting-started/bring-material-in.md) explains each option.
+   [Sources](../getting-started/bring-material-in.md) explains each option.
 
 Under the Add card:
 

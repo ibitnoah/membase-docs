@@ -1,6 +1,7 @@
 ---
 title: Memory operations
 description: "Every verb of the agent protocol end to end: containers, search, the profile, notes, documents, ask, forget and delete, what a run does to them, and what code sees when the app does something."
+icon: brain
 ---
 
 # Memory operations
@@ -8,7 +9,7 @@ description: "Every verb of the agent protocol end to end: containers, search, t
 The API has three nouns and a handful of verbs. This page walks them in the order a program
 meets them, says what each does inside the user's account, and what code sees when the
 person, a schedule or the app does something on its side. Every snippet is the Python SDK;
-the TypeScript and REST shapes are on the [Python and TypeScript SDKs](sdk-quickstart.md) and the
+the TypeScript and REST shapes are on the [SDKs](sdk-quickstart.md) and the
 [API reference](api-reference.md).
 
 | Noun | In the app | What it is |

@@ -1,5 +1,6 @@
 ---
 description: "The workflow canvas behind a memory update: one pipeline per memory, the blocks you can add, and what saving changes."
+icon: pen-ruler
 ---
 
 # Studio

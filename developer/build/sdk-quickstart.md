@@ -1,8 +1,9 @@
 ---
 description: The Python and TypeScript clients. One client, one key, your memory.
+icon: cube
 ---
 
-# Python and TypeScript SDKs
+# SDKs
 
 For your first working example, follow the [quickstart](api-quickstart.md). This page is
 client reference: installation, configuration, methods and errors.

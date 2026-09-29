@@ -1,6 +1,7 @@
 ---
 title: Claude
 description: "Membase in Claude on the web and the desktop app, as a custom connector with OAuth consent in the browser."
+icon: message
 ---
 
 # Claude

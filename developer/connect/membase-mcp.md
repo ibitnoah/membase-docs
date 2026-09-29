@@ -1,5 +1,6 @@
 ---
 description: "The MCP server itself: how a client discovers it, the two ways to authenticate, what a connected client sees, the ready-made config files, and the clients without a page of their own."
+icon: plug-circle-bolt
 ---
 
 # Any MCP client

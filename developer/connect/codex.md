@@ -1,6 +1,7 @@
 ---
 title: Codex
 description: "Membase in the Codex CLI and IDE extension over MCP, with consent or a developer key, and the skill beside AGENTS.md."
+icon: file-code
 ---
 
 # Codex

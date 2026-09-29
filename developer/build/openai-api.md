@@ -1,6 +1,7 @@
 ---
 title: OpenAI API
 description: "The user's memory behind the OpenAI API or any function-calling model: declare search_memories and add_memory as functions and call the SDK when the model asks."
+icon: comment-dots
 ---
 
 # OpenAI API

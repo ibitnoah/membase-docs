@@ -1,9 +1,10 @@
 ---
-title: Build with an AI coding assistant
+title: AI coding assistants
 description: "Ask a coding assistant to build a Membase integration, with checks for learning completion, permissions and search failures."
+icon: robot
 ---
 
-# Build with an AI coding assistant
+# AI coding assistants
 
 Use this recipe when a coding assistant is implementing Membase in your application.
 To give the coding assistant your memory for its own work, follow its client guide under

@@ -1,6 +1,7 @@
 ---
 title: Kimi Code
 description: "Membase in the Kimi Code CLI over Streamable HTTP, with OAuth consent or a developer key in the header, and the skill."
+icon: keyboard
 ---
 
 # Kimi Code

@@ -1,5 +1,6 @@
 ---
 description: "Find a run, inspect its status and error, and decide what to fix before trying again."
+icon: clock-rotate-left
 ---
 
 # Activity

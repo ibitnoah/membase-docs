@@ -1,6 +1,7 @@
 ---
 title: FAQ
 description: "Answers about memories, connected apps, models, exports and deleting data."
+icon: circle-question
 ---
 
 # FAQ
@@ -10,7 +11,7 @@ description: "Answers about memories, connected apps, models, exports and deleti
 A Memory organizes information about a topic, such as project decisions, reading notes or
 customers. Choose its sources, describe what it should retain, and update it manually or on a
 schedule. You control which apps and keys can access it.
-[How Membase fits together](concepts.md).
+[Concepts](concepts.md).
 
 ## I added a folder. Why does my AI not know about it yet?
 

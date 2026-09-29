@@ -1,5 +1,6 @@
 ---
 description: Every call carries a bearer. What the two credentials are, what an access level grants, what reach and the profile tick add, and how a key ends.
+icon: key
 ---
 
 # Authentication & Scopes

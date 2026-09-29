@@ -1,5 +1,6 @@
 ---
 description: Every word and status a connected client, the Connect page or the API can show, and what to do about it.
+icon: wrench
 ---
 
 # Troubleshooting

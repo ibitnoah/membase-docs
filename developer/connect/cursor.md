@@ -1,6 +1,7 @@
 ---
 title: Cursor
 description: "Membase in Cursor through mcp.json, in one project or globally, with consent or a developer key."
+icon: laptop-code
 ---
 
 # Cursor

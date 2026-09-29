@@ -1,6 +1,7 @@
 ---
 title: Claude API
 description: "The user's memory behind Claude: point the request at Membase's MCP server with the key as its token, or wrap the SDK in your own tools and let the tool runner loop."
+icon: message
 ---
 
 # Claude API

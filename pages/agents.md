@@ -1,5 +1,6 @@
 ---
 description: "Create a custom agent, edit it in Studio, run it, inspect results, and pause or delete it."
+icon: robot
 ---
 
 # Agents

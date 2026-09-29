@@ -1,5 +1,6 @@
 ---
 description: "Create a Memory, add your notes, run it, and verify what it learned before connecting another AI."
+icon: rocket
 ---
 
 # Your first Memory

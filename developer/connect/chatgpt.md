@@ -1,6 +1,7 @@
 ---
 title: ChatGPT
 description: "Membase as a ChatGPT plugin, through the Plugins dialog, with OAuth consent in the browser."
+icon: comment-dots
 ---
 
 # ChatGPT

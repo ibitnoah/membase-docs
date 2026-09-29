@@ -1,5 +1,6 @@
 ---
 description: "Diagnose API authentication errors, unread documents, partial search failures, model availability and timeouts."
+icon: wrench
 ---
 
 # API troubleshooting
@@ -46,7 +47,7 @@ is retained when a model is unavailable, but that does not make hosted search mo
 | `status: confirmation_required` | A destructive call has not been confirmed. | Ask the owner before calling with `confirm=true`; the key still needs Full access. |
 
 A `403` is the API's refusal convention; it does not prove that the supplied secret was
-valid. Do not retry refused requests unchanged. [Authentication and access](authentication.md)
+valid. Do not retry refused requests unchanged. [Authentication](authentication.md)
 explains the credential model.
 
 ## Model, capacity and timeout errors

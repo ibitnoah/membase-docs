@@ -1,5 +1,6 @@
 ---
 description: The account is the tenant. What that means for a product that serves many people, and the three ways to reach each person's memory with their own credential.
+icon: users
 ---
 
 # Multi-user isolation
@@ -72,7 +73,7 @@ The reverse case: you hold the memory (a support corpus, a product's knowledge) 
 people ask it. List that Memory on the Marketplace as an **agent endpoint**. Each subscriber
 receives a credential of their own and calls `ask_agent`; your agent answers from what it
 learned, and the files never leave your container. Lapsing a subscription stops access at
-once. See [App and API concepts](platform-overview.md#marketplace).
+once. See [Platform overview](platform-overview.md#marketplace).
 
 ![The seller's Memory and its agent stay in the seller's container; the listing is an agent endpoint; each subscriber calls ask_agent with their own credential and gets answers, never files](figures/agent-endpoint.svg)
 

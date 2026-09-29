@@ -1,6 +1,7 @@
 ---
 title: What's new
 description: "New features and significant updates for Membase users and developers."
+icon: sparkles
 ---
 
 # What's new

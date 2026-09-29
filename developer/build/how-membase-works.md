@@ -1,5 +1,6 @@
 ---
 description: "How documents become memory, how search behaves, and how models and access settings affect API calls."
+icon: gears
 ---
 
 # How Membase works
@@ -72,7 +73,7 @@ Changes to permissions apply to subsequent requests using the credential.
 `delete_document` and `forget_memory` require Full access and `confirm=true`. Obtain the
 owner's confirmation before submitting either operation. Revoking a credential prevents
 future access through it; it does not erase results already received by an external client.
-[Authentication and access](authentication.md) describes the permission rules.
+[Authentication](authentication.md) describes the permission rules.
 
 ## Where to go next
 
@@ -81,6 +82,6 @@ future access through it; it does not erase results already received by an exter
 | Make a first call | [Quickstart](api-quickstart.md) |
 | Add, retrieve or remove content | [Memory operations](memory-operations.md) |
 | Look up an operation | [API reference](api-reference.md) |
-| Map the app to API concepts | [App and API concepts](platform-overview.md) |
+| Map the app to API concepts | [Platform overview](platform-overview.md) |
 | Connect an AI app | [Connect your AI](https://noah-gao.gitbook.io/membase-user-guide/connect) |
 | Review engine evaluation results | [Benchmarks](https://noah-gao.gitbook.io/membase-user-guide/evaluation/benchmarks) |

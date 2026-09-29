@@ -6,29 +6,29 @@
 
 * [Quickstart](getting-started/quickstart.md)
 * [Sign in](getting-started/sign-in.md)
-* [The setup guide](getting-started/first-run-guide.md)
+* [Setup guide](getting-started/first-run-guide.md)
 
 ## Bring your material in
 
-* [Choose a source](getting-started/bring-material-in.md)
-* [Files and uploads](pages/files.md)
+* [Sources](getting-started/bring-material-in.md)
+* [Files](pages/files.md)
 * [Notion](getting-started/notion.md)
 * [Browser extension](getting-started/browser-extension.md)
 
 ## Manage your memory
 
-* [Create, update and edit memories](pages/memory.md)
-* [Connect apps and manage keys](pages/connect.md)
+* [Memory](pages/memory.md)
+* [Connect](pages/connect.md)
 
 ## Use your assistant
 
-* [Home and conversations](pages/home.md)
+* [Home](pages/home.md)
 * [Telegram](pages/telegram.md)
 
 ## Automate and troubleshoot
 
 * [Schedules](pages/schedules.md)
-* [Activity and failed runs](pages/activity.md)
+* [Activity](pages/activity.md)
 
 ## Share and trade
 

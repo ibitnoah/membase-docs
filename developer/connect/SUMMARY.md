@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Choose a connection method](README.md)
+* [Connect your AI](README.md)
 
 ## Clients
 

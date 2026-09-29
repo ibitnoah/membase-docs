@@ -1,6 +1,7 @@
 ---
 title: MCP frameworks
 description: "An agent framework with an MCP client needs no Membase-specific code: the server URL and the key as a header, and it discovers the tools. Without a framework, the OpenAPI document generates a typed client."
+icon: diagram-project
 ---
 
 # MCP frameworks

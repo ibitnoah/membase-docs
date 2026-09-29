@@ -1,6 +1,7 @@
 ---
 title: Use Membase
 description: "Start with a working Memory, then import more material, use your assistant, connect apps, and keep your memory up to date."
+icon: house
 ---
 
 # Use Membase
@@ -10,7 +11,7 @@ it, and ask your assistant a question. You can connect another AI after that fir
 
 A **Memory** is a named collection of what Membase has learned about a topic. A **source**
 is the material it reads. Adding a source and learning from it are separate steps.
-[How Membase fits together](https://noah-gao.gitbook.io/membase-user-guide/concepts) explains the other product terms.
+[Concepts](https://noah-gao.gitbook.io/membase-user-guide/concepts) explains the other product terms.
 
 ![Sources feed a Memory, the Memory learns on a run, and the assistant, connected apps and your code read the result](figures/how-it-fits-together.svg)
 
@@ -19,10 +20,10 @@ is the material it reads. Adding a source and learning from it are separate step
 | I want to | Guide |
 |---|---|
 | sign in or replay the setup tour | [Sign in](getting-started/sign-in.md) · [Setup guide](getting-started/first-run-guide.md) |
-| import my material | [Choose a source](getting-started/bring-material-in.md) · [Files](pages/files.md) · [Notion](getting-started/notion.md) · [Browser extension](getting-started/browser-extension.md) |
+| import my material | [Sources](getting-started/bring-material-in.md) · [Files](pages/files.md) · [Notion](getting-started/notion.md) · [Browser extension](getting-started/browser-extension.md) |
 | create, update, inspect or edit a Memory | [Memory](pages/memory.md) |
 | talk to my assistant | [Home](pages/home.md) · [Telegram](pages/telegram.md) |
-| let another AI use my memory | [Choose a connection method](https://noah-gao.gitbook.io/membase-user-guide/connect) |
+| let another AI use my memory | [Connect your AI](https://noah-gao.gitbook.io/membase-user-guide/connect) |
 | change access or manage developer keys | [Connect](pages/connect.md) |
 | update automatically or investigate a failure | [Schedules](pages/schedules.md) · [Activity](pages/activity.md) |
 | buy or sell access to a Memory | [Marketplace](pages/marketplace.md) |

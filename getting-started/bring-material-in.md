@@ -1,5 +1,6 @@
 ---
 description: "Choose how to bring in files, Notion pages or captured conversations, and learn when a Memory reads them."
+icon: inbox
 ---
 
 # Bring your material in

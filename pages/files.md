@@ -1,5 +1,6 @@
 ---
 description: Your files as a real folder tree the assistant shares with you, and how a folder becomes a source.
+icon: file
 ---
 
 # Files

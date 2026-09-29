@@ -1,5 +1,6 @@
 ---
 description: "Browse skills and memory listings, manage purchases and subscriptions, and publish a memory listing."
+icon: store
 ---
 
 # Marketplace

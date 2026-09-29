@@ -1,9 +1,10 @@
 ---
-title: App and API concepts
+title: Platform overview
 description: "The hosted Membase at app.membase.io as your code meets it: the three nouns, what each screen of the app is to the API, credentials, one account per person, limits, the Marketplace, and what can be undone."
+icon: layer-group
 ---
 
-# App and API concepts
+# Platform overview
 
 The Memory Platform is the hosted Membase at `https://www.app.membase.io`. A person hands it
 material once; it keeps a living memory of that material; every AI they connect, and every
@@ -112,4 +113,4 @@ changes follow the terms and dates shown for that purchase or plan.
 Deleting a Memory removes its stored content. Deleting a conversation removes the transcript
 but retains information already saved to memory. Deleting account data retains the sign-in
 identity. Review the confirmation and export data you want to keep before deleting.
-[How Membase fits together](https://noah-gao.gitbook.io/membase-user-guide/concepts#stopping-and-undoing).
+[Concepts](https://noah-gao.gitbook.io/membase-user-guide/concepts#stopping-and-undoing).

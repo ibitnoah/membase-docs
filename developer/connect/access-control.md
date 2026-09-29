@@ -1,5 +1,6 @@
 ---
 description: "What a connected client may do, decided by its credential and by the switches on Connect: reach, level, the profile tick, confirmation, and revocation."
+icon: shield-halved
 ---
 
 # Access control

@@ -1,5 +1,6 @@
 ---
 description: "Continue with Google, X or email through Privy, or connect a wallet, then Home and the first-run guide."
+icon: right-to-bracket
 ---
 
 # Sign in

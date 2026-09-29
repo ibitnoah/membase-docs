@@ -1,5 +1,6 @@
 ---
 description: "Use Python, TypeScript or curl to add a document, wait until the Memory has learned it, and search the result."
+icon: rocket
 ---
 
 # API quickstart
@@ -182,6 +183,6 @@ is not a way to force another learning run. See [API troubleshooting](troublesho
 ## Next steps
 
 - [Memory operations](memory-operations.md): facts, profile, documents, search and deletion.
-- [Python and TypeScript SDKs](sdk-quickstart.md): configuration, errors and method signatures.
-- [Authentication and access](authentication.md): permissions, reach and expiry.
+- [SDKs](sdk-quickstart.md): configuration, errors and method signatures.
+- [Authentication](authentication.md): permissions, reach and expiry.
 - [Integrations](README.md#integrations): put these calls behind your model or framework.

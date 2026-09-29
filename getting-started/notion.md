@@ -1,6 +1,7 @@
 ---
 title: Notion
 description: "Connect a Notion workspace, choose pages for a Memory, learn from them, and manage updates or disconnect the workspace."
+icon: file-lines
 ---
 
 # Notion
@@ -22,7 +23,7 @@ You need a Memory and permission to share the Notion pages you want it to read.
    under the Memory's Add card.
 5. Open the source and wait for its files to arrive. Return to the Memory and press **Update now**. When the run finishes, inspect **Your memory** or ask about the material.
 
-If your deployment does not offer the Notion card, use [Files and uploads](../pages/files.md)
+If your deployment does not offer the Notion card, use [Files](../pages/files.md)
 to import an export instead. Some deployments offer **Use a token instead** in the picker;
 that token must have access to the pages you select.
 

@@ -1,6 +1,7 @@
 ---
 title: Grok
 description: "Membase in Grok on the web, iOS and Android, as a custom connector with OAuth consent in the browser."
+icon: bolt
 ---
 
 # Grok

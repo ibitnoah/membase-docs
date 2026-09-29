@@ -1,6 +1,7 @@
 ---
 title: Membase Docs
 description: "Create memory from your material, use it in your AI apps, or build an integration with the API. Start with the task you want to finish."
+icon: house
 ---
 
 # Membase Docs
@@ -17,14 +18,14 @@ access at any time.
 <tr><td><strong>Build with Membase</strong></td><td>Use Python, TypeScript or REST to add a document, wait for learning, and search the result.</td><td><a href="https://noah-gao.gitbook.io/membase-user-guide/build/getting-started/api-quickstart">build/api-quickstart.md</a></td></tr>
 </tbody></table>
 
-New to the product? Read [How Membase fits together](concepts.md), or go straight to the
+New to the product? Read [Concepts](concepts.md), or go straight to the
 [quickstart](https://noah-gao.gitbook.io/membase-user-guide/use/getting-started/quickstart).
 
 ## Common tasks
 
 | I want to | Start here |
 |---|---|
-| bring in files, Notion pages or conversations | [Choose a source](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/bring-material-in) |
+| bring in files, Notion pages or conversations | [Sources](https://noah-gao.gitbook.io/membase-user-guide/use/bring-your-material-in/bring-material-in) |
 | keep a Memory up to date | [Schedules](https://noah-gao.gitbook.io/membase-user-guide/use/automate-and-troubleshoot/schedules) |
 | chat with my assistant from Telegram | [Telegram](https://noah-gao.gitbook.io/membase-user-guide/use/use-your-assistant/telegram) |
 | change what an app or key may use | [Connect and developer keys](https://noah-gao.gitbook.io/membase-user-guide/use/manage-your-memory/connect) |

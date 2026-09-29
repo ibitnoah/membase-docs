@@ -1,8 +1,9 @@
 ---
 description: "Understand Memories, sources, files, connected apps and agents, and manage access or deletion."
+icon: shapes
 ---
 
-# How Membase fits together
+# Concepts
 
 Membase turns your material into memory that your assistant and connected AI apps can use.
 

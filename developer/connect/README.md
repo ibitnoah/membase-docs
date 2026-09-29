@@ -1,6 +1,7 @@
 ---
 title: Connect your AI
 description: "Choose MCP for read-only access through consent, or a skill with a developer key for an AI that needs to write. Then follow your client’s setup guide."
+icon: plug
 ---
 
 # Connect your AI

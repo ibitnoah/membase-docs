@@ -1,6 +1,7 @@
 ---
 title: Telegram
 description: "Connect Telegram to your assistant, receive scheduled results, and manage or remove a connected chat."
+icon: paper-plane
 ---
 
 # Telegram

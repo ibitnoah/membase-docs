@@ -1,8 +1,9 @@
 ---
 description: LoCoMo, LongMemEval and DMR results for the Unibase memory engine, with the method behind each number.
+icon: chart-bar
 ---
 
-# Memory engine benchmarks
+# Benchmarks
 
 This report covers the memory engine’s benchmark harness. These scores and latency figures
 are not measurements of the hosted Membase API, account startup, or an end-to-end app task.

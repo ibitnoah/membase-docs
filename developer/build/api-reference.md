@@ -1,5 +1,6 @@
 ---
 description: Every operation of the agent protocol with its access level, parameters and response shape, rendered from the tool table and the OpenAPI document.
+icon: book
 ---
 
 # Agent protocol — API reference

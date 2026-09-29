@@ -1,5 +1,6 @@
 ---
 description: "Manage your account, plan, payments, exports and account-data deletion."
+icon: gear
 ---
 
 # Settings

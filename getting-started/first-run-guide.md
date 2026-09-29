@@ -1,8 +1,9 @@
 ---
 description: "The Setup guide on a new account: create a memory, add a source, connect an AI tool, one lit control at a time."
+icon: map
 ---
 
-# The first-run guide
+# Setup guide
 
 On a new account the product dims the page and lights the one control to press next. That is the
 **Setup guide**. It has three steps, the same three this documentation follows:

@@ -1,6 +1,7 @@
 ---
 title: Claude Code
 description: "Membase in Claude Code: over MCP with consent, over MCP with a developer key, or as the skill alone."
+icon: terminal
 ---
 
 # Claude Code

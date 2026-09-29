@@ -1,5 +1,6 @@
 ---
 description: Unibase Memory, the browser extension that captures the person's conversations with other assistants and hands them to a Memory as a source.
+icon: puzzle-piece
 ---
 
 # Browser extension

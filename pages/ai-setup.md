@@ -1,5 +1,6 @@
 ---
 description: "Where the account's model comes from: your own provider key or a Claude or ChatGPT subscription, verified before use."
+icon: sliders
 ---
 
 # AI Setup
